@@ -14,9 +14,6 @@ public class ItemPosition : MonoBehaviour
     Vector3 StartPosition;
     Quaternion StartRotation;
     Vector3 StartScale;
-
-
-
     [HideInInspector] public bool IsDragable;
 
     public bool inHome;
@@ -45,7 +42,6 @@ public class ItemPosition : MonoBehaviour
     }
     private void Update()
     {
-        HomeHighlights.SetActive(IsDragable);
         if (inHome)
         {
             if (!IsDragable)
@@ -61,6 +57,10 @@ public class ItemPosition : MonoBehaviour
             transform.localScale = Vector3.Lerp(transform.localScale, StartScale, AnimationDuration * Time.deltaTime);
             transform.rotation = Quaternion.Lerp(transform.rotation, StartRotation, AnimationDuration * Time.deltaTime);
         }
+    }
+    public void ActiveFade(bool status)
+    {
+        HomeHighlights.SetActive(status);
 
     }
 }

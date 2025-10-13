@@ -8,16 +8,17 @@ TagManager:
   - SheetHome2
   - SaltHome
   - Drag
+  - RopeSegment
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NoOutline
   - Water
   - UI
   - ray
-  - 
-  - 
+  - Ground
+  - Outline
   - 
   - 
   - 

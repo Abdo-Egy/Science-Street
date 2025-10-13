@@ -1,5 +1,6 @@
-using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
+using UnityEngine;
 public class FadeAnimation : MonoBehaviour
 {
     [SerializeField] Material Material;
@@ -9,7 +10,7 @@ public class FadeAnimation : MonoBehaviour
         Color c = Material.color;
         c.a = 0f;
         Material.color = c;
-        Material.DOFade(.25f, FadeSpeed).SetLoops(-1,LoopType.Yoyo).SetEase(Ease.Linear);
+        Material.DOFade(.35f, FadeSpeed).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
     }
     private void OnDisable()
     {

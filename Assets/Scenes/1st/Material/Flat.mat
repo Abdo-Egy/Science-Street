@@ -29,6 +29,7 @@ Material:
   stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
+  - SRPDEFAULTUNLIT
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
@@ -114,7 +115,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 0.7647059, g: 0.57254905, b: 0.17254902, a: 1}
-    - _ColorDim: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
+    - _ColorDim: {r: 0.7647059, g: 0.57254905, b: 0.17254898, a: 1}
     - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _ColorDimExtra: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
     - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
@@ -127,7 +128,6 @@ Material:
     - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
   m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!114 &3043696581102797694
 MonoBehaviour:
   m_ObjectHideFlags: 11
