@@ -301,7 +301,6 @@ GameObject:
   - component: {fileID: 3563750980395708814}
   - component: {fileID: 7110936710798203924}
   - component: {fileID: 5579443404714414549}
-  - component: {fileID: 4371103381002986784}
   m_Layer: 0
   m_Name: Quad
   m_TagString: Untagged
@@ -374,28 +373,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4371103381002986784
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6265712182000758818}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &7334042819610820902
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,9 +383,11 @@ GameObject:
   m_Component:
   - component: {fileID: 873992763343538893}
   - component: {fileID: 5078119415931532820}
-  m_Layer: 0
+  - component: {fileID: 3661433149696796573}
+  - component: {fileID: 5855127655371148272}
+  m_Layer: 6
   m_Name: Zinc Sulphate Glass
-  m_TagString: Untagged
+  m_TagString: Drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -451,6 +430,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.58527875, y: 0.9042173, z: 0.6235074}
   m_Center: {x: 0.0008071602, y: 0.22614351, z: -0.000019602372}
+--- !u!114 &3661433149696796573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334042819610820902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f165afe5f1d6c1e41bc342bfac454ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  EventExit:
+    m_PersistentCalls:
+      m_Calls: []
+  HomeHighlights: {fileID: 0}
+  EndPositionAreaName: 7
+  AnimationDuration: 5
+  EndPosition: {x: -0.15, y: 1, z: -1.030001}
+  EndRotation: {x: 0.0029631744, y: -0.008208046, z: 0.33954614, w: -0.9405489}
+  EndScale: {x: 0.71, y: 0.71, z: 0.71}
+  IsDragable: 0
+  inHome: 0
+  inHomePosition: 0
+--- !u!114 &5855127655371148272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7334042819610820902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2006a59abfa8f5743b7fe20807d4f53c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AnimationDuration: 0.4
+  MaxRotation: -66.426
+  Loops: 6
 --- !u!1 &8668902348118769567
 GameObject:
   m_ObjectHideFlags: 0

@@ -569,9 +569,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2921370317167016372}
-  - component: {fileID: 5507073309696404995}
-  - component: {fileID: 2765117318494418795}
-  m_Layer: 0
+  - component: {fileID: 2768956588097750524}
+  - component: {fileID: 5121688255471420022}
+  m_Layer: 6
   m_Name: Zinc Strip Socket
   m_TagString: Drag
   m_Icon: {fileID: 0}
@@ -586,14 +586,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3104506835063199327}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.61258835, y: -0.3553155, z: -0.35317925, w: 0.6113517}
-  m_LocalPosition: {x: 1.757086, y: 0.21, z: -0.9918759}
-  m_LocalScale: {x: 5.199229, y: 5.199228, z: 5.1992273}
+  m_LocalRotation: {x: -0.49912652, y: 0.49912655, z: 0.5008719, w: 0.5008719}
+  m_LocalPosition: {x: -2.0262332, y: 0.21000083, z: 0.01717329}
+  m_LocalScale: {x: 5.19923, y: 5.199229, z: 5.1992283}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 198473824395953378}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5507073309696404995
+--- !u!65 &2768956588097750524
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -608,13 +608,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.015349659, y: 0.024407785, z: 0.014878069}
-  m_Center: {x: 0.000000025081444, y: 0.014168797, z: -7.864504e-12}
---- !u!114 &2765117318494418795
+  m_Size: {x: 0.029547494, y: 0.036636878, z: 0.028399663}
+  m_Center: {x: 2.643026e-12, y: 0.017995186, z: -0.007353625}
+--- !u!114 &5121688255471420022
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -626,14 +626,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f165afe5f1d6c1e41bc342bfac454ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EventEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  EventExit:
+    m_PersistentCalls:
+      m_Calls: []
   HomeHighlights: {fileID: 0}
-  EndPositionAreaTag: 
+  EndPositionAreaName: 5
   AnimationDuration: 5
-  EndPosition: {x: 0, y: 0, z: 0}
-  EndRotation: {x: 0, y: 0, z: 0, w: 0}
-  EndScale: {x: 0, y: 0, z: 0}
+  EndPosition: {x: 0.997797, y: 0.18199721, z: -1.7559917}
+  EndRotation: {x: 0.70710677, y: 0, z: 0, w: 0.70710677}
+  EndScale: {x: 5.19923, y: 5.199229, z: 5.199228}
   IsDragable: 0
   inHome: 0
+  inHomePosition: 0
+  isTriggerDestroy: 1
 --- !u!1 &3112804782575762280
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,11 +685,9 @@ GameObject:
   - component: {fileID: 5035565660167324465}
   - component: {fileID: 6226223394635325331}
   - component: {fileID: 5421815329572855373}
-  - component: {fileID: 2131033434236189752}
-  - component: {fileID: 2226515739617873571}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Zinc Strip
-  m_TagString: Drag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -694,14 +700,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3388115418315571152}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.18191938, y: -0.68441135, z: -0.6820264, w: 0.18255553}
+  m_LocalRotation: {x: -0.7058716, y: 0, z: 0, w: 0.70833987}
   m_LocalPosition: {x: 0, y: 0.162, z: 0.017218}
   m_LocalScale: {x: 23.947506, y: 8.15139, z: 49.179893}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4967516954690628658}
   m_Father: {fileID: 198473824395953378}
-  m_LocalEulerAnglesHint: {x: -89.8, y: -150.13, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.8, y: 0, z: 0}
 --- !u!33 &6226223394635325331
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -752,47 +758,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2131033434236189752
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3388115418315571152}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.02, y: 0.020000001, z: 0.00054672814}
-  m_Center: {x: 0, y: 0, z: 0.00027336407}
---- !u!114 &2226515739617873571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3388115418315571152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f165afe5f1d6c1e41bc342bfac454ead, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HomeHighlights: {fileID: 0}
-  EndPositionAreaTag: SheetHome
-  AnimationDuration: 5
-  EndPosition: {x: -0.311, y: 0.31, z: -7.34}
-  EndRotation: {x: 0.67086524, y: -0.54697156, z: 0.2104479, w: -0.45439377}
-  EndScale: {x: 34.86, y: 11.865845, z: 11.865845}
-  IsDragable: 0
-  inHome: 0
 --- !u!1 &3724299592076216501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,9 +1619,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 198473824395953378}
-  m_Layer: 0
+  - component: {fileID: 6820214325328157665}
+  - component: {fileID: 9150327553962321862}
+  m_Layer: 6
   m_Name: Zinc Strip
-  m_TagString: Untagged
+  m_TagString: Drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1678,6 +1645,55 @@ Transform:
   - {fileID: 5035565660167324465}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6820214325328157665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228694643224077756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f165afe5f1d6c1e41bc342bfac454ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  EventExit:
+    m_PersistentCalls:
+      m_Calls: []
+  HomeHighlights: {fileID: 0}
+  EndPositionAreaName: 4
+  AnimationDuration: 5
+  EndPosition: {x: 0.4177701, y: 0.561, z: -1}
+  EndRotation: {x: 0.6963642, y: -0.6963642, z: 0.12278777, w: 0.12278783}
+  EndScale: {x: 1, y: 1, z: 1}
+  IsDragable: 0
+  inHome: 0
+  inHomePosition: 0
+  isTriggerDestroy: 1
+--- !u!65 &9150327553962321862
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8228694643224077756}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.51168704, y: 0.083908856, z: 0.18419664}
+  m_Center: {x: 0, y: 0.16830954, z: 0.021038614}
 --- !u!1 &8430964464332949886
 GameObject:
   m_ObjectHideFlags: 0

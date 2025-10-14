@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 1121810354753845219}
   - component: {fileID: 8943142868627812491}
   - component: {fileID: 7006699537901218262}
-  m_Layer: 0
+  - component: {fileID: 2875501969076188545}
+  - component: {fileID: 662589352131541442}
+  m_Layer: 6
   m_Name: Spoon
-  m_TagString: Untagged
+  m_TagString: Drag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,9 +101,48 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.1579281, y: 0.010173414, z: 0.027818738}
   m_Center: {x: -0.019633865, y: -0.004086707, z: 0.0000000017554048}
+--- !u!114 &2875501969076188545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154315106626687298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f165afe5f1d6c1e41bc342bfac454ead, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EventEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  EventExit:
+    m_PersistentCalls:
+      m_Calls: []
+  HomeHighlights: {fileID: 0}
+  EndPositionAreaName: 10
+  AnimationDuration: 5
+  EndPosition: {x: 0.45, y: 0.865368, z: -1.03}
+  EndRotation: {x: 0.70284325, y: 0.70284325, z: 0.07753251, w: -0.07753257}
+  EndScale: {x: 7, y: 7, z: 7}
+  IsDragable: 0
+  inHome: 0
+  inHomePosition: 0
+--- !u!114 &662589352131541442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8154315106626687298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b7ffa42a79cd0741915d393f5355f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
