@@ -2,7 +2,6 @@ using DG.Tweening;
 using LiquidVolumeFX;
 using System.Collections;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class Water : MonoBehaviour, ItemAction
 {
@@ -10,15 +9,23 @@ public class Water : MonoBehaviour, ItemAction
     [SerializeField] ParticleSystem WaterEffect;
     [SerializeField] LiquidVolume LiquidVolume;
     [SerializeField] GameObject AnotherWater;
+    [Header("Effect")]
+    [SerializeField] float maxRotate;
+    [SerializeField] float ToLiquidVolume;
+    [SerializeField] float timeToLiquidVolume;
 
-    bool doneWithFrist;
     public void StartAction()
     {
+        transform.DORotate(new Vector3(2.035555e-13f, 180f, maxRotate), AnimationDuration);
+        LiquidVolume ThisLiquidVolume = GetComponentInChildren<LiquidVolume>();
+        DOTween.To(() => ThisLiquidVolume.level, x => ThisLiquidVolume.level = x, ToLiquidVolume, timeToLiquidVolume);
+        GetComponent<SoundEffect>().PlaySound();
         WaterEffect.Play();
         DOTween.To(() => LiquidVolume.level, x => LiquidVolume.level = x, .6f, AnimationDuration).OnComplete(() =>
         {
             GetComponent<ItemPosition>().ReturnToHome();
             WaterEffect.Stop();
+            LiquidVolume.turbulence2 = 0;
         });
     }
 
@@ -32,7 +39,7 @@ public class Water : MonoBehaviour, ItemAction
         AnotherWater.SetActive(true);
         this.gameObject.SetActive(false);
     }
-    void ItemAction.StopAction()
+    public void StopAction()
     {
         WaterEffect.Stop();
         DOTween.KillAll();

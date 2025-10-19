@@ -20,6 +20,7 @@ Material:
   - DR_RIM_ON
   - DR_SPECULAR_ON
   - DR_VERTEX_COLORS_ON
+  - _ALPHATEST_ON
   - _CELPRIMARYMODE_SINGLE
   - _DETAILMAPBLENDINGMODE_MULTIPLY
   - _GRADIENTSPACE_WORLD
@@ -98,7 +99,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AlphaClip: 0
+    - _AlphaClip: 1
     - _BaseMapPremultiply: 0
     - _Blend: 0
     - _BumpScale: 1

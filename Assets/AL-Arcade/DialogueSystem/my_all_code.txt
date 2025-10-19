@@ -1,0 +1,2502 @@
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\AIVoiceHandler.cs 
+" 
+using System;
+using System.Collections;
+using System.IO;
+using UnityEngine;
+using UnityEngine.Networking;
+
+namespace AL_Arcade.DialogueSystem.Scripts
+{
+    public class AIVoiceHandler : MonoBehaviour
+    {
+        #region Singleton
+        private static AIVoiceHandler instance;
+        public static AIVoiceHandler Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = FindObjectOfType<AIVoiceHandler>();
+                return instance;
+            }
+        }
+        #endregion
+
+        #region API config
+        private const string API_URL = "https://voice-agent.caprover.al-arcade.com/chat";
+        private const string STUDENT_ID = "student_001";
+        private const int REQUEST_TIMEOUT = 30;
+        #endregion
+
+        #region Events
+        public event Action<string> OnResponseTextReceived;
+        public event Action<AudioClip> OnResponseAudioReady;
+        public event Action<string> OnError;
+        public event Action OnProcessingStarted;
+        public event Action OnProcessingComplete;
+        #endregion
+
+        #region Fields and Paths
+        private bool isProcessing;
+        private string saveDirectory;
+        private string responseWavPath;
+        private AudioSource targetAudioSource;
+        
+        private const string RESPONSE_WAV = "response.wav";
+        #endregion
+
+        #region Unity Lifecycle
+        private void Awake()
+        {
+            if (instance == null) instance = this;
+            else if (instance != this)  { Destroy(gameObject); return; }
+
+            // Setup paths
+            saveDirectory = Path.Combine(Application.persistentDataPath, "DialogueSystem");
+            
+            if (!Directory.Exists(saveDirectory))
+            {
+                Directory.CreateDirectory(saveDirectory);
+            }
+
+            responseWavPath = Path.Combine(saveDirectory, RESPONSE_WAV);
+
+            // Cache the first AudioSource component
+            AudioSource[] audioSources = GetComponents<AudioSource>();
+            if (audioSources != null && audioSources.Length > 0)
+            {
+                targetAudioSource = audioSources[0];
+                Debug.Log($"[AIVoiceHandler] Cached first AudioSource component");
+            }
+            else
+            {
+                Debug.LogError("[AIVoiceHandler] No AudioSource components found on this GameObject!");
+            }
+
+            Debug.Log($"[AIVoiceHandler] Initialized - Directory: {saveDirectory}");
+        }
+
+        private void OnDestroy()
+        {
+            CleanupTempFiles();
+        }
+        #endregion
+
+        #region Public API
+        public bool IsProcessing => isProcessing;
+
+        public void SendVoiceMessage(byte[] wavData)
+        {
+            if (isProcessing)
+            {
+                Fail("Already processing a request");
+                return;
+            }
+
+            if (wavData == null || wavData.Length < 44)
+            {
+                Fail("Invalid WAV data");
+                return;
+            }
+
+            if (targetAudioSource == null)
+            {
+                Fail("No AudioSource component found to play audio");
+                return;
+            }
+
+            StartCoroutine(ProcessVoiceMessageCoroutine(wavData));
+        }
+        #endregion
+
+        #region Core Processing
+        private IEnumerator ProcessVoiceMessageCoroutine(byte[] wavData)
+        {
+            isProcessing = true;
+            OnProcessingStarted?.Invoke();
+            Debug.Log("[AIVoiceHandler] Processing started");
+
+            // Get game context
+            string gameContext = GameContextBuilder.Instance != null
+                ? GameContextBuilder.Instance.GetFullContext()
+                : "No game context available";
+
+            // Send API request
+            ChatResponse response = null;
+            yield return SendChatRequest(wavData, gameContext, (success, result, error) =>
+            {
+                if (success)
+                {
+                    response = result;
+                    Debug.Log("[AIVoiceHandler] API Success");
+                }
+                else
+                {
+                    Fail($"API Error: {error}");
+                }
+            });
+
+            if (response == null)
+            {
+                EndProcessing();
+                yield break;
+            }
+
+            Debug.Log($"[AIVoiceHandler] Response received - Text: {response.agent_response}");
+
+            // Invoke text response
+            OnResponseTextReceived?.Invoke(response.agent_response ?? string.Empty);
+
+            // Download WAV and save
+            yield return DownloadDecodeAndSaveWav(response.audio_filepath);
+
+            EndProcessing();
+        }
+
+        private void EndProcessing()
+        {
+            isProcessing = false;
+            OnProcessingComplete?.Invoke();
+            Debug.Log("[AIVoiceHandler] Processing complete");
+        }
+        #endregion
+
+        #region API Communication
+        private IEnumerator SendChatRequest(byte[] wavData, string gameContext, Action<bool, ChatResponse, string> callback)
+        {
+            WWWForm form = new WWWForm();
+            form.AddField("student_id", STUDENT_ID);
+            form.AddBinaryData("file", wavData, "recording.wav", "audio/wav");
+            form.AddField("game_context", gameContext);
+
+            using (UnityWebRequest request = UnityWebRequest.Post(API_URL, form))
+            {
+                request.timeout = REQUEST_TIMEOUT;
+                
+                Debug.Log("[AIVoiceHandler] Sending request to API");
+                
+                yield return request.SendWebRequest();
+
+                if (request.result != UnityWebRequest.Result.Success)
+                {
+                    callback?.Invoke(false, null, request.error);
+                    yield break;
+                }
+
+                ChatResponse parsedResponse = null;
+                Exception parseException = null;
+                
+                try
+                {
+                    parsedResponse = JsonUtility.FromJson<ChatResponse>(request.downloadHandler.text);
+                }
+                catch (Exception e)
+                {
+                    parseException = e;
+                }
+                
+                if (parsedResponse != null && parsedResponse.status == "success")
+                {
+                    callback?.Invoke(true, parsedResponse, null);
+                }
+                else
+                {
+                    string error = parseException != null 
+                        ? $"JSON parse error: {parseException.Message}"
+                        : $"API returned status: {parsedResponse?.status}";
+                    callback?.Invoke(false, null, error);
+                }
+            }
+        }
+        #endregion
+
+        #region Download, Decode and Save
+        private IEnumerator DownloadDecodeAndSaveWav(string audioUrl)
+        {
+            if (string.IsNullOrEmpty(audioUrl))
+            {
+                Fail("No audio URL provided");
+                yield break;
+            }
+
+            Debug.Log("[AIVoiceHandler] Downloading WAV file");
+
+            // Clean up old file
+            DeleteFileIfExists(responseWavPath);
+
+            // Download WAV data from server
+            byte[] wavData = null;
+            
+            using (UnityWebRequest request = UnityWebRequest.Get(audioUrl))
+            {
+                request.timeout = REQUEST_TIMEOUT;
+                yield return request.SendWebRequest();
+                
+                if (request.result != UnityWebRequest.Result.Success)
+                {
+                    Fail($"Download failed: {request.error}");
+                    yield break;
+                }
+
+                wavData = request.downloadHandler.data;
+                
+                if (wavData == null || wavData.Length < 44)
+                {
+                    Fail($"Downloaded WAV data is invalid (size: {wavData?.Length ?? 0})");
+                    yield break;
+                }
+            }
+
+            // Repair WAV header if needed
+            wavData = RepairWavHeader(wavData);
+
+            // Save WAV file to disk
+            try
+            {
+                File.WriteAllBytes(responseWavPath, wavData);
+                Debug.Log($"[AIVoiceHandler] WAV file saved: {responseWavPath} ({wavData.Length} bytes)");
+            }
+            catch (Exception e)
+            {
+                Fail($"Failed to save WAV file: {e.Message}");
+                yield break;
+            }
+
+            // Load WAV using WavUtility
+            AudioClip audioClip = null;
+            
+            try
+            {
+                audioClip = WavUtility.ToAudioClip(wavData, 0, "response");
+                
+                if (audioClip != null)
+                {
+                    Debug.Log($"[AIVoiceHandler] AudioClip loaded - Duration: {audioClip.length:F2}s, Frequency: {audioClip.frequency}Hz");
+                }
+            }
+            catch (Exception e)
+            {
+                // Try loading from file path as fallback
+                try
+                {
+                    audioClip = WavUtility.ToAudioClip(responseWavPath);
+                }
+                catch
+                {
+                    Fail($"Failed to load WAV: {e.Message}");
+                    yield break;
+                }
+            }
+            
+            if (audioClip == null || audioClip.samples <= 0 || audioClip.channels <= 0)
+            {
+                if (audioClip != null) Destroy(audioClip);
+                Fail("Failed to create valid AudioClip");
+                yield break;
+            }
+
+            // Play the audio clip on the cached AudioSource
+            PlayAudioClip(audioClip);
+
+            // Still invoke the event for any external listeners
+            OnResponseAudioReady?.Invoke(audioClip);
+        }
+
+        private void PlayAudioClip(AudioClip clip)
+        {
+            if (targetAudioSource == null)
+            {
+                Debug.LogError("[AIVoiceHandler] Cannot play audio - AudioSource is null");
+                return;
+            }
+
+            if (clip == null)
+            {
+                Debug.LogError("[AIVoiceHandler] Cannot play audio - AudioClip is null");
+                return;
+            }
+
+            // Stop any currently playing audio
+            if (targetAudioSource.isPlaying)
+            {
+                targetAudioSource.Stop();
+                Debug.Log("[AIVoiceHandler] Stopped previous audio playback");
+            }
+
+            // Assign and play the new clip
+            targetAudioSource.clip = clip;
+            targetAudioSource.Play();
+            
+            Debug.Log($"[AIVoiceHandler] Playing audio response on AudioSource");
+            Debug.Log($"  Clip: {clip.name}");
+            Debug.Log($"  Duration: {clip.length:F2} seconds");
+            Debug.Log($"  Is Playing: {targetAudioSource.isPlaying}");
+            Debug.Log($"  Volume: {targetAudioSource.volume}");
+            Debug.Log($"  Mute: {targetAudioSource.mute}");
+        }
+
+        private byte[] RepairWavHeader(byte[] wavData)
+        {
+            if (wavData == null || wavData.Length < 44)
+                return wavData;
+
+            // Check and repair file size field (position 4)
+            int fileSizeField = BitConverter.ToInt32(wavData, 4);
+            if (fileSizeField == -1 || fileSizeField == 0xFFFFFFFF)
+            {
+                int correctFileSize = wavData.Length - 8;
+                byte[] sizeBytes = BitConverter.GetBytes(correctFileSize);
+                Array.Copy(sizeBytes, 0, wavData, 4, 4);
+                Debug.Log($"[AIVoiceHandler] Repaired file size header: {correctFileSize} bytes");
+            }
+
+            // Find and repair data chunk size
+            for (int i = 36; i < Math.Min(wavData.Length - 8, 200); i++)
+            {
+                string marker = System.Text.Encoding.ASCII.GetString(wavData, i, 4);
+                if (marker == "data")
+                {
+                    int dataSizeField = BitConverter.ToInt32(wavData, i + 4);
+                    if (dataSizeField == -1 || dataSizeField == 0xFFFFFFFF)
+                    {
+                        int correctDataSize = wavData.Length - (i + 8);
+                        byte[] dataSizeBytes = BitConverter.GetBytes(correctDataSize);
+                        Array.Copy(dataSizeBytes, 0, wavData, i + 4, 4);
+                        Debug.Log($"[AIVoiceHandler] Repaired data size header: {correctDataSize} bytes");
+                    }
+                    break;
+                }
+            }
+
+            return wavData;
+        }
+        #endregion
+
+        #region Helper Methods
+        private void DeleteFileIfExists(string path)
+        {
+            try
+            {
+                if (File.Exists(path))
+                {
+                    File.Delete(path);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning($"[AIVoiceHandler] Failed to delete file: {e.Message}");
+            }
+        }
+
+        private void CleanupTempFiles()
+        {
+            // Stop audio if playing when destroyed
+            if (targetAudioSource != null && targetAudioSource.isPlaying)
+            {
+                targetAudioSource.Stop();
+            }
+        }
+
+        private void Fail(string message)
+        {
+            Debug.LogError($"[AIVoiceHandler] ERROR: {message}");
+            OnError?.Invoke(message);
+        }
+        #endregion
+
+        #region Data Classes
+        [Serializable]
+        public class ChatResponse
+        {
+            public string status;
+            public string message;
+            public string student_id;
+            public string agent_response;
+            public string audio_filepath;
+        }
+        #endregion
+    }
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\DialogueManager.cs 
+" 
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using AL_Arcade.DialogueSystem.Scripts;
+using ALArcade.ArabicTMP;
+using TMPro;
+
+namespace AL_Arcade.DialogueSystem.Scripts
+{
+    public class DialogueManager : MonoBehaviour
+    {
+        [Header("UI References")] [SerializeField]
+        private Transform dialogueContainer;
+
+        [SerializeField] private GameObject dialoguePrefabEN;
+        [SerializeField] private GameObject dialoguePrefabAR;
+        [SerializeField] private GameObject replyPrefab;
+        [SerializeField] private GameObject replyPanel;
+        [SerializeField] private Transform replyContainer;
+        [SerializeField] private CanvasGroup dialogueCanvasGroup;
+        [SerializeField] private RectTransform FreeUseDialogue; 
+
+        [Header("Settings")] [SerializeField] private Language currentLanguage = Language.English;
+        [SerializeField] private float textSpeed = 0.03f;
+        [SerializeField] private float fadeInDuration = 0.3f;
+        [SerializeField] private KeyCode advanceKey = KeyCode.Space;
+
+        [Header("Audio")]  public AudioSource voiceAudioSource;
+        [SerializeField] private AudioSource sfxAudioSource;
+
+        // Current dialogue state
+        private DialogueMessageBase currentMessage;
+        public GameObject currentDialogueUI;
+        private List<GameObject> activeReplyButtons = new List<GameObject>();
+        private bool isTyping = false;
+        private bool canAdvance = false;
+        private Coroutine typingCoroutine;
+
+        // Events
+        public System.Action<DialogueSequence> OnDialogueStart;
+        public System.Action OnDialogueEnd;
+        public System.Action<DialogueMessageBase> OnMessageDisplay;
+        public System.Action<DialogueReply> OnReplySelected;
+
+        private static DialogueManager instance;
+
+        public static DialogueManager Instance
+        {
+            get
+            {
+                if (instance == null)
+                    instance = FindObjectOfType<DialogueManager>();
+                return instance;
+            }
+        }
+
+        public enum Language
+        {
+            English,
+            Arabic
+        }
+
+        void Awake()
+        {
+            if (instance == null)
+                instance = this;
+            else if (instance != this)
+                Destroy(gameObject);
+            
+            if (replyPanel != null)
+                Debug.Log("I hId it start ");
+            replyPanel.SetActive(false);
+
+            if (dialogueCanvasGroup != null)
+                dialogueCanvasGroup.alpha = 0;
+        }
+
+        void Start()
+        {
+    
+        }
+
+        void Update()
+        {
+            // Handle advance input
+            if (canAdvance && !isTyping && Input.GetKeyDown(advanceKey))
+            {
+                if (currentMessage != null && (currentMessage.replies == null || currentMessage.replies.Count == 0))
+                {
+                    AdvanceDialogue();
+                }
+            }
+
+            // Skip typing animation
+            if (isTyping && Input.GetKeyDown(advanceKey))
+            {
+                CompleteTyping();
+            }
+        }
+
+        public void StartDialogue(DialogueSequence sequence)
+        {
+            if (sequence == null || sequence.firstMessage == null)
+            {
+                Debug.LogError("Invalid dialogue sequence!");
+                return;
+            }
+
+            OnDialogueStart?.Invoke(sequence);
+
+            if (sequence.pauseGameDuringDialogue)
+                Time.timeScale = 0;
+
+            ShowDialogueUI(true);
+            DisplayMessage(sequence.firstMessage);
+            FreeUseDialogue.gameObject.SetActive(false);
+        }
+
+        public void StartDialogue(DialogueMessageBase firstMessage)
+        {
+            if (firstMessage == null)
+            {
+                Debug.LogError("Invalid dialogue message!");
+                return;
+            }
+
+            ShowDialogueUI(true);
+            DisplayMessage(firstMessage);
+            FreeUseDialogue.gameObject.SetActive(false);
+        }
+
+        private void DisplayMessage(DialogueMessageBase message)
+        {
+            if (message == null)
+            {
+                EndDialogue();
+                return;
+            }
+
+            currentMessage = message;
+            OnMessageDisplay?.Invoke(message);
+
+            // Clear previous UI
+            if (currentDialogueUI != null)
+                Destroy(currentDialogueUI);
+
+            // Create appropriate prefab
+            GameObject prefabToUse = currentLanguage == Language.English ? dialoguePrefabEN : dialoguePrefabAR;
+            currentDialogueUI = Instantiate(prefabToUse, dialogueContainer);
+
+            // Setup the dialogue UI
+            DialogueUI dialogueUI = currentDialogueUI.GetComponent<DialogueUI>();
+            if (dialogueUI != null)
+            {
+                dialogueUI.Setup(message, currentLanguage == Language.Arabic);
+
+                // Start typing animation
+                if (typingCoroutine != null)
+                    StopCoroutine(typingCoroutine);
+                typingCoroutine = StartCoroutine(TypeText(dialogueUI.messageText, message.messageText));
+            }
+
+            // Play voice clip
+            if (message.voiceClip != null && voiceAudioSource != null)
+            {
+                voiceAudioSource.clip = message.voiceClip;
+                voiceAudioSource.Play();
+            }
+
+            // Handle replies
+            UpdateReplyPanel(message);
+        }
+
+        private IEnumerator TypeText(TextMeshProUGUI textComponent, string fullText)
+        {
+            isTyping = true;
+            canAdvance = false;
+            textComponent.text = "";
+            ArabicTextMeshProUGUI arText;
+           arText =  textComponent.gameObject.GetComponent<ArabicTextMeshProUGUI>() != null ? textComponent.gameObject.GetComponent<ArabicTextMeshProUGUI>() :  null;
+            foreach (char c in fullText)
+            {
+                if (arText != null) arText.arabicText += c;
+                else textComponent.text += c;
+                yield return new WaitForSecondsRealtime(textSpeed);
+            }
+
+            isTyping = false;
+            canAdvance = true;
+        }
+
+        private void CompleteTyping()
+        {
+            if (typingCoroutine != null)
+            {
+                StopCoroutine(typingCoroutine);
+                typingCoroutine = null;
+            }
+
+            if (currentDialogueUI != null)
+            {
+                DialogueUI dialogueUI = currentDialogueUI.GetComponent<DialogueUI>();
+                if (dialogueUI != null && currentMessage != null)
+                {
+                    dialogueUI.messageText.text = currentMessage.messageText;
+                }
+            }
+
+            isTyping = false;
+            canAdvance = true;
+        }
+
+        private void UpdateReplyPanel(DialogueMessageBase message)
+        {
+            // Clear previous replies
+            foreach (var btn in activeReplyButtons)
+            {
+                Destroy(btn);
+            }
+
+            activeReplyButtons.Clear();
+
+            Debug.Log(message.replies.Count);
+            // Check if we have replies
+            if (message.replies != null && message.replies.Count > 0)
+            {
+                replyPanel.SetActive(true);
+                replyContainer.gameObject.SetActive(true);
+                
+                Debug.Log("message.replies.Count");
+
+                // Create reply buttons
+                foreach (var reply in message.replies)
+                {
+                    if (reply == null) continue;
+
+                    // Check conditions if needed
+                    if (reply.requiresCondition && !CheckCondition(reply.conditionKey))
+                        continue;
+
+                    GameObject replyButton = Instantiate(replyPrefab, replyContainer);
+                    ReplyButton replyBtn = replyButton.GetComponent<ReplyButton>();
+
+                    if (replyBtn != null)
+                    {
+                        replyBtn.Setup(reply, () => SelectReply(reply));
+                    }
+
+                    activeReplyButtons.Add(replyButton);
+                }
+            }
+            else
+            {
+                Debug.Log("I hId it else ");
+                replyPanel.SetActive(false);
+            }
+        }
+
+        private void SelectReply(DialogueReply reply)
+        {
+            if (reply == null) return;
+
+            OnReplySelected?.Invoke(reply);
+
+            // Play reply audio if exists
+            if (reply.replyAudioClip != null && sfxAudioSource != null)
+            {
+                sfxAudioSource.PlayOneShot(reply.replyAudioClip);
+            }
+
+            // Hide reply panel
+            Debug.Log("I hId it inSelectReply ");
+                
+            replyPanel.SetActive(false);
+
+            // Display next message
+            DisplayMessage(reply.nextMessage);
+        }
+
+        private void AdvanceDialogue()
+        {
+            if (currentMessage != null && currentMessage.nextMessage != null)
+            {
+                DisplayMessage(currentMessage.nextMessage);
+            }
+            else
+            {
+                EndDialogue();
+               // GameContextBuilder.Instance.InitializeGame("","","");
+            }
+        }
+
+        private void EndDialogue()
+        {
+            ShowDialogueUI(false);
+            
+
+            if (currentDialogueUI != null)
+                Destroy(currentDialogueUI);
+
+            currentMessage = null;
+            Time.timeScale = 1;
+
+            OnDialogueEnd?.Invoke();
+            FreeUseDialogue.gameObject.SetActive(true);
+        }
+
+        private void ShowDialogueUI(bool show)
+        {
+            if (dialogueCanvasGroup != null)
+            {
+                StartCoroutine(FadeCanvas(show));
+                
+            }
+        }
+
+        private IEnumerator FadeCanvas(bool fadeIn)
+        {
+            float targetAlpha = fadeIn ? 1 : 0;
+            float startAlpha = dialogueCanvasGroup.alpha;
+            float elapsed = 0;
+
+            while (elapsed < fadeInDuration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                dialogueCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, elapsed / fadeInDuration);
+                yield return null;
+            }
+
+            dialogueCanvasGroup.alpha = targetAlpha;
+            dialogueCanvasGroup.interactable = fadeIn;
+            dialogueCanvasGroup.blocksRaycasts = fadeIn;
+        }
+
+        private bool CheckCondition(string conditionKey)
+        {
+            // Implement your condition checking logic here
+            // For example, checking player stats, quest progress, etc.
+            // For now, return true as placeholder
+            return true;
+        }
+
+        public void SetLanguage(Language language)
+        {
+            currentLanguage = language;
+        }
+    }
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\DialogueTrigger.cs 
+" 
+
+using UnityEngine;
+namespace AL_Arcade.DialogueSystem.Scripts
+{
+   public class DialogueTrigger : MonoBehaviour
+{
+    [Header("Dialogue")]
+    public DialogueSequence dialogueSequence;
+    public DialogueMessageBase singleMessage;
+    
+    [Header("Trigger Settings")]
+    public bool triggerOnStart = false;
+    public bool triggerOnCollision = false;
+    public bool triggerOnInteract = true;
+    public KeyCode interactKey = KeyCode.E;
+    
+    [Header("Visual Feedback")]
+    public GameObject interactionPrompt;
+    
+    private bool playerInRange = false;
+    private bool hasTriggered = false;
+    
+    void Start()
+    {
+        if (interactionPrompt != null)
+            interactionPrompt.SetActive(false);
+        
+        if (triggerOnStart)
+            TriggerDialogue();
+    }
+    
+    void Update()
+    {
+        if (triggerOnInteract && playerInRange && Input.GetKeyDown(interactKey))
+        {
+            TriggerDialogue();
+        }
+    }
+    
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = true;
+            
+            if (interactionPrompt != null && !hasTriggered)
+                interactionPrompt.SetActive(true);
+            
+            if (triggerOnCollision)
+                TriggerDialogue();
+        }
+    }
+    
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerInRange = false;
+            
+            if (interactionPrompt != null)
+                interactionPrompt.SetActive(false);
+        }
+    }
+    
+    public void TriggerDialogue()
+    {
+        if (hasTriggered && !triggerOnInteract) return;
+        
+        if (DialogueManager.Instance != null)
+        {
+            if (dialogueSequence != null)
+                DialogueManager.Instance.StartDialogue(dialogueSequence);
+            else if (singleMessage != null)
+                DialogueManager.Instance.StartDialogue(singleMessage);
+        }
+        
+        hasTriggered = true;
+        
+        if (interactionPrompt != null)
+            interactionPrompt.SetActive(false);
+    }
+}
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\DialogueUI.cs 
+" 
+// ============================================
+// File: DialogueUI.cs - Simplified Version
+// ============================================
+
+using ALArcade.ArabicTMP;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+namespace AL_Arcade.DialogueSystem.Scripts
+{
+    public class DialogueUI : MonoBehaviour
+    {
+        [Header("UI Elements")] public Image characterSprite;
+        public TextMeshProUGUI characterName;
+        public TextMeshProUGUI messageText;
+
+        // Simplified setup - no layout modifications needed
+        public void Setup(DialogueMessageBase message, bool isRTL)
+        {
+            if (message == null) return;
+
+            // Set character sprite
+            if (characterSprite != null && message.characterSprite != null)
+            {
+                characterSprite.sprite = message.characterSprite;
+            }
+
+            // Set character name
+            if (characterName != null)
+            {
+                if (characterName.GetComponent<ArabicTextMeshProUGUI>() != null)
+                    characterName.GetComponent<ArabicTextMeshProUGUI>().arabicText = message.characterName;
+                else
+                {
+                    characterName.text = message.characterName;
+                }
+                
+            }
+
+            // Set message text (text will be empty initially for typing effect)
+            if (messageText != null)
+            {
+                if (messageText.GetComponent<ArabicTextMeshProUGUI>() != null)
+                    messageText.GetComponent<ArabicTextMeshProUGUI>().arabicText = " ";
+                // The actual text will be filled by the typing animation in DialogueManager
+                messageText.text = "";
+            }
+        }
+
+        // Optional: Method to directly set the text without typing effect
+        public void SetMessageTextDirect(string text)
+        {
+            if (messageText != null)
+            {
+                if (characterName.GetComponent<ArabicTextMeshProUGUI>() != null)
+                    characterName.GetComponent<ArabicTextMeshProUGUI>().arabicText = text;
+                else
+                {
+                    characterName.text = text;
+                }
+            }
+        }
+
+        // Optional: Show/hide character elements if needed
+        public void ShowCharacterInfo(bool show)
+        {
+            if (characterSprite != null)
+                characterSprite.gameObject.SetActive(show);
+
+            if (characterName != null)
+                characterName.gameObject.SetActive(show);
+        }
+    }
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\GameContextBuilder.cs 
+" 
+using System;
+using System.Collections.Generic;
+using System.Text;
+using UnityEngine;
+
+namespace AL_Arcade.DialogueSystem.Scripts
+{
+    /// <summary>
+    /// Singleton that builds and maintains comprehensive game context for AI.
+    /// Persists across scenes.
+    /// </summary>
+    public class GameContextBuilder : MonoBehaviour
+    {
+        #region Singleton
+        private static GameContextBuilder instance;
+        public static GameContextBuilder Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    GameObject go = new GameObject("GameContextBuilder");
+                    instance = go.AddComponent<GameContextBuilder>();
+                    DontDestroyOnLoad(go);
+                }
+                return instance;
+            }
+        }
+        #endregion
+
+        #region Context Data Structure
+        [Serializable]
+        private class GameContext
+        {
+            public string gameName = "";
+            public string gameDescription = "";
+            public string coreMechanics = "";
+            public List<string> playerActions = new List<string>();
+            public string currentObjective = "";
+        }
+        #endregion
+
+        #region Private Fields
+        private GameContext context = new GameContext();
+        private readonly StringBuilder contextBuilder = new StringBuilder();
+        private const int MAX_ACTIONS = 100; // Limit to prevent excessive context size
+        #endregion
+
+        #region Unity Lifecycle
+        void Awake()
+        {
+            if (instance == null)
+            {
+                instance = this;
+                DontDestroyOnLoad(gameObject);
+                Debug.Log("[GameContextBuilder] Singleton initialized and persisting across scenes");
+            }
+            else if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+        }
+        #endregion
+
+        #region Public API - Initialization
+        /// <summary>
+        /// Initializes static game information. Call once at game start.
+        /// </summary>
+        /// <param name="name">Name of the game</param>
+        /// <param name="description">Brief description of the game</param>
+        /// <param name="mechanics">Core game mechanics explanation</param>
+        public void InitializeGame(string name, string description, string mechanics)
+        {
+            context.gameName = name ?? "";
+            context.gameDescription = description ?? "";
+            context.coreMechanics = mechanics ?? "";
+
+            Debug.Log($"[GameContextBuilder] Game initialized: {name}");
+            Debug.Log($"[GameContextBuilder] Description: {description}");
+            Debug.Log($"[GameContextBuilder] Mechanics: {mechanics}");
+        }
+        #endregion
+
+        #region Public API - Player Actions
+        /// <summary>
+        /// Adds a player action to the chronological history.
+        /// </summary>
+        /// <param name="action">Description of the player action</param>
+        public void AddPlayerAction(string action)
+        {
+            if (string.IsNullOrWhiteSpace(action))
+            {
+                Debug.LogWarning("[GameContextBuilder] Attempted to add empty action");
+                return;
+            }
+
+            // Add timestamp for better context
+            string timestampedAction = $"[{DateTime.Now:HH:mm:ss}] {action}";
+            context.playerActions.Add(timestampedAction);
+
+            // Limit actions list to prevent excessive size
+            if (context.playerActions.Count > MAX_ACTIONS)
+            {
+                int removeCount = context.playerActions.Count - MAX_ACTIONS;
+                context.playerActions.RemoveRange(0, removeCount);
+                Debug.Log($"[GameContextBuilder] Trimmed {removeCount} old actions (exceeded MAX_ACTIONS)");
+            }
+
+            Debug.Log($"[GameContextBuilder] Action added: {action} (Total: {context.playerActions.Count})");
+        }
+
+        /// <summary>
+        /// Adds multiple player actions at once.
+        /// </summary>
+        public void AddPlayerActions(params string[] actions)
+        {
+            foreach (string action in actions)
+            {
+                AddPlayerAction(action);
+            }
+        }
+
+        /// <summary>
+        /// Clears all player actions. Useful for level transitions.
+        /// </summary>
+        public void ClearActions()
+        {
+            int count = context.playerActions.Count;
+            context.playerActions.Clear();
+            Debug.Log($"[GameContextBuilder] Cleared {count} player actions");
+        }
+        #endregion
+
+        #region Public API - Current Objective
+        /// <summary>
+        /// Sets or updates the current player objective.
+        /// </summary>
+        /// <param name="objective">Current objective description</param>
+        public void SetCurrentObjective(string objective)
+        {
+            context.currentObjective = objective ?? "";
+            Debug.Log($"[GameContextBuilder] Objective set: {objective}");
+        }
+
+        /// <summary>
+        /// Clears the current objective.
+        /// </summary>
+        public void ClearObjective()
+        {
+            context.currentObjective = "";
+            Debug.Log("[GameContextBuilder] Objective cleared");
+        }
+        #endregion
+
+        #region Public API - Context Retrieval
+        /// <summary>
+        /// Gets the complete formatted game context as a single string.
+        /// Returns FULL, UNTRIMMED context for AI processing.
+        /// </summary>
+        /// <returns>Formatted context string</returns>
+        public string GetFullContext()
+        {
+            contextBuilder.Clear();
+
+            // Game Information Section
+            contextBuilder.AppendLine("=== GAME INFORMATION ===");
+            
+            if (!string.IsNullOrEmpty(context.gameName))
+            {
+                contextBuilder.AppendLine($"GAME: {context.gameName}");
+            }
+
+            if (!string.IsNullOrEmpty(context.gameDescription))
+            {
+                contextBuilder.AppendLine($"DESCRIPTION: {context.gameDescription}");
+            }
+
+            if (!string.IsNullOrEmpty(context.coreMechanics))
+            {
+                contextBuilder.AppendLine($"MECHANICS: {context.coreMechanics}");
+            }
+
+            contextBuilder.AppendLine();
+
+            // Player Actions Section
+            contextBuilder.AppendLine("=== PLAYER ACTIONS (CHRONOLOGICAL) ===");
+            
+            if (context.playerActions.Count > 0)
+            {
+                for (int i = 0; i < context.playerActions.Count; i++)
+                {
+                    contextBuilder.AppendLine($"{i + 1}. {context.playerActions[i]}");
+                }
+            }
+            else
+            {
+                contextBuilder.AppendLine("(No actions recorded yet)");
+            }
+
+            contextBuilder.AppendLine();
+
+            // Current Objective Section
+            contextBuilder.AppendLine("=== CURRENT OBJECTIVE ===");
+            
+            if (!string.IsNullOrEmpty(context.currentObjective))
+            {
+                contextBuilder.AppendLine(context.currentObjective);
+            }
+            else
+            {
+                contextBuilder.AppendLine("(No objective set)");
+            }
+
+            string fullContext = contextBuilder.ToString();
+            
+            Debug.Log($"[GameContextBuilder] Generated context ({fullContext.Length} characters)");
+            
+            return fullContext;
+        }
+
+        /// <summary>
+        /// Gets a summary of the current context without full details.
+        /// </summary>
+        public string GetContextSummary()
+        {
+            return $"Game: {context.gameName} | Actions: {context.playerActions.Count} | " +
+                   $"Objective: {(string.IsNullOrEmpty(context.currentObjective) ? "None" : "Set")}";
+        }
+        #endregion
+
+        #region Public API - Context Management
+        /// <summary>
+        /// Completely resets all context data.
+        /// </summary>
+        public void ResetAllContext()
+        {
+            context = new GameContext();
+            Debug.Log("[GameContextBuilder] All context reset");
+        }
+
+        /// <summary>
+        /// Gets the current number of recorded actions.
+        /// </summary>
+        public int GetActionCount()
+        {
+            return context.playerActions.Count;
+        }
+
+        /// <summary>
+        /// Checks if game has been initialized.
+        /// </summary>
+        public bool IsGameInitialized()
+        {
+            return !string.IsNullOrEmpty(context.gameName);
+        }
+        #endregion
+
+        #region Debug Helpers
+        /// <summary>
+        /// Logs the full context to console. Useful for debugging.
+        /// </summary>
+        [ContextMenu("Log Full Context")]
+        public void LogFullContext()
+        {
+            string fullContext = GetFullContext();
+            Debug.Log($"[GameContextBuilder] FULL CONTEXT:\n{fullContext}");
+        }
+
+        /// <summary>
+        /// Logs a summary of the current context.
+        /// </summary>
+        [ContextMenu("Log Context Summary")]
+        public void LogContextSummary()
+        {
+            Debug.Log($"[GameContextBuilder] SUMMARY: {GetContextSummary()}");
+        }
+        #endregion
+    }
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\InGameAIChatPanel.cs 
+" 
+﻿using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using TMPro;
+using DG.Tweening;
+using AL_Arcade.DialogueSystem.Scripts;
+using ALArcade.ArabicTMP;
+
+namespace AL_Arcade.DialogueSystem.Scripts
+{
+    /// <summary>
+    /// Lightweight AI chat overlay that appears during gameplay without pausing.
+    /// Slides in/out based on mouse hover and AI responses.
+    /// </summary>
+    public class InGameAIChatPanel : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    {
+        #region Inspector Fields
+
+        [Header("UI References")]
+        [SerializeField] private RectTransform hoverArea;
+        [SerializeField] private RectTransform charArea;
+        [SerializeField] private RectTransform aiTextPanel;
+        [SerializeField] private Image characterPoseImage;
+        [SerializeField] private Button aiRecordButton;
+        [SerializeField] private ArabicTextMeshProUGUI aiText;
+
+        [Header("Animation Settings")]
+        [SerializeField] private float slideDuration = 0.5f;
+        [SerializeField] private float offScreenXPosition = 500f;
+        [SerializeField] private Ease slideEaseType = Ease.OutCubic;
+
+        [Header("Recording Settings")]
+        [SerializeField] private int maxRecordingDuration = 30;
+        [SerializeField] private int recordingFrequency = 44100;
+
+        [Header("Visual Feedback")]
+        [SerializeField] private Sprite recordingSprite;
+        [SerializeField] private Sprite idleSprite;
+        [SerializeField] private Image recordButtonImage;
+
+        #endregion
+
+        #region Private Fields
+
+        private bool isPlayerHovering = false;
+        private bool isCharAreaVisible = false;
+        private bool isAITextPanelVisible = false;
+        private bool isRecording = false;
+        private bool isWaitingForAIResponse = false;
+
+        private Vector2 charAreaOnScreenPos;
+        private Vector2 charAreaOffScreenPos;
+        private Vector2 aiTextPanelOnScreenPos;
+        private Vector2 aiTextPanelOffScreenPos;
+
+        private AudioClip recordedClip;
+        private string microphoneDevice;
+        private float recordingStartTime;
+
+        private Tweener charAreaTweener;
+        private Tweener aiTextPanelTweener;
+
+        #endregion
+
+        #region Unity Lifecycle
+
+        void Awake()
+        {
+            ValidateReferences();
+            InitializeMicrophone();
+        }
+
+        void Start()
+        {
+            SetupInitialPositions();
+            SetupButtonListener();
+            SubscribeToAIEvents();
+            
+            Debug.Log("[InGameAIChatPanel] Initialized - Ready for gameplay overlay");
+        }
+
+        void OnEnable()
+        {
+            SubscribeToAIEvents();
+        }
+
+        void OnDisable()
+        {
+            UnsubscribeFromAIEvents();
+            StopRecording();
+        }
+
+        void OnDestroy()
+        {
+            UnsubscribeFromAIEvents();
+            
+            if (recordedClip != null)
+            {
+                Destroy(recordedClip);
+                recordedClip = null;
+            }
+
+            if (aiRecordButton != null)
+            {
+                aiRecordButton.onClick.RemoveAllListeners();
+            }
+
+            // Kill any active tweens
+            charAreaTweener?.Kill();
+            aiTextPanelTweener?.Kill();
+        }
+
+        void Update()
+        {
+            // Auto-stop recording when max duration is reached
+            if (isRecording)
+            {
+                float recordingTime = Time.time - recordingStartTime;
+                if (recordingTime >= maxRecordingDuration)
+                {
+                    Debug.Log("[InGameAIChatPanel] Max recording duration reached");
+                    StopRecordingAndSend();
+                }
+            }
+        }
+
+        #endregion
+
+        #region Initialization
+
+        private void ValidateReferences()
+        {
+            if (hoverArea == null) Debug.LogError("[InGameAIChatPanel] HoverArea is not assigned!");
+            if (charArea == null) Debug.LogError("[InGameAIChatPanel] CharArea is not assigned!");
+            if (aiTextPanel == null) Debug.LogError("[InGameAIChatPanel] AITextPanel is not assigned!");
+            if (aiRecordButton == null) Debug.LogError("[InGameAIChatPanel] AIRecordButton is not assigned!");
+            if (aiText == null) Debug.LogError("[InGameAIChatPanel] AIText is not assigned!");
+        }
+
+        private void SetupInitialPositions()
+        {
+            // Store on-screen positions
+            charAreaOnScreenPos = charArea.anchoredPosition;
+            aiTextPanelOnScreenPos = aiTextPanel.anchoredPosition;
+
+            // Calculate off-screen positions (to the right)
+            charAreaOffScreenPos = new Vector2(charAreaOnScreenPos.x + offScreenXPosition, charAreaOnScreenPos.y);
+            aiTextPanelOffScreenPos = new Vector2(aiTextPanelOnScreenPos.x + offScreenXPosition, aiTextPanelOnScreenPos.y);
+
+            // Set initial off-screen positions
+            charArea.anchoredPosition = charAreaOffScreenPos;
+            aiTextPanel.anchoredPosition = aiTextPanelOffScreenPos;
+
+            isCharAreaVisible = false;
+            isAITextPanelVisible = false;
+
+            Debug.Log($"[InGameAIChatPanel] Initial positions set - CharArea off-screen, AITextPanel off-screen");
+        }
+
+        private void SetupButtonListener()
+        {
+            if (aiRecordButton != null)
+            {
+                aiRecordButton.onClick.AddListener(OnRecordButtonClicked);
+            }
+        }
+
+        private void InitializeMicrophone()
+        {
+            if (Microphone.devices.Length == 0)
+            {
+                Debug.LogError("[InGameAIChatPanel] No microphone devices found!");
+                if (aiRecordButton != null)
+                    aiRecordButton.interactable = false;
+                return;
+            }
+
+            microphoneDevice = null; // Use default device
+            Debug.Log($"[InGameAIChatPanel] Microphone initialized. Available devices: {Microphone.devices.Length}");
+        }
+
+        #endregion
+
+        #region Hover Detection (IPointerEnterHandler, IPointerExitHandler)
+
+        public void OnPointerEnter(PointerEventData eventData)
+        {
+            isPlayerHovering = true;
+            Debug.Log("[InGameAIChatPanel] Mouse entered hover area");
+            SlideInCharArea();
+        }
+
+        public void OnPointerExit(PointerEventData eventData)
+        {
+            isPlayerHovering = false;
+            Debug.Log("[InGameAIChatPanel] Mouse exited hover area");
+
+            // Only slide out if not waiting for AI response
+            if (!isWaitingForAIResponse && !isAITextPanelVisible)
+            {
+                SlideOutCharArea();
+            }
+        }
+
+        #endregion
+
+        #region Animation Methods
+
+        private void SlideInCharArea()
+        {
+            if (isCharAreaVisible) return;
+
+            Debug.Log("[InGameAIChatPanel] Sliding in CharArea");
+            
+            charAreaTweener?.Kill();
+            charAreaTweener = charArea.DOAnchorPos(charAreaOnScreenPos, slideDuration)
+                .SetEase(slideEaseType)
+                .SetUpdate(true) // Use unscaled time to work during any time scale
+                .OnComplete(() =>
+                {
+                    isCharAreaVisible = true;
+                    Debug.Log("[InGameAIChatPanel] CharArea slide in complete");
+                });
+        }
+
+        private void SlideOutCharArea()
+        {
+            if (!isCharAreaVisible) return;
+
+            Debug.Log("[InGameAIChatPanel] Sliding out CharArea");
+            
+            charAreaTweener?.Kill();
+            charAreaTweener = charArea.DOAnchorPos(charAreaOffScreenPos, slideDuration)
+                .SetEase(slideEaseType)
+                .SetUpdate(true)
+                .OnComplete(() =>
+                {
+                    isCharAreaVisible = false;
+                    Debug.Log("[InGameAIChatPanel] CharArea slide out complete");
+                });
+        }
+
+        private void SlideInAITextPanel()
+        {
+            if (isAITextPanelVisible) return;
+
+            Debug.Log("[InGameAIChatPanel] Sliding in AITextPanel");
+            
+            aiTextPanelTweener?.Kill();
+            aiTextPanelTweener = aiTextPanel.DOAnchorPos(aiTextPanelOnScreenPos, slideDuration)
+                .SetEase(slideEaseType)
+                .SetUpdate(true)
+                .OnComplete(() =>
+                {
+                    isAITextPanelVisible = true;
+                    Debug.Log("[InGameAIChatPanel] AITextPanel slide in complete");
+                });
+        }
+
+        private void SlideOutAITextPanel()
+        {
+            if (!isAITextPanelVisible) return;
+
+            Debug.Log("[InGameAIChatPanel] Sliding out AITextPanel");
+            
+            aiTextPanelTweener?.Kill();
+            aiTextPanelTweener = aiTextPanel.DOAnchorPos(aiTextPanelOffScreenPos, slideDuration)
+                .SetEase(slideEaseType)
+                .SetUpdate(true)
+                .OnComplete(() =>
+                {
+                    isAITextPanelVisible = false;
+                    Debug.Log("[InGameAIChatPanel] AITextPanel slide out complete");
+
+                    // After AI panel slides out, check if char area should also slide out
+                    if (!isPlayerHovering)
+                    {
+                        SlideOutCharArea();
+                    }
+                });
+        }
+
+        #endregion
+
+        #region Recording Methods
+
+        private void OnRecordButtonClicked()
+        {
+            if (isWaitingForAIResponse)
+            {
+                Debug.Log("[InGameAIChatPanel] Already waiting for AI response");
+                return;
+            }
+
+            if (!isRecording)
+            {
+                StartRecording();
+            }
+            else
+            {
+                StopRecordingAndSend();
+            }
+        }
+
+        private void StartRecording()
+        {
+            Debug.Log("[InGameAIChatPanel] Starting recording...");
+
+            // Clean up previous recording
+            if (recordedClip != null)
+            {
+                Destroy(recordedClip);
+                recordedClip = null;
+            }
+
+            // Start recording
+            recordedClip = Microphone.Start(microphoneDevice, false, maxRecordingDuration, recordingFrequency);
+            recordingStartTime = Time.time;
+            isRecording = true;
+
+            // Update button visual
+            if (recordButtonImage != null && recordingSprite != null)
+            {
+                recordButtonImage.sprite = recordingSprite;
+            }
+
+            Debug.Log("[InGameAIChatPanel] Recording started");
+        }
+
+        private void StopRecordingAndSend()
+        {
+            if (recordedClip == null)
+            {
+                Debug.LogError("[InGameAIChatPanel] No recording to send!");
+                isRecording = false;
+                return;
+            }
+
+            Debug.Log("[InGameAIChatPanel] Stopping recording...");
+
+            // Stop microphone
+            int lastSample = Microphone.GetPosition(microphoneDevice);
+            Microphone.End(microphoneDevice);
+            isRecording = false;
+
+            // Update button visual
+            if (recordButtonImage != null && idleSprite != null)
+            {
+                recordButtonImage.sprite = idleSprite;
+            }
+
+            // Trim the audio clip to actual recorded length
+            if (lastSample > 0 && lastSample < recordedClip.samples)
+            {
+                AudioClip trimmedClip = AudioClip.Create(
+                    "TrimmedRecording",
+                    lastSample,
+                    recordedClip.channels,
+                    recordedClip.frequency,
+                    false
+                );
+
+                float[] data = new float[lastSample * recordedClip.channels];
+                recordedClip.GetData(data, 0);
+                trimmedClip.SetData(data, 0);
+
+                Destroy(recordedClip);
+                recordedClip = trimmedClip;
+            }
+
+            float duration = (float)recordedClip.samples / recordedClip.frequency;
+            Debug.Log($"[InGameAIChatPanel] Recording stopped. Duration: {duration:F2} seconds");
+
+            // Convert to WAV and send
+            byte[] wavData = ConvertToWAV(recordedClip);
+
+            if (wavData != null && wavData.Length > 0)
+            {
+                Debug.Log($"[InGameAIChatPanel] Sending {wavData.Length} bytes to AIVoiceHandler");
+                isWaitingForAIResponse = true;
+                
+                if (AIVoiceHandler.Instance != null)
+                {
+                    AIVoiceHandler.Instance.SendVoiceMessage(wavData);
+                }
+                else
+                {
+                    Debug.LogError("[InGameAIChatPanel] AIVoiceHandler.Instance is null!");
+                    isWaitingForAIResponse = false;
+                }
+            }
+            else
+            {
+                Debug.LogError("[InGameAIChatPanel] Failed to convert audio to WAV");
+            }
+        }
+
+        private void StopRecording()
+        {
+            if (Microphone.IsRecording(microphoneDevice))
+            {
+                Microphone.End(microphoneDevice);
+                Debug.Log("[InGameAIChatPanel] Recording stopped (cleanup)");
+            }
+
+            if (recordedClip != null)
+            {
+                Destroy(recordedClip);
+                recordedClip = null;
+            }
+
+            isRecording = false;
+
+            if (recordButtonImage != null && idleSprite != null)
+            {
+                recordButtonImage.sprite = idleSprite;
+            }
+        }
+
+        #endregion
+
+        #region WAV Conversion
+
+        private byte[] ConvertToWAV(AudioClip clip)
+        {
+            if (clip == null)
+            {
+                Debug.LogError("[InGameAIChatPanel] Cannot convert null AudioClip");
+                return null;
+            }
+
+            try
+            {
+                float[] samples = new float[clip.samples * clip.channels];
+                clip.GetData(samples, 0);
+
+                // Convert float samples to 16-bit PCM
+                short[] intData = new short[samples.Length];
+                byte[] bytesData = new byte[samples.Length * 2];
+
+                int rescaleFactor = 32767;
+
+                for (int i = 0; i < samples.Length; i++)
+                {
+                    intData[i] = (short)(samples[i] * rescaleFactor);
+                    byte[] byteArr = System.BitConverter.GetBytes(intData[i]);
+                    byteArr.CopyTo(bytesData, i * 2);
+                }
+
+                // Create WAV file structure
+                int fileSize = 44 + bytesData.Length;
+                byte[] wav = new byte[fileSize];
+
+                // RIFF header
+                byte[] riff = System.Text.Encoding.UTF8.GetBytes("RIFF");
+                riff.CopyTo(wav, 0);
+
+                byte[] chunkSize = System.BitConverter.GetBytes(fileSize - 8);
+                chunkSize.CopyTo(wav, 4);
+
+                byte[] wave = System.Text.Encoding.UTF8.GetBytes("WAVE");
+                wave.CopyTo(wav, 8);
+
+                // fmt subchunk
+                byte[] fmt = System.Text.Encoding.UTF8.GetBytes("fmt ");
+                fmt.CopyTo(wav, 12);
+
+                byte[] subChunk1 = System.BitConverter.GetBytes(16);
+                subChunk1.CopyTo(wav, 16);
+
+                ushort audioFormat = 1;
+                byte[] audioFormatBytes = System.BitConverter.GetBytes(audioFormat);
+                audioFormatBytes.CopyTo(wav, 20);
+
+                byte[] numChannels = System.BitConverter.GetBytes(clip.channels);
+                numChannels.CopyTo(wav, 22);
+
+                byte[] sampleRate = System.BitConverter.GetBytes(clip.frequency);
+                sampleRate.CopyTo(wav, 24);
+
+                int byteRate = clip.frequency * clip.channels * 2;
+                byte[] byteRateBytes = System.BitConverter.GetBytes(byteRate);
+                byteRateBytes.CopyTo(wav, 28);
+
+                ushort blockAlign = (ushort)(clip.channels * 2);
+                byte[] blockAlignBytes = System.BitConverter.GetBytes(blockAlign);
+                blockAlignBytes.CopyTo(wav, 32);
+
+                ushort bitsPerSample = 16;
+                byte[] bitsPerSampleBytes = System.BitConverter.GetBytes(bitsPerSample);
+                bitsPerSampleBytes.CopyTo(wav, 34);
+
+                // data subchunk
+                byte[] data = System.Text.Encoding.UTF8.GetBytes("data");
+                data.CopyTo(wav, 36);
+
+                byte[] subChunk2 = System.BitConverter.GetBytes(bytesData.Length);
+                subChunk2.CopyTo(wav, 40);
+
+                bytesData.CopyTo(wav, 44);
+
+                Debug.Log($"[InGameAIChatPanel] WAV conversion successful. Size: {wav.Length} bytes");
+                return wav;
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"[InGameAIChatPanel] WAV conversion failed: {e.Message}");
+                return null;
+            }
+        }
+
+        #endregion
+
+        #region AI Event Handlers
+
+        private void SubscribeToAIEvents()
+        {
+            if (AIVoiceHandler.Instance != null)
+            {
+                AIVoiceHandler.Instance.OnResponseTextReceived += OnAIResponseTextReceived;
+                AIVoiceHandler.Instance.OnResponseAudioReady += OnAIResponseAudioReady;
+                AIVoiceHandler.Instance.OnError += OnAIError;
+                AIVoiceHandler.Instance.OnProcessingComplete += OnAIProcessingComplete;
+            }
+        }
+
+        private void UnsubscribeFromAIEvents()
+        {
+            if (AIVoiceHandler.Instance != null)
+            {
+                AIVoiceHandler.Instance.OnResponseTextReceived -= OnAIResponseTextReceived;
+                AIVoiceHandler.Instance.OnResponseAudioReady -= OnAIResponseAudioReady;
+                AIVoiceHandler.Instance.OnError -= OnAIError;
+                AIVoiceHandler.Instance.OnProcessingComplete -= OnAIProcessingComplete;
+            }
+        }
+
+        private void OnAIResponseTextReceived(string responseText)
+        {
+            Debug.Log($"[InGameAIChatPanel] AI response text received: {responseText}");
+
+            // Update AI text
+            if (aiText != null)
+            {
+                aiText.arabicText = responseText;
+            }
+
+            // Slide in AI text panel
+            SlideInAITextPanel();
+        }
+
+        private void OnAIResponseAudioReady(AudioClip audioClip)
+        {
+            Debug.Log($"[InGameAIChatPanel] AI response audio ready. Duration: {audioClip.length:F2}s");
+
+            // Keep AI text panel visible for the duration of the audio
+            StartCoroutine(HideAITextPanelAfterDelay(audioClip.length));
+        }
+
+        private void OnAIError(string error)
+        {
+            Debug.LogError($"[InGameAIChatPanel] AI error: {error}");
+            
+            isWaitingForAIResponse = false;
+
+            // Show error in AI text
+            if (aiText != null)
+            {
+                aiText.text = $"Error: {error}";
+            }
+
+            // Slide in panel to show error, then hide after delay
+            SlideInAITextPanel();
+            StartCoroutine(HideAITextPanelAfterDelay(3f));
+        }
+
+        private void OnAIProcessingComplete()
+        {
+            Debug.Log("[InGameAIChatPanel] AI processing complete");
+            isWaitingForAIResponse = false;
+        }
+
+        private IEnumerator HideAITextPanelAfterDelay(float delay)
+        {
+            Debug.Log($"[InGameAIChatPanel] Waiting {delay:F2} seconds before hiding AI text panel");
+            
+            yield return new WaitForSeconds(delay);
+
+            SlideOutAITextPanel();
+        }
+
+        #endregion
+
+        #region Public API (Optional)
+
+        /// <summary>
+        /// Manually show the character area.
+        /// </summary>
+        public void ShowCharacterArea()
+        {
+            SlideInCharArea();
+        }
+
+        /// <summary>
+        /// Manually hide the character area.
+        /// </summary>
+        public void HideCharacterArea()
+        {
+            SlideOutCharArea();
+        }
+
+        /// <summary>
+        /// Set the character pose sprite.
+        /// </summary>
+        public void SetCharacterPose(Sprite sprite)
+        {
+            if (characterPoseImage != null)
+            {
+                characterPoseImage.sprite = sprite;
+            }
+        }
+
+        /// <summary>
+        /// Check if currently recording.
+        /// </summary>
+        public bool IsRecording => isRecording;
+
+        /// <summary>
+        /// Check if waiting for AI response.
+        /// </summary>
+        public bool IsWaitingForAI => isWaitingForAIResponse;
+
+        #endregion
+    }
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\ReplyButton.cs 
+" 
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using ALArcade.ArabicTMP;
+namespace AL_Arcade.DialogueSystem.Scripts
+{
+    public class ReplyButton : MonoBehaviour
+    {
+        [Header("UI Elements")]
+        public ArabicTextMeshProUGUI replyText;
+        public Button button;
+        public Image backgroundImage;
+    
+        [Header("Visual Feedback")]
+        public Color normalColor = Color.white;
+        public Color hoverColor = Color.gray;
+        public Color pressedColor = Color.gray;
+    
+        private System.Action onClickAction;
+    
+        public void Setup(DialogueReply reply, System.Action onClick)
+        {
+            if (reply == null) return;
+        
+            if (replyText != null)
+                replyText.arabicText = reply.replyText;
+        
+            onClickAction = onClick;
+        
+            if (button != null)
+            {
+                button.onClick.RemoveAllListeners();
+                button.onClick.AddListener(() => onClickAction?.Invoke());
+            }
+        }
+    
+        public void OnPointerEnter()
+        {
+            if (backgroundImage != null)
+                backgroundImage.color = hoverColor;
+        }
+    
+        public void OnPointerExit()
+        {
+            if (backgroundImage != null)
+                backgroundImage.color = normalColor;
+        }
+    
+        public void OnPointerDown()
+        {
+            if (backgroundImage != null)
+                backgroundImage.color = pressedColor;
+        }
+    }
+
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\VoiceMessageUI.cs 
+" 
+using System;
+using System.Collections;
+using System.IO;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using ALArcade.ArabicTMP;
+
+namespace AL_Arcade.DialogueSystem.Scripts
+{
+    /// <summary>
+    /// Handles voice recording UI for dialogue messages.
+    /// Attach to dialogue message prefabs (EN/AR).
+    /// </summary>
+    [RequireComponent(typeof(Button))]
+    public class VoiceMessageUI : MonoBehaviour
+    {
+        #region Inspector Fields
+        [Header("UI References")]
+        [SerializeField] private Button voiceButton;
+        [SerializeField] private Image buttonImage;
+        [SerializeField] private TextMeshProUGUI messageText;
+
+        [Header("Button Sprites")]
+        [SerializeField] private Sprite idleSprite;
+        [SerializeField] private Sprite recordingSprite;
+        [SerializeField] private Sprite sendingSprite;
+
+        [Header("Recording Settings")]
+        [SerializeField] private int maxRecordingDuration = 30;
+        [SerializeField] private int recordingFrequency = 44100;
+        #endregion
+
+        #region State Enum
+        private enum VoiceState
+        {
+            IDLE,
+            RECORDING,
+            SENDING,
+            COMPLETE
+        }
+        #endregion
+
+        #region Private Fields
+        private VoiceState currentState = VoiceState.IDLE;
+        private AudioClip recordedClip;
+        private string microphoneDevice;
+        private float recordingStartTime;
+        private bool isInitialized = false;
+        #endregion
+
+        #region Unity Lifecycle
+        void Awake()
+        {
+            // Auto-assign button if not set
+            if (voiceButton == null)
+                voiceButton = GetComponent<Button>();
+
+            // Auto-assign button image if not set
+            if (buttonImage == null && voiceButton != null)
+                buttonImage = voiceButton.GetComponent<Image>();
+
+            // Validate setup
+            if (voiceButton == null)
+            {
+                Debug.LogError("[VoiceMessageUI] Button component is missing!");
+                enabled = false;
+                return;
+            }
+
+            if (messageText == null)
+            {
+                Debug.LogError("[VoiceMessageUI] MessageText reference is missing!");
+            }
+        }
+
+        void Start()
+        {
+            // Setup button listener
+            voiceButton.onClick.AddListener(OnVoiceButtonClicked);
+            
+            // Initialize microphone
+            InitializeMicrophone();
+            
+            // Set initial state
+            SetState(VoiceState.IDLE);
+            
+            Debug.Log("[VoiceMessageUI] Initialized");
+        }
+
+        void OnEnable()
+        {
+            // Subscribe to AI handler events
+            if (AIVoiceHandler.Instance != null)
+            {
+                AIVoiceHandler.Instance.OnResponseTextReceived += OnResponseTextReceived;
+                AIVoiceHandler.Instance.OnError += OnError;
+                AIVoiceHandler.Instance.OnProcessingComplete += OnProcessingComplete;
+            }
+        }
+
+        void OnDisable()
+        {
+            // Unsubscribe from events
+            if (AIVoiceHandler.Instance != null)
+            {
+                AIVoiceHandler.Instance.OnResponseTextReceived -= OnResponseTextReceived;
+                AIVoiceHandler.Instance.OnError -= OnError;
+                AIVoiceHandler.Instance.OnProcessingComplete -= OnProcessingComplete;
+            }
+
+            // Stop recording if active
+            if (currentState == VoiceState.RECORDING)
+            {
+                StopRecording();
+            }
+        }
+
+        void OnDestroy()
+        {
+            // Cleanup
+            if (recordedClip != null)
+            {
+                Destroy(recordedClip);
+                recordedClip = null;
+            }
+
+            if (voiceButton != null)
+            {
+                voiceButton.onClick.RemoveListener(OnVoiceButtonClicked);
+            }
+        }
+
+        void Update()
+        {
+            // Auto-stop recording when max duration is reached
+            if (currentState == VoiceState.RECORDING)
+            {
+                float recordingTime = Time.realtimeSinceStartup - recordingStartTime;
+                if (recordingTime >= maxRecordingDuration)
+                {
+                    Debug.Log("[VoiceMessageUI] Max recording duration reached. Auto-stopping.");
+                    OnVoiceButtonClicked();
+                }
+            }
+        }
+        #endregion
+
+        #region Microphone Initialization
+        /// <summary>
+        /// Initializes microphone device.
+        /// </summary>
+        private void InitializeMicrophone()
+        {
+            if (Microphone.devices.Length == 0)
+            {
+                Debug.LogError("[VoiceMessageUI] No microphone devices found!");
+                voiceButton.interactable = false;
+                return;
+            }
+
+            microphoneDevice = null; // Use default device
+            isInitialized = true;
+            Debug.Log($"[VoiceMessageUI] Microphone initialized. Available devices: {Microphone.devices.Length}");
+        }
+        #endregion
+
+        #region Button Click Handler
+        /// <summary>
+        /// Handles voice button clicks based on current state.
+        /// </summary>
+        private void OnVoiceButtonClicked()
+        {
+            switch (currentState)
+            {
+                case VoiceState.IDLE:
+                    StartRecording();
+                    break;
+
+                case VoiceState.RECORDING:
+                    StopRecordingAndSend();
+                    break;
+
+                case VoiceState.SENDING:
+                    Debug.Log("[VoiceMessageUI] Currently sending. Please wait.");
+                    break;
+
+                case VoiceState.COMPLETE:
+                    // Reset to idle
+                    SetState(VoiceState.IDLE);
+                    break;
+            }
+        }
+        #endregion
+
+        #region Recording Logic
+        /// <summary>
+        /// Starts microphone recording.
+        /// </summary>
+        private void StartRecording()
+        {
+            if (!isInitialized)
+            {
+                Debug.LogError("[VoiceMessageUI] Microphone not initialized!");
+                return;
+            }
+
+            Debug.Log("[VoiceMessageUI] Starting recording...");
+
+            // Clean up previous recording
+            if (recordedClip != null)
+            {
+                Destroy(recordedClip);
+                recordedClip = null;
+            }
+
+            // Start recording
+            recordedClip = Microphone.Start(microphoneDevice, false, maxRecordingDuration, recordingFrequency);
+            recordingStartTime = Time.realtimeSinceStartup;
+            
+            SetState(VoiceState.RECORDING);
+            Debug.Log("[VoiceMessageUI] Recording started");
+        }
+
+        /// <summary>
+        /// Stops recording and sends audio to AI handler.
+        /// </summary>
+        private void StopRecordingAndSend()
+        {
+            if (recordedClip == null)
+            {
+                Debug.LogError("[VoiceMessageUI] No recording to send!");
+                SetState(VoiceState.IDLE);
+                return;
+            }
+
+            Debug.Log("[VoiceMessageUI] Stopping recording...");
+
+            // Stop microphone
+            int lastSample = Microphone.GetPosition(microphoneDevice);
+            Microphone.End(microphoneDevice);
+
+            // Trim the audio clip to actual recorded length
+            if (lastSample > 0 && lastSample < recordedClip.samples)
+            {
+                AudioClip trimmedClip = AudioClip.Create(
+                    "TrimmedRecording",
+                    lastSample,
+                    recordedClip.channels,
+                    recordedClip.frequency,
+                    false
+                );
+
+                float[] data = new float[lastSample * recordedClip.channels];
+                recordedClip.GetData(data, 0);
+                trimmedClip.SetData(data, 0);
+
+                Destroy(recordedClip);
+                recordedClip = trimmedClip;
+            }
+
+            float duration = (float)recordedClip.samples / recordedClip.frequency;
+            Debug.Log($"[VoiceMessageUI] Recording stopped. Duration: {duration:F2} seconds");
+
+            // Convert to WAV and send
+            SetState(VoiceState.SENDING);
+            byte[] wavData = ConvertToWAV(recordedClip);
+            
+            if (wavData != null && wavData.Length > 0)
+            {
+                Debug.Log($"[VoiceMessageUI] Sending {wavData.Length} bytes to AI handler");
+                AIVoiceHandler.Instance.SendVoiceMessage(wavData);
+            }
+            else
+            {
+                Debug.LogError("[VoiceMessageUI] Failed to convert audio to WAV");
+                SetState(VoiceState.IDLE);
+            }
+        }
+
+        /// <summary>
+        /// Stops recording without sending (cleanup).
+        /// </summary>
+        private void StopRecording()
+        {
+            if (Microphone.IsRecording(microphoneDevice))
+            {
+                Microphone.End(microphoneDevice);
+                Debug.Log("[VoiceMessageUI] Recording stopped (cleanup)");
+            }
+
+            if (recordedClip != null)
+            {
+                Destroy(recordedClip);
+                recordedClip = null;
+            }
+        }
+        #endregion
+
+        #region WAV Conversion
+        /// <summary>
+        /// Converts an AudioClip to WAV file bytes.
+        /// </summary>
+        private byte[] ConvertToWAV(AudioClip clip)
+        {
+            if (clip == null)
+            {
+                Debug.LogError("[VoiceMessageUI] Cannot convert null AudioClip");
+                return null;
+            }
+
+            try
+            {
+                float[] samples = new float[clip.samples * clip.channels];
+                clip.GetData(samples, 0);
+
+                // Convert float samples to 16-bit PCM
+                short[] intData = new short[samples.Length];
+                byte[] bytesData = new byte[samples.Length * 2];
+
+                int rescaleFactor = 32767; // Max value for 16-bit signed
+
+                for (int i = 0; i < samples.Length; i++)
+                {
+                    intData[i] = (short)(samples[i] * rescaleFactor);
+                    byte[] byteArr = BitConverter.GetBytes(intData[i]);
+                    byteArr.CopyTo(bytesData, i * 2);
+                }
+
+                // Create WAV file structure
+                int fileSize = 44 + bytesData.Length;
+                byte[] wav = new byte[fileSize];
+
+                // RIFF header
+                byte[] riff = System.Text.Encoding.UTF8.GetBytes("RIFF");
+                riff.CopyTo(wav, 0);
+
+                byte[] chunkSize = BitConverter.GetBytes(fileSize - 8);
+                chunkSize.CopyTo(wav, 4);
+
+                byte[] wave = System.Text.Encoding.UTF8.GetBytes("WAVE");
+                wave.CopyTo(wav, 8);
+
+                // fmt subchunk
+                byte[] fmt = System.Text.Encoding.UTF8.GetBytes("fmt ");
+                fmt.CopyTo(wav, 12);
+
+                byte[] subChunk1 = BitConverter.GetBytes(16);
+                subChunk1.CopyTo(wav, 16);
+
+                ushort audioFormat = 1; // PCM
+                byte[] audioFormatBytes = BitConverter.GetBytes(audioFormat);
+                audioFormatBytes.CopyTo(wav, 20);
+
+                byte[] numChannels = BitConverter.GetBytes(clip.channels);
+                numChannels.CopyTo(wav, 22);
+
+                byte[] sampleRate = BitConverter.GetBytes(clip.frequency);
+                sampleRate.CopyTo(wav, 24);
+
+                int byteRate = clip.frequency * clip.channels * 2;
+                byte[] byteRateBytes = BitConverter.GetBytes(byteRate);
+                byteRateBytes.CopyTo(wav, 28);
+
+                ushort blockAlign = (ushort)(clip.channels * 2);
+                byte[] blockAlignBytes = BitConverter.GetBytes(blockAlign);
+                blockAlignBytes.CopyTo(wav, 32);
+
+                ushort bitsPerSample = 16;
+                byte[] bitsPerSampleBytes = BitConverter.GetBytes(bitsPerSample);
+                bitsPerSampleBytes.CopyTo(wav, 34);
+
+                // data subchunk
+                byte[] data = System.Text.Encoding.UTF8.GetBytes("data");
+                data.CopyTo(wav, 36);
+
+                byte[] subChunk2 = BitConverter.GetBytes(bytesData.Length);
+                subChunk2.CopyTo(wav, 40);
+
+                bytesData.CopyTo(wav, 44);
+
+                Debug.Log($"[VoiceMessageUI] WAV conversion successful. Size: {wav.Length} bytes");
+                return wav;
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"[VoiceMessageUI] WAV conversion failed: {e.Message}");
+                return null;
+            }
+        }
+        #endregion
+
+        #region State Management
+        /// <summary>
+        /// Sets the current UI state and updates visuals.
+        /// </summary>
+        private void SetState(VoiceState newState)
+        {
+            currentState = newState;
+            UpdateButtonVisuals();
+            Debug.Log($"[VoiceMessageUI] State changed to: {newState}");
+        }
+
+        /// <summary>
+        /// Updates button visuals based on current state.
+        /// </summary>
+        private void UpdateButtonVisuals()
+        {
+            if (buttonImage == null) return;
+
+            switch (currentState)
+            {
+                case VoiceState.IDLE:
+                    if (idleSprite != null)
+                        buttonImage.sprite = idleSprite;
+                    voiceButton.interactable = true;
+                    break;
+
+                case VoiceState.RECORDING:
+                    if (recordingSprite != null)
+                        buttonImage.sprite = recordingSprite;
+                    voiceButton.interactable = true;
+                    break;
+
+                case VoiceState.SENDING:
+                    if (sendingSprite != null)
+                        buttonImage.sprite = sendingSprite;
+                    voiceButton.interactable = false;
+                    break;
+
+                case VoiceState.COMPLETE:
+                    if (idleSprite != null)
+                        buttonImage.sprite = idleSprite;
+                    voiceButton.interactable = true;
+                    break;
+            }
+        }
+        #endregion
+
+        #region Event Handlers
+        /// <summary>
+        /// Called when AI response text is received.
+        /// </summary>
+        private void OnResponseTextReceived(string responseText)
+        {
+            if (messageText == null)
+            {
+                Debug.LogWarning("[VoiceMessageUI] MessageText reference is null");
+                return;
+            }
+
+            Debug.Log($"[VoiceMessageUI] Updating message text with response: {responseText}");
+
+            // Handle Arabic text if component exists
+            ArabicTextMeshProUGUI arabicText = messageText.GetComponent<ArabicTextMeshProUGUI>();
+            if (arabicText != null)
+            {
+                arabicText.arabicText = responseText;
+            }
+            else
+            {
+                messageText.text = responseText;
+            }
+        }
+
+        /// <summary>
+        /// Called when processing is complete.
+        /// </summary>
+        private void OnProcessingComplete()
+        {
+            Debug.Log("[VoiceMessageUI] Processing complete");
+            SetState(VoiceState.COMPLETE);
+            
+            // Auto-return to idle after a short delay
+            StartCoroutine(AutoReturnToIdle());
+        }
+
+        /// <summary>
+        /// Called when an error occurs.
+        /// </summary>
+        private void OnError(string error)
+        {
+            Debug.LogError($"[VoiceMessageUI] Error received: {error}");
+            SetState(VoiceState.IDLE);
+        }
+
+        /// <summary>
+        /// Auto-returns to idle state after response is complete.
+        /// </summary>
+        private IEnumerator AutoReturnToIdle()
+        {
+            yield return new WaitForSeconds(1f);
+            SetState(VoiceState.IDLE);
+        }
+        #endregion
+    }
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\ScriptableObjects\DialogueMessage.cs 
+" 
+using UnityEngine;
+
+// English dialogue message
+[CreateAssetMenu(fileName = "DialogueMessage_EN", menuName = "Dialogue/Message (English)")]
+public class DialogueMessage : DialogueMessageBase
+{
+    // English-specific settings can be added here if needed
+}" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\ScriptableObjects\DialogueMessageArabic.cs 
+" 
+using UnityEngine;
+
+// Arabic dialogue message
+[CreateAssetMenu(fileName = "DialogueMessage_AR", menuName = "Dialogue/Message (Arabic)")]
+public class DialogueMessageArabic : DialogueMessageBase
+{
+    // Arabic-specific settings can be added here if needed
+}
+
+// Reply scriptable object (shared for both languages)
+
+// Dialogue sequence container
+" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\ScriptableObjects\DialogueMessageBase.cs 
+" 
+using System.Collections.Generic;
+using UnityEngine;
+
+
+
+// Base class for dialogue messages
+    public abstract class DialogueMessageBase : ScriptableObject
+    {
+        [Header("Character Information")] public Sprite characterSprite;
+        public string characterName;
+
+        [Header("Message Content")] [TextArea(3, 5)]
+        public string messageText;
+
+        public AudioClip voiceClip;
+
+        [Header("Dialogue Flow")] public List<DialogueReply> replies = new List<DialogueReply>();
+        public DialogueMessageBase nextMessage; // Used when there are no replies
+    }
+
+
+
+
+" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\ScriptableObjects\DialogueReply.cs 
+" 
+using UnityEngine;
+
+
+    [CreateAssetMenu(fileName = "DialogueReply", menuName = "Dialogue/Reply")]
+    public class DialogueReply : ScriptableObject
+    {
+        [TextArea(2, 3)] public string replyText;
+        public AudioClip replyAudioClip;
+        public DialogueMessageBase nextMessage;
+
+        [Header("Optional Conditions")] public bool requiresCondition;
+        public string conditionKey; // Can be used for quest/stat checks
+    }
+
+" 
+ 
+C:\Users\aglan\OneDrive\Documents\DialogueSystem\DialoueSystem\Assets\AL-Arcade\DialogueSystem\Scripts\ScriptableObjects\DialogueSequence.cs 
+" 
+using UnityEngine;
+
+[CreateAssetMenu(fileName = "DialogueSequence", menuName = "Dialogue/Sequence")]
+public class DialogueSequence : ScriptableObject
+{
+    public string sequenceName;
+    public DialogueMessageBase firstMessage;
+    public bool pauseGameDuringDialogue = true;
+}" 
+ 

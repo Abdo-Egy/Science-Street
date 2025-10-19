@@ -1,0 +1,2 @@
+TagLib# is licensed under [GNU Lesser General Public License v2.1 only] (https://licenses.nuget.org/LGPL-2.1-only)
+Package URL: https://www.nuget.org/packages/TagLibSharp/

@@ -1,0 +1,7 @@
+<linker>
+  <assembly fullname="TaglibSharp">
+	<type fullname="TagLib.Mpeg*" />
+	<type fullname="TagLib.Riff*" />
+    <type fullname="TagLib.Ogg*" />
+  </assembly>
+</linker>

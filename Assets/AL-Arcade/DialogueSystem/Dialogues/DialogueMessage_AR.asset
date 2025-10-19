@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa73e80dba941a3901cb680b6419c69, type: 3}
+  m_Name: DialogueMessage_AR
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21300000, guid: 4abda2c5e10ce4ecaaddad066ae97a8c, type: 3}
+  characterName: "\u0639\u0646\u0627\u0646"
+  messageText: "\u0627\u0644\u0633\u0644\u0627\u0645 \u0639\u0644\u064A\u0643\u0645
+    \u0627\u0646\u0627 \u0639\u0646\u0627\u0646 \u0648\u0627\u0646\u0627 \u0645\u0634
+    \u0632\u0646\u062C\u0633 "
+  voiceClip: {fileID: 0}
+  replies:
+  - {fileID: 11400000, guid: 77abc69f975958e42963f5e4ffc8aadd, type: 2}
+  nextMessage: {fileID: 0}

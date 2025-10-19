@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5821770334530250272}
-  - component: {fileID: 1121810354753845219}
-  - component: {fileID: 8943142868627812491}
   - component: {fileID: 7006699537901218262}
   - component: {fileID: 2875501969076188545}
   - component: {fileID: 662589352131541442}
@@ -36,56 +34,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -118.32, z: -0.22}
---- !u!33 &1121810354753845219
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154315106626687298}
-  m_Mesh: {fileID: -760733123537448851, guid: 17108fd48fef4274a9bb0cc10d46dbac, type: 3}
---- !u!23 &8943142868627812491
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8154315106626687298}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 1b0539faab89dc54da3ff48c999feb93, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &7006699537901218262
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -133,6 +81,7 @@ MonoBehaviour:
   EndScale: {x: 7, y: 7, z: 7}
   IsDragable: 0
   inHome: 0
+  doneWithAction: 0
   inHomePosition: 0
 --- !u!114 &662589352131541442
 MonoBehaviour:
@@ -146,3 +95,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7ffa42a79cd0741915d393f5355f37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimationDuraction: 0
+  MaxLoops: 0
+  Maxrotation: 0
+  LoopType: 0
+  AnotherSpoon: {fileID: 0}
+  liquidVolume: {fileID: 0}

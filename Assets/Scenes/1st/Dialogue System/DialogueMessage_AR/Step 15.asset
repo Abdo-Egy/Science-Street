@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa73e80dba941a3901cb680b6419c69, type: 3}
+  m_Name: Step 15
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21300000, guid: 9076cdee3a80e4dba8f49f99957d5da9, type: 3}
+  characterName: "\u0639\u0646\u0627\u0646"
+  messageText: "\u0648\u0635\u0651\u0644 \u0634\u0631\u064A\u062D\u0629 \u0627\u0644\u0646\u062D\u0627\u0633
+    \u0628\u0627\u0644\u0637\u0631\u0641 \u0627\u0644\u0645\u0648\u062C\u0628 \u0644\u0644\u0641\u0648\u0644\u062A\u0645\u064A\u062A\u0631
+    \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0633\u0644\u0643
+    \u0627\u0644\u0623\u062D\u0645\u0631."
+  voiceClip: {fileID: 8300000, guid: 229708828d7008a4db31b9043534b801, type: 3}
+  replies: []
+  nextMessage: {fileID: 0}

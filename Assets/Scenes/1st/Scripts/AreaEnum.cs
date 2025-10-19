@@ -10,5 +10,8 @@ public enum AreaEnum{
     CopperStriptHome,
     CopperStripSocketHome,
     Spoon,
-    SaltBridgeHome
+    SaltBridgeHome,
+    Na2so4,
+    ZincLabSpatula,
+    CopperLabSpatula
 }   

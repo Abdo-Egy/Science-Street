@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa73e80dba941a3901cb680b6419c69, type: 3}
+  m_Name: Step 13
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21300000, guid: 9076cdee3a80e4dba8f49f99957d5da9, type: 3}
+  characterName: "\u0639\u0646\u0627\u0646"
+  messageText: "\u0647\u0627\u062A \u062C\u0647\u0627\u0632 \u0627\u0644\u0641\u0648\u0644\u062A\u0645\u064A\u062A\u0631."
+  voiceClip: {fileID: 8300000, guid: 4b1daaa8454bc6a40955209a89fc33f1, type: 3}
+  replies: []
+  nextMessage: {fileID: 0}

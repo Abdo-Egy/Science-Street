@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa73e80dba941a3901cb680b6419c69, type: 3}
+  m_Name: Step 8
+  m_EditorClassIdentifier: 
+  characterSprite: {fileID: 21300000, guid: 9076cdee3a80e4dba8f49f99957d5da9, type: 3}
+  characterName: "\u0639\u0646\u0627\u0646"
+  messageText: "\u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0646\u0641\u0633
+    \u0627\u0644\u0645\u0644\u0639\u0642\u0629\u060C \u062E\u062F \u0634\u0648\u064A\u0629
+    \u0643\u0628\u0631\u064A\u062A\u0627\u062A \u0646\u062D\u0627\u0633 \u0648\u0636\u064A\u0641\u0647\u0645
+    \u0639\u0644\u0649 \u0627\u0644\u0645\u064A\u0629 \u0641\u064A \u0627\u0644\u0643\u0648\u0628\u0627\u064A\u0629
+    \u0627\u0644\u062A\u0627\u0646\u064A\u0629."
+  voiceClip: {fileID: 8300000, guid: 64cc958fc72ea6247a438c88267e675a, type: 3}
+  replies: []
+  nextMessage: {fileID: 0}

@@ -95,6 +95,7 @@ GameObject:
   - component: {fileID: 2010613650726958287}
   - component: {fileID: 4037005267267580470}
   - component: {fileID: 7857388447054519179}
+  - component: {fileID: 848673957446897727}
   m_Layer: 0
   m_Name: WaterLiquidVolume
   m_TagString: Untagged
@@ -145,8 +146,6 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 2100000, guid: 42ff8359de472554ea05cdf4fdce090c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -280,6 +279,18 @@ MonoBehaviour:
   pointLightInsideAtten: 0
   fixedMesh: {fileID: 0}
   closedMesh: {fileID: 0}
+--- !u!114 &848673957446897727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656649877291716861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e5126596f7fdb47af9d3c65e4324ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1903538377882478504
 GameObject:
   m_ObjectHideFlags: 0
@@ -292,6 +303,7 @@ GameObject:
   - component: {fileID: 6816113276742005236}
   - component: {fileID: 5965481596523647680}
   - component: {fileID: 3571339725510360346}
+  - component: {fileID: 8389965577476975794}
   m_Layer: 0
   m_Name: CopperLiquidVolume
   m_TagString: Untagged
@@ -341,9 +353,7 @@ MeshRenderer:
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 0}
-  - {fileID: 0}
+  m_Materials: []
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -476,6 +486,18 @@ MonoBehaviour:
   pointLightInsideAtten: 0
   fixedMesh: {fileID: 0}
   closedMesh: {fileID: 0}
+--- !u!114 &8389965577476975794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1903538377882478504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e5126596f7fdb47af9d3c65e4324ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2356142025573154872
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,8 +846,8 @@ MonoBehaviour:
   EndScale: {x: 7.14, y: 7.14, z: 7.14}
   IsDragable: 0
   inHome: 0
+  doneWithAction: 0
   inHomePosition: 0
-  isTriggerDestroy: 1
 --- !u!1 &3221114166692366671
 GameObject:
   m_ObjectHideFlags: 0
@@ -838,6 +860,7 @@ GameObject:
   - component: {fileID: 608581970163255651}
   - component: {fileID: 8432714755832962127}
   - component: {fileID: 4720990571112208491}
+  - component: {fileID: 3778646527546632808}
   m_Layer: 0
   m_Name: BaseLiquidVolume
   m_TagString: Untagged
@@ -1022,6 +1045,18 @@ MonoBehaviour:
   pointLightInsideAtten: 0
   fixedMesh: {fileID: 0}
   closedMesh: {fileID: 0}
+--- !u!114 &3778646527546632808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221114166692366671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e5126596f7fdb47af9d3c65e4324ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3949940838414243908
 GameObject:
   m_ObjectHideFlags: 0
@@ -1223,6 +1258,7 @@ GameObject:
   - component: {fileID: 7471172670629432134}
   - component: {fileID: 6542023045794091355}
   - component: {fileID: 2069499093961477596}
+  - component: {fileID: 2647701286246686419}
   m_Layer: 0
   m_Name: Na2so4LiquidVolume
   m_TagString: Untagged
@@ -1408,6 +1444,18 @@ MonoBehaviour:
   pointLightInsideAtten: 0
   fixedMesh: {fileID: 0}
   closedMesh: {fileID: 0}
+--- !u!114 &2647701286246686419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5671677004906248206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e5126596f7fdb47af9d3c65e4324ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6653105279264115998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1582,6 +1630,7 @@ GameObject:
   - component: {fileID: 5198290467105916719}
   - component: {fileID: 3065226810959952567}
   - component: {fileID: 4558778538050563221}
+  - component: {fileID: 1185181234443393172}
   m_Layer: 0
   m_Name: ZincVolume
   m_TagString: Untagged
@@ -1766,3 +1815,15 @@ MonoBehaviour:
   pointLightInsideAtten: 0
   fixedMesh: {fileID: 0}
   closedMesh: {fileID: 0}
+--- !u!114 &1185181234443393172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6931138275008068957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48e5126596f7fdb47af9d3c65e4324ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

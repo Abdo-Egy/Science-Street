@@ -1,9 +1,11 @@
+using AL_Arcade.DialogueSystem.Scripts;
+using DG.Tweening;
+using LiquidVolumeFX;
+using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using DG.Tweening;
-using System.Collections.Generic;
-using System;
-using LiquidVolumeFX;
+using UnityEngine.SceneManagement;
 
 public class ExperimentManager : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class ExperimentManager : MonoBehaviour
     [SerializeField] LiquidVolume CopperWater;
     [SerializeField] LiquidVolume ZincWater;
 
-    [HideInInspector] public List<ItemPosition> Items = new List<ItemPosition>();
+    [SerializeField] List<ItemPosition> Items = new List<ItemPosition>();
 
     private void Awake()
     {
@@ -23,7 +25,7 @@ public class ExperimentManager : MonoBehaviour
 
     public void CheckIfItemsInCorrectPosition(ItemPosition item)
     {
-        if (Items.All(home => home.inHome))
+        if (Items.All(home => home.doneWithAction))
         {
             Arrow.DORotate(new Vector3(0, 0, -30f), SpeedArrow).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
         }
@@ -36,12 +38,21 @@ public class ExperimentManager : MonoBehaviour
 
     private void ExpStep(ItemPosition item)
     {
-        
+
     }
 
     private void OnDestroy()
     {
         DOTween.Kill(Arrow);
     }
-
+    public void RealoadScene()
+    {
+        GameContextBuilder.Instance.ClearActions();
+        GameContextBuilder.Instance.ClearObjective();
+        SceneManager.LoadScene(0);
+    }
+    public void CloseApp ()
+    {
+        Application.Quit();
+    }
 }

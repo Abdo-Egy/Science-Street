@@ -21,9 +21,9 @@ public class ItemPosition : MonoBehaviour
     Vector3 StartScale;
     [SerializeField] public bool IsDragable;
 
-    public bool inHome;
+    [SerializeField] bool inHome;
     bool startAction;
-
+    public bool doneWithAction;
 
     [SerializeField] bool inHomePosition;
 
@@ -34,7 +34,6 @@ public class ItemPosition : MonoBehaviour
         StartRotation = transform.rotation;
         StartScale = transform.localScale;
 
-        ExperimentManager.Instance.Items.Add(this);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,6 +42,7 @@ public class ItemPosition : MonoBehaviour
         {
             if (EndPositionAreaName == HomeHighlights.AreaName)
             {
+                doneWithAction = true;
                 inHome = true;
                 EventEnter?.Invoke();
             }
@@ -61,6 +61,8 @@ public class ItemPosition : MonoBehaviour
                 EventExit?.Invoke();
                 inHome = false;
                 startAction = false;
+                doneWithAction = false;
+
             }
         }
     }
@@ -99,7 +101,7 @@ public class ItemPosition : MonoBehaviour
         {
             if (!startAction)
             {
-                Debug.Log("StartActionInHome");
+              //  Debug.Log("StartActionInHome");
                 action.StartAction();
                 startAction = true;
             }

@@ -1,0 +1,2 @@
+Managed libraries are fully writen in C# and packed into DLL. Thus, they are cross-platform and don't depend on runtime platform. For example, we can use managed libraries for WebGL, if needed.
+The main disadvantage of managed libraries is bad performance (x4-x8 slower than native plugins).

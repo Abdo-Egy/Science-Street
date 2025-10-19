@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4eedafe308a4bc788fea2ab78bf641e, type: 3}
+  m_Name: DialogueReply
+  m_EditorClassIdentifier: 
+  replyText: "\u064A\u0627 \u0641\u0644\u0627\u062D"
+  replyAudioClip: {fileID: 8300000, guid: cc8a2056f5e2eeb4f9d19ebc0645e558, type: 3}
+  nextMessage: {fileID: 11400000, guid: 503b0ea731168aa4692a3eaa8fe28013, type: 2}
+  requiresCondition: 0
+  conditionKey: 
