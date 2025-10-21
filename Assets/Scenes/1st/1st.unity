@@ -317,7 +317,22 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1541428997}
+  - {fileID: 1953397245417013812}
+  - {fileID: 247956889}
+  - {fileID: 1234515727}
+  - {fileID: 1835185469}
+  - {fileID: 263749910}
+  - {fileID: 1773588920}
+  - {fileID: 1232824440}
+  - {fileID: 681579816}
+  - {fileID: 1829776508}
+  - {fileID: 904375509}
+  - {fileID: 8456621175088535042}
+  - {fileID: 1171330200}
+  - {fileID: 2770320021435484671}
+  - {fileID: 2020325425}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &84221531
@@ -326,7 +341,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 360926448473091340, guid: ea6c384fecbc3814dbc9eaf8a2516d4a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -919,7 +934,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 719712240866105166, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: _level
@@ -1015,7 +1030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1023,7 +1038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1634,6 +1649,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243679f20cea4db47b16b13beeebafda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &247956889 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 360926448473091340, guid: ea6c384fecbc3814dbc9eaf8a2516d4a, type: 3}
+  m_PrefabInstance: {fileID: 4185650002016323956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &263628596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,6 +1703,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 716004679}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &263749910 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3847494395845971956, guid: 36f84fd76fe094d4cbbdfb07ade7ff2f, type: 3}
+  m_PrefabInstance: {fileID: 8656244446023454041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &281472610
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,6 +1759,106 @@ MonoBehaviour:
   triggerOnInteract: 0
   interactKey: 101
   interactionPrompt: {fileID: 0}
+--- !u!21 &294915509
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiquidVolumeDefaultNoFlask(Clone)
+  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - LIQUID_VOLUME_IRREGULAR
+  - LIQUID_VOLUME_NON_AABB
+  - LIQUID_VOLUME_USE_REFRACTION
+  m_InvalidKeywords:
+  - 
+  - 
+  - 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2D:
+        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AlphaCombined: 0.8627451
+    - _BasePos: -1
+    - _CullMode: 2
+    - _DeepAtten: 0.31
+    - _DoubleSidedBias: 0
+    - _FlaskBlurIntensity: 0.75
+    - _FlaskThickness: 0.05
+    - _FoamBottom: 1
+    - _FoamDensity: -1
+    - _FoamMaxPos: 0.55752367
+    - _FoamRaySteps: 1
+    - _FoamTurbulence: 1
+    - _FoamWeight: 4
+    - _Glossiness: 0.767
+    - _GlossinessInt: 0.5
+    - _Level: 1
+    - _LevelPos: 0.55752367
+    - _LiquidRaySteps: 10
+    - _LowerLimit: -0.08981423
+    - _Metallic: 0
+    - _Muddy: 0
+    - _Radius: 0.5
+    - _SmokeAtten: 2
+    - _SmokeHeightAtten: 0
+    - _SmokeRaySteps: 5
+    - _SmokeSpeed: 5
+    - _Sparkling: 1
+    - _SparklingIntensity: 0
+    - _SparklingThreshold: 1
+    - _Topology: 0
+    - _Turbulence: 1
+    - _Turbulence2: 1
+    - _TurbulenceSpeed: 1
+    - _UpperLimit: 0.08981423
+    - _ZTestMode: 4
+    m_Colors:
+    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: -2.06, g: 0.47482595, b: -0.1, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 0}
+    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
+    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
+    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskThickness: {r: 0.97, g: 0.9662005, b: 0.9662005, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 0.5705829, g: 0.022823317, b: 3.7202005, a: 11.411658}
+    - _Size: {r: 1.312659, g: 0.897783, b: 0.63569474, a: 0.34736007}
+    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
+    - _Turbulence: {r: 0.422, g: 0.2, b: 9.424778, a: 3.1415927}
+    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &303460803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,7 +2237,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 227156124253608959, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
       propertyPath: m_IsActive
@@ -2345,6 +2470,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2770320021274425329, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.1399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770320021274425329, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.1399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2770320021274425329, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.44
       objectReference: {fileID: 0}
@@ -2362,7 +2495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770320021274425329, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2770320021274425329, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
       propertyPath: m_LocalRotation.y
@@ -2370,7 +2503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770320021274425329, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2770320021274425329, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2427,7 +2560,7 @@ PrefabInstance:
     - target: {fileID: 4037005267267580470, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1500819405}
+      objectReference: {fileID: 2058896262}
     - target: {fileID: 4037005267267580470, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -3301,7 +3434,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 662589352131541442, guid: 087f27f5c4f0df74ea2e5d1d585ae39a, type: 3}
       propertyPath: LoopType
@@ -4116,6 +4249,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1e7dda0a1a94acc46802c42b10e2b862, type: 3}
   m_PrefabInstance: {fileID: 639001397}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &681579816 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5656130505516192340, guid: 384394f1b6dd8234787b423a8dbf9a01, type: 3}
+  m_PrefabInstance: {fileID: 1603073924016272573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &716004676
 GameObject:
   m_ObjectHideFlags: 0
@@ -4661,7 +4799,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1024187983}
+  - {fileID: 1746786125}
   - {fileID: 1998215283}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -5097,106 +5235,6 @@ MonoBehaviour:
     \u0628\u064A\u0643\u0648\u0646 \u0645\u0646 \u0627\u0644\u0646\u062D\u0627\u0633
     \u0644\u0644\u062E\u0627\u0631\u0635\u064A\u0646 \u0641\u064A \u0627\u0644\u062F\u0627\u0626\u0631\u0629
     \u0627\u0644\u062E\u0627\u0631\u062C\u064A\u0629."
---- !u!21 &1024187983
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidVolumeDefaultNoFlask(Clone)
-  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LIQUID_VOLUME_IRREGULAR
-  - LIQUID_VOLUME_NON_AABB
-  - LIQUID_VOLUME_USE_REFRACTION
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise2Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex2D:
-        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 1
-    - _AlphaCombined: 1
-    - _BasePos: -1
-    - _CullMode: 2
-    - _DeepAtten: 0.31
-    - _DoubleSidedBias: 0
-    - _FlaskBlurIntensity: 0.75
-    - _FlaskThickness: 0.05
-    - _FoamBottom: 1
-    - _FoamDensity: -1
-    - _FoamMaxPos: 0.58862495
-    - _FoamRaySteps: 1
-    - _FoamTurbulence: 1
-    - _FoamWeight: 4
-    - _Glossiness: 0.767
-    - _GlossinessInt: 0.5
-    - _Level: 1
-    - _LevelPos: 0.58862495
-    - _LiquidRaySteps: 10
-    - _LowerLimit: -0.08981423
-    - _Metallic: 0
-    - _Muddy: 0
-    - _Radius: 0.5
-    - _SmokeAtten: 2
-    - _SmokeHeightAtten: 0
-    - _SmokeRaySteps: 5
-    - _SmokeSpeed: 5
-    - _Sparkling: 1
-    - _SparklingIntensity: 0
-    - _SparklingThreshold: 1
-    - _Topology: 0
-    - _Turbulence: 1
-    - _Turbulence2: 1
-    - _TurbulenceSpeed: 1
-    - _UpperLimit: 0.08981423
-    - _ZTestMode: 4
-    m_Colors:
-    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
-    - _Center: {r: -2.51, g: 0.432, b: -3.04, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.505226, g: 0.63432544, b: 0.81886786, a: 0.3019608}
-    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
-    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
-    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskThickness: {r: 0.97, g: 0.9662005, b: 0.9662005, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Scale: {r: 0.6185165, g: 0.02474066, b: 4.0327277, a: 12.370331}
-    - _Size: {r: 1.210931, g: 0.8282069, b: 0.58642983, a: 0.32044047}
-    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
-    - _Turbulence: {r: 0.4, g: 0.2, b: 9.424778, a: 3.1415927}
-    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!21 &1026159328
 Material:
   serializedVersion: 8
@@ -5459,106 +5497,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!21 &1032150835
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidVolumeDefaultNoFlask(Clone)
-  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LIQUID_VOLUME_IRREGULAR
-  - LIQUID_VOLUME_NON_AABB
-  - LIQUID_VOLUME_USE_REFRACTION
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise2Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex2D:
-        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 1
-    - _AlphaCombined: 0.8627451
-    - _BasePos: -1
-    - _CullMode: 2
-    - _DeepAtten: 0.31
-    - _DoubleSidedBias: 0
-    - _FlaskBlurIntensity: 0.75
-    - _FlaskThickness: 0.05
-    - _FoamBottom: 1
-    - _FoamDensity: -1
-    - _FoamMaxPos: 0.035013974
-    - _FoamRaySteps: 1
-    - _FoamTurbulence: 1
-    - _FoamWeight: 4
-    - _Glossiness: 0.767
-    - _GlossinessInt: 0.5
-    - _Level: 1
-    - _LevelPos: 0.034143124
-    - _LiquidRaySteps: 10
-    - _LowerLimit: -0.08981423
-    - _Metallic: 0
-    - _Muddy: 0
-    - _Radius: 0.5
-    - _SmokeAtten: 2
-    - _SmokeHeightAtten: 0
-    - _SmokeRaySteps: 5
-    - _SmokeSpeed: 5
-    - _Sparkling: 1
-    - _SparklingIntensity: 0
-    - _SparklingThreshold: 1
-    - _Topology: 0
-    - _Turbulence: 1
-    - _Turbulence2: 1
-    - _TurbulenceSpeed: 1
-    - _UpperLimit: 0.08981423
-    - _ZTestMode: 4
-    m_Colors:
-    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
-    - _Center: {r: 2.58, g: 0.47482595, b: 0.3, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 1, g: 1, b: 1, a: 0}
-    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
-    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
-    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskThickness: {r: 0.97, g: 0.9662005, b: 0.9662005, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Scale: {r: 0.5705829, g: 0.022823317, b: 3.7202005, a: 11.411658}
-    - _Size: {r: 1.4633094, g: 0.897783, b: 0.63569474, a: 0.34736007}
-    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
-    - _Turbulence: {r: 0, g: 0, b: 188.49556, a: 62.831856}
-    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!21 &1045144377
 Material:
   serializedVersion: 8
@@ -10843,6 +10781,106 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194119300}
   m_CullTransparentMesh: 1
+--- !u!21 &1200287258
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiquidVolumeDefaultNoFlask(Clone)
+  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - LIQUID_VOLUME_IRREGULAR
+  - LIQUID_VOLUME_NON_AABB
+  - LIQUID_VOLUME_USE_REFRACTION
+  m_InvalidKeywords:
+  - 
+  - 
+  - 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2D:
+        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AlphaCombined: 0.8627451
+    - _BasePos: -1
+    - _CullMode: 2
+    - _DeepAtten: 0.31
+    - _DoubleSidedBias: 0
+    - _FlaskBlurIntensity: 0.75
+    - _FlaskThickness: 0.05
+    - _FoamBottom: 1
+    - _FoamDensity: -1
+    - _FoamMaxPos: 0.035013974
+    - _FoamRaySteps: 1
+    - _FoamTurbulence: 1
+    - _FoamWeight: 4
+    - _Glossiness: 0.767
+    - _GlossinessInt: 0.5
+    - _Level: 1
+    - _LevelPos: 0.034143124
+    - _LiquidRaySteps: 10
+    - _LowerLimit: -0.08981423
+    - _Metallic: 0
+    - _Muddy: 0
+    - _Radius: 0.5
+    - _SmokeAtten: 2
+    - _SmokeHeightAtten: 0
+    - _SmokeRaySteps: 5
+    - _SmokeSpeed: 5
+    - _Sparkling: 1
+    - _SparklingIntensity: 0
+    - _SparklingThreshold: 1
+    - _Topology: 0
+    - _Turbulence: 1
+    - _Turbulence2: 1
+    - _TurbulenceSpeed: 1
+    - _UpperLimit: 0.08981423
+    - _ZTestMode: 4
+    m_Colors:
+    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: 2.58, g: 0.47482595, b: 0.3, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 0}
+    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
+    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
+    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskThickness: {r: 0.97, g: 0.9662005, b: 0.9662005, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 0.5705829, g: 0.022823317, b: 3.7202005, a: 11.411658}
+    - _Size: {r: 1.463309, g: 0.897783, b: 0.6356946, a: 0.34736004}
+    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
+    - _Turbulence: {r: 0, g: 0, b: 188.49556, a: 62.831856}
+    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1203399941 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1656649877291716861, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
@@ -11180,6 +11218,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
   m_PrefabInstance: {fileID: 136026994}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1234515727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 731753947390293286, guid: 11a9264eb4f211e4abead845910f51ce, type: 3}
+  m_PrefabInstance: {fileID: 4958196341093031482}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1239214296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 540923965955489572, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
@@ -11509,106 +11552,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428192825}
   m_Mesh: {fileID: -5076798556035486163, guid: adbe7f3b121a1cd43b6573d1ad537e2f, type: 3}
---- !u!21 &1500819405
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidVolumeDefaultNoFlask(Clone)
-  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LIQUID_VOLUME_IRREGULAR
-  - LIQUID_VOLUME_NON_AABB
-  - LIQUID_VOLUME_USE_REFRACTION
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise2Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex2D:
-        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 1
-    - _AlphaCombined: 0.8627451
-    - _BasePos: -1
-    - _CullMode: 2
-    - _DeepAtten: 0.31
-    - _DoubleSidedBias: 0
-    - _FlaskBlurIntensity: 0.75
-    - _FlaskThickness: 0.05
-    - _FoamBottom: 1
-    - _FoamDensity: -1
-    - _FoamMaxPos: 0.035013974
-    - _FoamRaySteps: 1
-    - _FoamTurbulence: 1
-    - _FoamWeight: 4
-    - _Glossiness: 0.767
-    - _GlossinessInt: 0.5
-    - _Level: 1
-    - _LevelPos: 0.034143124
-    - _LiquidRaySteps: 10
-    - _LowerLimit: -0.08981423
-    - _Metallic: 0
-    - _Muddy: 0
-    - _Radius: 0.5
-    - _SmokeAtten: 2
-    - _SmokeHeightAtten: 0
-    - _SmokeRaySteps: 5
-    - _SmokeSpeed: 5
-    - _Sparkling: 1
-    - _SparklingIntensity: 0
-    - _SparklingThreshold: 1
-    - _Topology: 0
-    - _Turbulence: 1
-    - _Turbulence2: 1
-    - _TurbulenceSpeed: 1
-    - _UpperLimit: 0.08981423
-    - _ZTestMode: 4
-    m_Colors:
-    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
-    - _Center: {r: 2.44, g: 0.47482595, b: -2.4, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 1, g: 1, b: 1, a: 0}
-    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
-    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
-    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskThickness: {r: 0.97, g: 0.9662005, b: 0.9662005, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Scale: {r: 0.5705829, g: 0.022823317, b: 3.7202005, a: 11.411658}
-    - _Size: {r: 1.4633093, g: 0.897783, b: 0.63569474, a: 0.34736007}
-    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
-    - _Turbulence: {r: 0, g: 0, b: 188.49556, a: 62.831856}
-    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1520800796
 GameObject:
   m_ObjectHideFlags: 0
@@ -11663,6 +11606,11 @@ MonoBehaviour:
 --- !u!65 &1541428996 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 2965190289606023050, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
+  m_PrefabInstance: {fileID: 373573290}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1541428997 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2770320021274425329, guid: 41247bd9e0847144d89928f41f4ab39e, type: 3}
   m_PrefabInstance: {fileID: 373573290}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1579338918
@@ -12191,6 +12139,106 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1741900448}
   m_Mesh: {fileID: 4300002, guid: 9f7061e33a6f353489bfdb56f6390954, type: 3}
+--- !u!21 &1746786125
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiquidVolumeDefaultNoFlask(Clone)
+  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - LIQUID_VOLUME_IRREGULAR
+  - LIQUID_VOLUME_NON_AABB
+  - LIQUID_VOLUME_USE_REFRACTION
+  m_InvalidKeywords:
+  - 
+  - 
+  - 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2D:
+        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AlphaCombined: 1
+    - _BasePos: -1
+    - _CullMode: 2
+    - _DeepAtten: 0.31
+    - _DoubleSidedBias: 0
+    - _FlaskBlurIntensity: 0.75
+    - _FlaskThickness: 0.05
+    - _FoamBottom: 1
+    - _FoamDensity: -1
+    - _FoamMaxPos: 0.58862495
+    - _FoamRaySteps: 1
+    - _FoamTurbulence: 1
+    - _FoamWeight: 4
+    - _Glossiness: 0.767
+    - _GlossinessInt: 0.5
+    - _Level: 1
+    - _LevelPos: 0.58862495
+    - _LiquidRaySteps: 10
+    - _LowerLimit: -0.08981423
+    - _Metallic: 0
+    - _Muddy: 0
+    - _Radius: 0.5
+    - _SmokeAtten: 2
+    - _SmokeHeightAtten: 0
+    - _SmokeRaySteps: 5
+    - _SmokeSpeed: 5
+    - _Sparkling: 1
+    - _SparklingIntensity: 0
+    - _SparklingThreshold: 1
+    - _Topology: 0
+    - _Turbulence: 1
+    - _Turbulence2: 1
+    - _TurbulenceSpeed: 1
+    - _UpperLimit: 0.08981423
+    - _ZTestMode: 4
+    m_Colors:
+    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: -2.51, g: 0.432, b: -3.04, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.505226, g: 0.63432544, b: 0.81886786, a: 0.3019608}
+    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
+    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
+    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskThickness: {r: 0.97, g: 0.9662005, b: 0.9662005, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 0.6185165, g: 0.02474066, b: 4.0327277, a: 12.370331}
+    - _Size: {r: 1.210931, g: 0.8282069, b: 0.58642983, a: 0.32044047}
+    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
+    - _Turbulence: {r: 0.4, g: 0.2, b: 9.424778, a: 3.1415927}
+    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!114 &1773588918 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6710382043615601680, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
@@ -12205,6 +12253,11 @@ MonoBehaviour:
 --- !u!65 &1773588919 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 8229766840460555815, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
+  m_PrefabInstance: {fileID: 5910144073021620157}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1773588920 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4232914016707996834, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
   m_PrefabInstance: {fileID: 5910144073021620157}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1809953127
@@ -12478,6 +12531,11 @@ GameObject:
 --- !u!65 &1829776505 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 3555931670452818161, guid: ea6c384fecbc3814dbc9eaf8a2516d4a, type: 3}
+  m_PrefabInstance: {fileID: 84221531}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1829776508 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 360926448473091340, guid: ea6c384fecbc3814dbc9eaf8a2516d4a, type: 3}
   m_PrefabInstance: {fileID: 84221531}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1835185463 stripped
@@ -13162,6 +13220,11 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 1226203789583977078, guid: 82fbb35153fd56f468461173855ad2e5, type: 3}
   m_PrefabInstance: {fileID: 3564337993702708993}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2020325425 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1683735765145052468, guid: 82fbb35153fd56f468461173855ad2e5, type: 3}
+  m_PrefabInstance: {fileID: 3564337993702708993}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2057382732
 GameObject:
   m_ObjectHideFlags: 0
@@ -13213,6 +13276,106 @@ MonoBehaviour:
   triggerOnInteract: 0
   interactKey: 101
   interactionPrompt: {fileID: 0}
+--- !u!21 &2058896262
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiquidVolumeDefaultNoFlask(Clone)
+  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - LIQUID_VOLUME_IRREGULAR
+  - LIQUID_VOLUME_NON_AABB
+  - LIQUID_VOLUME_USE_REFRACTION
+  m_InvalidKeywords:
+  - 
+  - 
+  - 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2D:
+        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AlphaCombined: 0.8627451
+    - _BasePos: -1
+    - _CullMode: 2
+    - _DeepAtten: 0.31
+    - _DoubleSidedBias: 0
+    - _FlaskBlurIntensity: 0.75
+    - _FlaskThickness: 0.05
+    - _FoamBottom: 1
+    - _FoamDensity: -1
+    - _FoamMaxPos: 0.035013974
+    - _FoamRaySteps: 1
+    - _FoamTurbulence: 1
+    - _FoamWeight: 4
+    - _Glossiness: 0.767
+    - _GlossinessInt: 0.5
+    - _Level: 1
+    - _LevelPos: 0.034143124
+    - _LiquidRaySteps: 10
+    - _LowerLimit: -0.08981423
+    - _Metallic: 0
+    - _Muddy: 0
+    - _Radius: 0.5
+    - _SmokeAtten: 2
+    - _SmokeHeightAtten: 0
+    - _SmokeRaySteps: 5
+    - _SmokeSpeed: 5
+    - _Sparkling: 1
+    - _SparklingIntensity: 0
+    - _SparklingThreshold: 1
+    - _Topology: 0
+    - _Turbulence: 1
+    - _Turbulence2: 1
+    - _TurbulenceSpeed: 1
+    - _UpperLimit: 0.08981423
+    - _ZTestMode: 4
+    m_Colors:
+    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: 2.44, g: 0.47482595, b: -2.4, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 1, g: 1, b: 1, a: 0}
+    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
+    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
+    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskThickness: {r: 0.97, g: 0.9662005, b: 0.9662005, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 0.5705829, g: 0.022823317, b: 3.7202005, a: 11.411658}
+    - _Size: {r: 1.463309, g: 0.897783, b: 0.6356946, a: 0.34736004}
+    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
+    - _Turbulence: {r: 0, g: 0, b: 188.49556, a: 62.831856}
+    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!21 &2109846798
 Material:
   serializedVersion: 8
@@ -13519,106 +13682,6 @@ Transform:
   - {fileID: 1428192826}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &2124861109
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidVolumeDefaultNoFlask(Clone)
-  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LIQUID_VOLUME_IRREGULAR
-  - LIQUID_VOLUME_NON_AABB
-  - LIQUID_VOLUME_USE_REFRACTION
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise2Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex2D:
-        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 1
-    - _AlphaCombined: 0.8627451
-    - _BasePos: -1
-    - _CullMode: 2
-    - _DeepAtten: 0.31
-    - _DoubleSidedBias: 0
-    - _FlaskBlurIntensity: 0.75
-    - _FlaskThickness: 0.05
-    - _FoamBottom: 1
-    - _FoamDensity: -1
-    - _FoamMaxPos: 0.55752367
-    - _FoamRaySteps: 1
-    - _FoamTurbulence: 1
-    - _FoamWeight: 4
-    - _Glossiness: 0.767
-    - _GlossinessInt: 0.5
-    - _Level: 1
-    - _LevelPos: 0.55752367
-    - _LiquidRaySteps: 10
-    - _LowerLimit: -0.08981423
-    - _Metallic: 0
-    - _Muddy: 0
-    - _Radius: 0.5
-    - _SmokeAtten: 2
-    - _SmokeHeightAtten: 0
-    - _SmokeRaySteps: 5
-    - _SmokeSpeed: 5
-    - _Sparkling: 1
-    - _SparklingIntensity: 0
-    - _SparklingThreshold: 1
-    - _Topology: 0
-    - _Turbulence: 1
-    - _Turbulence2: 1
-    - _TurbulenceSpeed: 1
-    - _UpperLimit: 0.08981423
-    - _ZTestMode: 4
-    m_Colors:
-    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
-    - _Center: {r: -2.06, g: 0.47482595, b: -0.1, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 1, g: 1, b: 1, a: 0}
-    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
-    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
-    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskThickness: {r: 0.97, g: 0.9662005, b: 0.9662005, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Scale: {r: 0.5705829, g: 0.022823317, b: 3.7202005, a: 11.411658}
-    - _Size: {r: 1.312659, g: 0.897783, b: 0.63569474, a: 0.34736007}
-    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
-    - _Turbulence: {r: 0.422, g: 0.2, b: 9.424778, a: 3.1415927}
-    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &2132307563
 GameObject:
   m_ObjectHideFlags: 0
@@ -14582,7 +14645,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 662589352131541442, guid: 087f27f5c4f0df74ea2e5d1d585ae39a, type: 3}
       propertyPath: LoopType
@@ -15002,7 +15065,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 3719806474104604010, guid: 384394f1b6dd8234787b423a8dbf9a01, type: 3}
       propertyPath: m_Name
@@ -15034,15 +15097,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5656130505516192340, guid: 384394f1b6dd8234787b423a8dbf9a01, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5656130505516192340, guid: 384394f1b6dd8234787b423a8dbf9a01, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5656130505516192340, guid: 384394f1b6dd8234787b423a8dbf9a01, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5656130505516192340, guid: 384394f1b6dd8234787b423a8dbf9a01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -15218,7 +15281,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 719712240866105166, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: _level
@@ -15318,7 +15381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: m_LocalRotation.y
@@ -15326,7 +15389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7668024832981050175, guid: 4207e39600b63e14f939c6ef3ee85de3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -16184,7 +16247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3207821027317737946}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
   m_LocalPosition: {x: -2.06, y: 0.04, z: -0.1}
   m_LocalScale: {x: 7.14, y: 7.14, z: 7.14}
   m_ConstrainProportionsScale: 1
@@ -16201,7 +16264,7 @@ Transform:
   - {fileID: 2030487977370357618}
   - {fileID: 7793800830141320383}
   - {fileID: 1579338919}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 67910369}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!224 &2778119036355557124
 RectTransform:
@@ -16573,7 +16636,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 1220570177053772421, guid: 82fbb35153fd56f468461173855ad2e5, type: 3}
       propertyPath: ChildCollidor
@@ -17408,7 +17471,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 360926448473091340, guid: ea6c384fecbc3814dbc9eaf8a2516d4a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18400,7 +18463,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 731753947390293286, guid: 11a9264eb4f211e4abead845910f51ce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18420,15 +18483,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 731753947390293286, guid: 11a9264eb4f211e4abead845910f51ce, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 731753947390293286, guid: 11a9264eb4f211e4abead845910f51ce, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 731753947390293286, guid: 11a9264eb4f211e4abead845910f51ce, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 731753947390293286, guid: 11a9264eb4f211e4abead845910f51ce, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -18875,7 +18938,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 28333053224717172, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
       propertyPath: m_Mesh
@@ -18942,6 +19005,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1998215283}
     - target: {fileID: 4232914016707996834, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.1399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232914016707996834, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.1399994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4232914016707996834, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.58
       objectReference: {fileID: 0}
@@ -18959,7 +19030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4232914016707996834, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4232914016707996834, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
       propertyPath: m_LocalRotation.y
@@ -18967,7 +19038,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4232914016707996834, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4232914016707996834, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -19211,7 +19282,7 @@ PrefabInstance:
     - target: {fileID: 8359401040660786229, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1032150835}
+      objectReference: {fileID: 1200287258}
     - target: {fileID: 8359401040660786229, guid: fbc0a846c56a5114d956681c092b801d, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -19567,7 +19638,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2124861109}
+  - {fileID: 294915509}
   - {fileID: 1998215283}
   - {fileID: 2100000, guid: 42ff8359de472554ea05cdf4fdce090c, type: 2}
   m_StaticBatchInfo:
@@ -20727,6 +20798,11 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 8369139721204746670, guid: 43a3ef57af1aa8042ac8b2d03ce4ec2c, type: 3}
   m_PrefabInstance: {fileID: 9153178493183900516}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &8456621175088535042 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1822293694609862051, guid: 43a3ef57af1aa8042ac8b2d03ce4ec2c, type: 3}
+  m_PrefabInstance: {fileID: 9153178493183900516}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8474711299461532668
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20791,7 +20867,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 1236155336148931222, guid: 36f84fd76fe094d4cbbdfb07ade7ff2f, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -21204,7 +21280,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 628220425871503775, guid: a077fabfb90131f44866a776c2f57079, type: 3}
       propertyPath: HomeHighlights
@@ -21421,19 +21497,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2472836632263617886, guid: a077fabfb90131f44866a776c2f57079, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.96890783
+      value: 0.9689079
       objectReference: {fileID: 0}
     - target: {fileID: 2472836632263617886, guid: a077fabfb90131f44866a776c2f57079, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2472836632263617886, guid: a077fabfb90131f44866a776c2f57079, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.2474218
+      value: -0.24742182
       objectReference: {fileID: 0}
     - target: {fileID: 2472836632263617886, guid: a077fabfb90131f44866a776c2f57079, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 2472836632263617886, guid: a077fabfb90131f44866a776c2f57079, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -21883,7 +21959,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 67910369}
     m_Modifications:
     - target: {fileID: 193139571470727237, guid: 43a3ef57af1aa8042ac8b2d03ce4ec2c, type: 3}
       propertyPath: HomeHighlights
@@ -22059,7 +22135,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1822293694609862051, guid: 43a3ef57af1aa8042ac8b2d03ce4ec2c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1822293694609862051, guid: 43a3ef57af1aa8042ac8b2d03ce4ec2c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22204,21 +22280,6 @@ SceneRoots:
   - {fileID: 1911868344}
   - {fileID: 716004679}
   - {fileID: 1845993231}
-  - {fileID: 67910369}
   - {fileID: 2124772077}
-  - {fileID: 373573290}
-  - {fileID: 1953397245417013805}
-  - {fileID: 4185650002016323956}
-  - {fileID: 4958196341093031482}
-  - {fileID: 1275254418271161977}
-  - {fileID: 8656244446023454041}
-  - {fileID: 5910144073021620157}
-  - {fileID: 136026994}
-  - {fileID: 1603073924016272573}
-  - {fileID: 84221531}
-  - {fileID: 622202561}
-  - {fileID: 9153178493183900516}
-  - {fileID: 8705419094373129489}
-  - {fileID: 2770320021435484671}
-  - {fileID: 3564337993702708993}
+  - {fileID: 67910369}
   - {fileID: 1015995514}
