@@ -8,21 +8,21 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: LacquerBlack__StylSurf_Single_ExCel_Spec_Rim
-  m_Shader: {fileID: 4800000, guid: bee44b4a58655ee4cbff107302a3e131, type: 3}
+  m_Shader: {fileID: 4800000, guid: 4e76d4023d7e0411297c670f878973e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
+  m_ValidKeywords: []
+  m_InvalidKeywords:
   - DR_CEL_EXTRA_ON
   - DR_RIM_ON
   - DR_SPECULAR_ON
   - _CELPRIMARYMODE_SINGLE
   - _DETAILMAPBLENDINGMODE_MULTIPLY
+  - _FLAT_SHADOWS_ENABLED
+  - _FLAT_SPECULAR_ENABLED
   - _GRADIENTSPACE_WORLD
   - _OUTLINESPACE_SCREEN
   - _TEXTUREBLENDINGMODE_MULTIPLY
-  m_InvalidKeywords:
-  - _FLAT_SHADOWS_ENABLED
-  - _FLAT_SPECULAR_ENABLED
   - _UNITYSHADOWMODE_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -169,9 +169,10 @@ Material:
     - _UnityShadowSharpness: 1
     - _VertexColorsEnabled: 0
     - _VertexExtrusionSmoothNormals: 0
+    - _ZTest: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 0.5706301, g: 0.6970361, b: 0.735849, a: 1}
     - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _ColorCelShadow: {r: 0.49056602, g: 0.34478462, b: 0.4476891, a: 1}
     - _ColorDim: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}

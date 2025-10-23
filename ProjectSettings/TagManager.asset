@@ -9,6 +9,7 @@ TagManager:
   - SaltHome
   - Drag
   - RopeSegment
+  - color
   layers:
   - Default
   - TransparentFX

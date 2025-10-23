@@ -172,7 +172,7 @@ Material:
     - _VertexExtrusionSmoothNormals: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.7647059, g: 0.57254905, b: 0.17254902, a: 1}
+    - _BaseColor: {r: 0.99607843, g: 0.6484218, b: 0, a: 1}
     - _Color: {r: 0.2951673, g: 0.5189514, b: 0.6320754, a: 1}
     - _ColorCelShadow: {r: 0.49056602, g: 0.34478462, b: 0.4476891, a: 1}
     - _ColorDim: {r: 0.2528302, g: 0.23414622, b: 0.14072624, a: 0.85}

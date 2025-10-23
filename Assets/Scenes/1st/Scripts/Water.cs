@@ -21,6 +21,7 @@ public class Water : MonoBehaviour, ItemAction
         DOTween.To(() => ThisLiquidVolume.level, x => ThisLiquidVolume.level = x, ToLiquidVolume, timeToLiquidVolume);
         GetComponent<SoundEffect>().PlaySound();
         WaterEffect.Play();
+        LiquidVolume.alpha = 1;
         DOTween.To(() => LiquidVolume.level, x => LiquidVolume.level = x, .6f, AnimationDuration).OnComplete(() =>
         {
             GetComponent<ItemPosition>().ReturnToHome();
