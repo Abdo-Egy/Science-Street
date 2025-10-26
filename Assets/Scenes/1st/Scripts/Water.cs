@@ -10,13 +10,13 @@ public class Water : MonoBehaviour, ItemAction
     [SerializeField] LiquidVolume LiquidVolume;
     [SerializeField] GameObject AnotherWater;
     [Header("Effect")]
-    [SerializeField] float maxRotate;
+    [SerializeField] Vector3 maxRotate;
     [SerializeField] float ToLiquidVolume;
     [SerializeField] float timeToLiquidVolume;
 
     public void StartAction()
     {
-        transform.DORotate(new Vector3(2.035555e-13f, 180f, maxRotate), AnimationDuration);
+        transform.DORotate(maxRotate, AnimationDuration);
         LiquidVolume ThisLiquidVolume = GetComponentInChildren<LiquidVolume>();
         DOTween.To(() => ThisLiquidVolume.level, x => ThisLiquidVolume.level = x, ToLiquidVolume, timeToLiquidVolume);
         GetComponent<SoundEffect>().PlaySound();
@@ -34,7 +34,8 @@ public class Water : MonoBehaviour, ItemAction
 
     public void ChangerWater()
     {
-        StartCoroutine(Enable());
+        if(AnotherWater!=null)
+            StartCoroutine(Enable());
     }
     IEnumerator Enable()
     {

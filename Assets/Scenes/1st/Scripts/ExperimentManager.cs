@@ -29,7 +29,7 @@ public class ExperimentManager : MonoBehaviour
         {
             if (Items.All(home => home.doneWithAction))
             {
-                Arrow.DORotate(new Vector3(0, 0, -30f), SpeedArrow).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+                Arrow.DORotate(new Vector3(0, 0, -30f), SpeedArrow);
             }
             else
             {

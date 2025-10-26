@@ -18,6 +18,6 @@ MonoBehaviour:
     \u0627\u0644\u0632\u062C\u0627\u062C\u064A\u0629 \u0648\u0642\u0644\u0651\u0628
     \u0627\u0644\u0645\u062D\u0644\u0648\u0644 \u0644\u062D\u062F \u0645\u0627 \u0643\u0628\u0631\u064A\u062A\u0627\u062A
     \u0627\u0644\u0646\u062D\u0627\u0633 \u062A\u0630\u0648\u0628 \u062E\u0627\u0644\u0635."
-  voiceClip: {fileID: 8300000, guid: 4c923e562a8296a4da56acd9cb6b8144, type: 3}
+  voiceClip: {fileID: 8300000, guid: ef3fa5034825f574e8f924fec4661dca, type: 3}
   replies: []
   nextMessage: {fileID: 0}

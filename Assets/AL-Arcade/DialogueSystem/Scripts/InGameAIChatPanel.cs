@@ -38,10 +38,6 @@ namespace AL_Arcade.DialogueSystem.Scripts
         [SerializeField] private Sprite recordingSprite;
         [SerializeField] private Sprite idleSprite;
         [SerializeField] private Image recordButtonImage;
-        [SerializeField] private Sprite ananIdle;
-        [SerializeField] private Sprite ananThinking;
-        [SerializeField] private Sprite ananListening;
-        [SerializeField] private Image ananImage;
 
         #endregion
 
@@ -311,6 +307,12 @@ namespace AL_Arcade.DialogueSystem.Scripts
         {
             Debug.Log("[InGameAIChatPanel] Starting recording...");
 
+            // Stop any currently playing dialogue audio
+            if (DialogueManager.Instance != null)
+            {
+                DialogueManager.Instance.StopCurrentDialogueAudio();
+            }
+
             // Clean up previous recording
             if (recordedClip != null)
             {
@@ -327,7 +329,6 @@ namespace AL_Arcade.DialogueSystem.Scripts
             if (recordButtonImage != null && recordingSprite != null)
             {
                 recordButtonImage.sprite = recordingSprite;
-                ananImage.sprite = ananListening;
             }
 
             Debug.Log("[InGameAIChatPanel] Recording started");
@@ -353,7 +354,6 @@ namespace AL_Arcade.DialogueSystem.Scripts
             if (recordButtonImage != null && idleSprite != null)
             {
                 recordButtonImage.sprite = idleSprite;
-                ananImage.sprite = ananThinking;
             }
 
             // Trim the audio clip to actual recorded length
@@ -421,7 +421,6 @@ namespace AL_Arcade.DialogueSystem.Scripts
             if (recordButtonImage != null && idleSprite != null)
             {
                 recordButtonImage.sprite = idleSprite;
-                ananImage.sprite = ananIdle;
             }
         }
 
@@ -551,6 +550,13 @@ namespace AL_Arcade.DialogueSystem.Scripts
             if (aiText != null)
             {
                 aiText.arabicText = responseText;
+            }
+
+            // Report to GameContextBuilder
+            if (GameContextBuilder.Instance != null && !string.IsNullOrEmpty(responseText))
+            {
+                string contextEntry = $"AI Assistant (Free Chat): {responseText}";
+                GameContextBuilder.Instance.AddPlayerAction(contextEntry);
             }
 
             // Slide in AI text panel

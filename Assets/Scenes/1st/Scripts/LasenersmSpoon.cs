@@ -17,11 +17,11 @@ public class LasenersmSpoon : MonoBehaviour, ItemAction
     [SerializeField] Vector3 MaxRotateToScoopPowder;
     [Header("Step 4")] // move to the Beaker
     [SerializeField] Vector3 BeakerPosition;
-    //[SerializeField] GameObject CopperLasenersmSpoon;
     [Header("Step 5")] // place powder in Beaker
     [SerializeField] Vector3 RotateToBeaker;
     [Header("Step 6")] // move powder to Beaker
     [SerializeField] Vector3 MovePowderPosition;
+    [SerializeField] GameObject CopperLasenersmSpoon;
 
     //[Header("Step 1 scooping some powder")]
     //[SerializeField] Vector3 MaxRotateToScoopPowder;
@@ -49,41 +49,26 @@ public class LasenersmSpoon : MonoBehaviour, ItemAction
         sequence.Append(transform.DORotate(MaxRotateToScoopPowder, AnimationDuraction));
         //////////////////////////////////////////// Step 4
         sequence.Append(transform.DOMove(BeakerPosition, AnimationDuraction));
+        sequence.Join(BottleHead.DOMove(startPos, AnimationDuraction));
+        sequence.Join(BottleHead.transform.DORotateQuaternion(startRot, AnimationDuraction));
+        sequence.AppendCallback(() =>
+        {
+            Powder.transform.parent = null;
+            Powder.GetComponent<MeshRenderer>().material.renderQueue = 3002;
+        });
         //////////////////////////////////////////// Step 5
         sequence.Append(transform.DORotate(RotateToBeaker, AnimationDuraction));
         /////////////////////////////////////////// Step 6
         sequence.Join(Powder.transform.DOMove(MovePowderPosition, MovePowderPositionDuraction));
-
+        /////////////////////////////////////////// Final Step
         sequence.AppendCallback(() =>
         {
             GetComponent<ItemPosition>().enabled = true;
+            Powder.transform.DOScale(Vector3.zero, .5f).OnComplete(()=> Powder.SetActive(false));
+            
+        
             GetComponent<ItemPosition>().ReturnToHome();
         });
-
-        /////////////////////////////////////////// Final Step
-
-
-        //sequence.AppendCallback(() =>
-        //{
-        //    Powder.SetActive(true);
-        //    GetComponent<ItemPosition>().enabled = false;
-        //});
-        //sequence.Append(transform.DOMove(MoveBeakerPosition, AnimationDuraction));
-        //sequence.Append(transform.DORotate(RotateToPlacePowderInBeaker, AnimationDuraction));
-        //sequence.JoinCallback(() =>
-        //{
-        //    Powder.transform.position = new Vector3(Powder.transform.position.x, Powder.transform.position.y, -0.966f);
-        //    Powder.transform.DOMove(MovePowderPosition, MovePowderPositionDuraction);
-        //}).OnComplete(() =>Powder.SetActive(false));
-        //sequence.AppendInterval(.1f);
-        //sequence.AppendCallback(() =>
-        //{
-        //    GetComponent<ItemPosition>().enabled = true;
-        //    GetComponent<ItemPosition>().ReturnToHome();
-        //});
-
-
-
     }
     public void ChangerLasenersmSpoon()
     {
@@ -93,11 +78,7 @@ public class LasenersmSpoon : MonoBehaviour, ItemAction
     {
         yield return new WaitForSeconds(1.5f);
         this.gameObject.SetActive(false);
-        //CopperLasenersmSpoon.SetActive(true);
-    }
-    private void Update()
-    {
-
+        CopperLasenersmSpoon.SetActive(true);
     }
     public void StopAction()
     {

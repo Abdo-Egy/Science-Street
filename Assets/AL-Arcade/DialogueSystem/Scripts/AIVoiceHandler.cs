@@ -128,6 +128,13 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 {
                     response = result;
                     Debug.Log("[AIVoiceHandler] API Success");
+            
+                    // Report AI response to GameContextBuilder
+                    if (GameContextBuilder.Instance != null && result != null)
+                    {
+                        string contextEntry = $"AI Assistant: {result.agent_response}";
+                        GameContextBuilder.Instance.AddPlayerAction(contextEntry);
+                    }
                 }
                 else
                 {
@@ -181,6 +188,7 @@ namespace AL_Arcade.DialogueSystem.Scripts
                     callback?.Invoke(false, null, request.error);
                     yield break;
                 }
+
 
                 ChatResponse parsedResponse = null;
                 Exception parseException = null;

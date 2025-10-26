@@ -6,6 +6,7 @@ using System;
 
 public class ItemPosition : MonoBehaviour
 {
+    [SerializeField] Transform StartPos;
     [SerializeField] UnityEvent EventEnter;
     [SerializeField] UnityEvent EventExit;
     [SerializeField] GameObject HomeHighlights;
@@ -25,15 +26,25 @@ public class ItemPosition : MonoBehaviour
 
     [SerializeField] bool inHomePosition;
 
-    private void Start()
+    private void OnEnable()
     {
         inHome = false;
-        StartPosition = transform.position;
-        StartRotation = transform.rotation;
-        StartScale = transform.localScale;
+        if(StartPos != null)
+        {
+            StartPosition = StartPos.position;
+            StartRotation = StartPos.rotation;
+            StartScale = StartPos.localScale;
+        }
+        else {
+            if(StartPosition == Vector3.zero)
+            {
+                StartPosition = transform.position;
+                StartRotation = transform.rotation;
+                StartScale = transform.localScale;
+            }
 
+        }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent<HomeName>(out HomeName HomeHighlights))
@@ -117,5 +128,9 @@ public class ItemPosition : MonoBehaviour
         startAction = false;
         inHome = false;
         EventExit?.Invoke();
+    }
+    public void SetTarget (Transform Target)
+    {
+        StartPos = Target;
     }
 }

@@ -56,7 +56,7 @@ public class RayCast : MonoBehaviour
         else
         {
             SetCursor(DefultMouse);
-            OnRayCast?.Invoke("");
+            OnRayCast?.Invoke(" ");
         }
         
         if (Input.GetMouseButtonUp(0))

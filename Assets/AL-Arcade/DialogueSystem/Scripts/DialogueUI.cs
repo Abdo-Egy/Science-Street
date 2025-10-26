@@ -12,9 +12,25 @@ namespace AL_Arcade.DialogueSystem.Scripts
     public class DialogueUI : MonoBehaviour
     {
         [Header("UI Elements")] public Image characterSprite;
-        public ArabicTextMeshProUGUI characterName;
-        public ArabicTextMeshProUGUI messageText;
+        public TextMeshProUGUI characterName;
+        public TextMeshProUGUI messageText;
 
+        public void OnNextButtonClicked()
+        {
+            if (DialogueManager.Instance != null)
+            {
+                // If audio is playing, stop it
+                if (DialogueManager.Instance.IsDialogueAudioPlaying())
+                {
+                    DialogueManager.Instance.StopCurrentDialogueAudio();
+                }
+                else
+                {
+                    // Otherwise try to advance dialogue
+                    DialogueManager.Instance.SkipCurrentDialogue(true);
+                }
+            }
+        }
         // Simplified setup - no layout modifications needed
         public void Setup(DialogueMessageBase message, bool isRTL)
         {
@@ -33,7 +49,7 @@ namespace AL_Arcade.DialogueSystem.Scripts
                     characterName.GetComponent<ArabicTextMeshProUGUI>().arabicText = message.characterName;
                 else
                 {
-                    characterName.arabicText = message.characterName;
+                    characterName.text = message.characterName;
                 }
                 
             }
@@ -44,7 +60,7 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 if (messageText.GetComponent<ArabicTextMeshProUGUI>() != null)
                     messageText.GetComponent<ArabicTextMeshProUGUI>().arabicText = " ";
                 // The actual text will be filled by the typing animation in DialogueManager
-                messageText.arabicText = "";
+                messageText.text = "";
             }
         }
 
@@ -57,7 +73,7 @@ namespace AL_Arcade.DialogueSystem.Scripts
                     characterName.GetComponent<ArabicTextMeshProUGUI>().arabicText = text;
                 else
                 {
-                    characterName.arabicText = text;
+                    characterName.text = text;
                 }
             }
         }

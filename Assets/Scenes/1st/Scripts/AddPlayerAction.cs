@@ -1,19 +1,16 @@
+using AL_Arcade.DialogueSystem.Scripts;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAction : MonoBehaviour
+public class AddPlayerAction : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    void Start()
+    public void SetCurrentObjective(string action)
     {
-        
+        GameContextBuilder.Instance.SetCurrentObjective(action);
     }
-
-    // Update is called once per frame
-    void Update()
+    public void SetPlayerAction(string action)
     {
-        
+        GameContextBuilder.Instance.AddPlayerAction(action);
     }
 }

@@ -205,6 +205,12 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 return;
             }
 
+            // Stop any currently playing dialogue audio
+            if (DialogueManager.Instance != null)
+            {
+                DialogueManager.Instance.StopCurrentDialogueAudio();
+            }
+
             Debug.Log("[VoiceMessageUI] Starting recording...");
 
             // Clean up previous recording

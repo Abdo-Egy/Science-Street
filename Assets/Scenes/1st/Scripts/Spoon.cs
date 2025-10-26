@@ -8,14 +8,14 @@ public class Spoon : MonoBehaviour, ItemAction
 {
     [SerializeField] float AnimationDuraction;
     [SerializeField] int MaxLoops;
-    [SerializeField] float Maxrotation;
+    [SerializeField] Vector3 Maxrotation;
     [SerializeField] LoopType LoopType;
     [SerializeField] GameObject AnotherSpoon;
     [SerializeField] LiquidVolume liquidVolume;
     public void StartAction()
     {
         TweenLiquidVolume(.2f);
-        transform.DORotate(new Vector3(-12.59f, Maxrotation, 90), AnimationDuraction)
+        transform.DORotate(Maxrotation, AnimationDuraction, RotateMode.FastBeyond360)
             .SetLoops(MaxLoops).OnComplete( () =>{ GetComponent<ItemPosition>().ReturnToHome(); ChangerSpoon(); });
     }
     public void ChangerSpoon()

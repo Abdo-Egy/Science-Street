@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3877208973717692497}
   - component: {fileID: 7453428382406276318}
   - component: {fileID: 7592014169710111323}
-  - component: {fileID: 3966708739816864262}
   m_Layer: 5
   m_Name: DialogueMessageAR
   m_TagString: Untagged
@@ -122,21 +121,6 @@ MonoBehaviour:
   - {fileID: 4949317386692519353}
   - {fileID: 4631524098155153505}
   - {fileID: 6581378033710487808}
---- !u!114 &3966708739816864262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741054887350408350}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
-  m_EffectDistance: {x: 10, y: 10}
-  m_UseGraphicAlpha: 1
 --- !u!1 &5351913775290478158
 GameObject:
   m_ObjectHideFlags: 0
@@ -196,7 +180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92549026, g: 0.92549026, b: 0.92549026, a: 1}
+  m_Color: {r: 0.3137255, g: 0.8078432, b: 0.9960785, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -287,7 +271,8 @@ MonoBehaviour:
     \uFEF3\uFED8\uFED4\uFED0\uFE9C\uFE98\uFE9C\uFEFC\uFED7\uFED4\uFEF4\uFE8E \uFEF3\uFE92\uFEE0\uFE98\uFEF4\uFED8\uFED4\uFEFC\uFE97\uFEF4\uFED8\uFE90\n"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 66667e28087a64839a2747ce47035171, type: 2}
-  m_sharedMaterial: {fileID: 7170194958679140877, guid: 66667e28087a64839a2747ce47035171, type: 2}
+  m_sharedMaterial: {fileID: 7170194958679140877, guid: 66667e28087a64839a2747ce47035171,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -380,11 +365,11 @@ GameObject:
   - component: {fileID: 2534379369148424309}
   m_Layer: 5
   m_Name: Button
-  m_TagString: color
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8444234996915329937
 RectTransform:
   m_ObjectHideFlags: 0
@@ -403,7 +388,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -686, y: -97.71}
-  m_SizeDelta: {x: 95.42, y: 95.42}
+  m_SizeDelta: {x: 123.1094, y: 95.42}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3152125667820502156
 CanvasRenderer:
@@ -426,14 +411,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.8156863, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a65ce01f375554476acaef3c5d8a58a1, type: 3}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -502,9 +487,9 @@ MonoBehaviour:
   voiceButton: {fileID: 5556728256055984987}
   buttonImage: {fileID: 5674825158718156751}
   messageText: {fileID: 8871772912470498426}
-  idleSprite: {fileID: 21300000, guid: cbe4da29d68394474941f05fed2476ce, type: 3}
-  recordingSprite: {fileID: 21300000, guid: 87504b254f4924afdafd0f104042f7a1, type: 3}
-  sendingSprite: {fileID: 21300000, guid: b4273cc35706f473db26a075cc073f94, type: 3}
+  idleSprite: {fileID: 21300000, guid: 93a79c49c196e47b3bda411a8f6966ac, type: 3}
+  recordingSprite: {fileID: 21300000, guid: cb3c09cf7e29c4925b5503c81d8c85a3, type: 3}
+  sendingSprite: {fileID: 21300000, guid: bb0faff2594aa4f488da7b0d68ad82f1, type: 3}
   maxRecordingDuration: 30
   recordingFrequency: 44100
 --- !u!1 &7621513443958275610
@@ -565,14 +550,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92549026, g: 0.92549026, b: 0.92549026, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cbe4da29d68394474941f05fed2476ce, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ffb3da67650234567ba5385e2a70b907, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -650,7 +635,8 @@ MonoBehaviour:
   m_text: "\uFECB\uFEE8\uFE8E\u0646"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 66667e28087a64839a2747ce47035171, type: 2}
-  m_sharedMaterial: {fileID: 7170194958679140877, guid: 66667e28087a64839a2747ce47035171, type: 2}
+  m_sharedMaterial: {fileID: 7170194958679140877, guid: 66667e28087a64839a2747ce47035171,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -780,15 +766,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92549026, g: 0.92549026, b: 0.92549026, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ac58bb78a34e846a0a6e6ac11a9da887, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: ab7ccdba25d3941b9a0232b1d909ec58, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -999,6 +985,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 92c3c7fb26a59f74c9d659ca4f9ce348, type: 3}
 --- !u!224 &7029142227164786082 stripped
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 22400002, guid: 92c3c7fb26a59f74c9d659ca4f9ce348, type: 3}
+  m_CorrespondingSourceObject: {fileID: 22400002, guid: 92c3c7fb26a59f74c9d659ca4f9ce348,
+    type: 3}
   m_PrefabInstance: {fileID: 7029142227143041440}
   m_PrefabAsset: {fileID: 0}

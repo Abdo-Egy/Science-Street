@@ -5,8 +5,6 @@ using System.Collections;
 using AL_Arcade.DialogueSystem.Scripts;
 using ALArcade.ArabicTMP;
 using TMPro;
-using System;
-using UnityEngine.Events;
 
 namespace AL_Arcade.DialogueSystem.Scripts
 {
@@ -30,11 +28,6 @@ namespace AL_Arcade.DialogueSystem.Scripts
 
         [Header("Audio")]  public AudioSource voiceAudioSource;
         [SerializeField] private AudioSource sfxAudioSource;
-        [Header("Start Events")]
-        [SerializeField] public UnityEvent OnDialogueStartForGame;
-        [SerializeField] public UnityEvent OnDialogueEndForGame;
-
-
 
         // Current dialogue state
         private DialogueMessageBase currentMessage;
@@ -87,6 +80,44 @@ namespace AL_Arcade.DialogueSystem.Scripts
         {
     
         }
+        #region Audio Skip Functionality
+        /// <summary>
+        /// Stops any currently playing dialogue audio
+        /// </summary>
+        public void StopCurrentDialogueAudio()
+        {
+            if (voiceAudioSource != null && voiceAudioSource.isPlaying)
+            {
+                voiceAudioSource.Stop();
+                Debug.Log("[DialogueManager] Stopped current dialogue audio");
+            }
+        }
+
+        /// <summary>
+        /// Skips current dialogue audio and optionally advances to next message
+        /// </summary>
+        public void SkipCurrentDialogue(bool advanceToNext = false)
+        {
+            StopCurrentDialogueAudio();
+    
+            if (advanceToNext && canAdvance && !isTyping)
+            {
+                if (currentMessage != null && (currentMessage.replies == null || currentMessage.replies.Count == 0))
+                {
+                    AdvanceDialogue();
+                }
+            }
+        }
+
+        /// <summary>
+        /// Checks if dialogue audio is currently playing
+        /// </summary>
+        public bool IsDialogueAudioPlaying()
+        {
+            return voiceAudioSource != null && voiceAudioSource.isPlaying;
+        }
+        #endregion
+
 
         void Update()
         {
@@ -104,7 +135,30 @@ namespace AL_Arcade.DialogueSystem.Scripts
             {
                 CompleteTyping();
             }
+            if (Input.GetKeyDown(advanceKey))
+            {
+                // If audio is playing, stop it first
+                if (IsDialogueAudioPlaying())
+                {
+                    StopCurrentDialogueAudio();
+                    return; // Don't advance yet, just stop the audio
+                }
+        
+                // If typing, complete the typing
+                if (isTyping)
+                {
+                    CompleteTyping();
+                    return;
+                }
+        
+                // Otherwise advance dialogue if possible
+                if (canAdvance && currentMessage != null && (currentMessage.replies == null || currentMessage.replies.Count == 0))
+                {
+                    AdvanceDialogue();
+                }
+            }
         }
+        
 
         public void StartDialogue(DialogueSequence sequence)
         {
@@ -122,7 +176,6 @@ namespace AL_Arcade.DialogueSystem.Scripts
             ShowDialogueUI(true);
             DisplayMessage(sequence.firstMessage);
             FreeUseDialogue.gameObject.SetActive(false);
-            OnDialogueStartForGame?.Invoke();
         }
 
         public void StartDialogue(DialogueMessageBase firstMessage)
@@ -136,7 +189,6 @@ namespace AL_Arcade.DialogueSystem.Scripts
             ShowDialogueUI(true);
             DisplayMessage(firstMessage);
             FreeUseDialogue.gameObject.SetActive(false);
-            OnDialogueStartForGame?.Invoke();
         }
 
         private void DisplayMessage(DialogueMessageBase message)
@@ -146,6 +198,22 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 EndDialogue();
                 return;
             }
+
+            // Stop any currently playing audio before starting new message
+            StopCurrentDialogueAudio();
+
+            currentMessage = message;
+            OnMessageDisplay?.Invoke(message);
+
+            // Report to GameContextBuilder
+            if (GameContextBuilder.Instance != null && message != null)
+            {
+                string contextEntry = $"NPC [{message.characterName}]: {message.messageText}";
+                GameContextBuilder.Instance.AddPlayerAction(contextEntry);
+            }
+
+            // Stop any currently playing audio before starting new message
+            StopCurrentDialogueAudio();
 
             currentMessage = message;
             OnMessageDisplay?.Invoke(message);
@@ -181,17 +249,17 @@ namespace AL_Arcade.DialogueSystem.Scripts
             UpdateReplyPanel(message);
         }
 
-        private IEnumerator TypeText(ArabicTextMeshProUGUI textComponent, string fullText)
+        private IEnumerator TypeText(TextMeshProUGUI textComponent, string fullText)
         {
             isTyping = true;
             canAdvance = false;
-            textComponent.arabicText = "";
+            textComponent.text = "";
             ArabicTextMeshProUGUI arText;
            arText =  textComponent.gameObject.GetComponent<ArabicTextMeshProUGUI>() != null ? textComponent.gameObject.GetComponent<ArabicTextMeshProUGUI>() :  null;
             foreach (char c in fullText)
             {
                 if (arText != null) arText.arabicText += c;
-                else textComponent.arabicText += c;
+                else textComponent.text += c;
                 yield return new WaitForSecondsRealtime(textSpeed);
             }
 
@@ -212,7 +280,7 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 DialogueUI dialogueUI = currentDialogueUI.GetComponent<DialogueUI>();
                 if (dialogueUI != null && currentMessage != null)
                 {
-                    dialogueUI.messageText.arabicText = currentMessage.messageText;
+                    dialogueUI.messageText.text = currentMessage.messageText;
                 }
             }
 
@@ -272,10 +340,11 @@ namespace AL_Arcade.DialogueSystem.Scripts
 
             OnReplySelected?.Invoke(reply);
 
-            // Play reply audio if exists
-            if (reply.replyAudioClip != null && sfxAudioSource != null)
+            // Report player's reply to GameContextBuilder
+            if (GameContextBuilder.Instance != null && reply != null)
             {
-                sfxAudioSource.PlayOneShot(reply.replyAudioClip);
+                string contextEntry = $"Player Reply: {reply.replyText}";
+                GameContextBuilder.Instance.AddPlayerAction(contextEntry);
             }
 
             // Hide reply panel
@@ -313,7 +382,6 @@ namespace AL_Arcade.DialogueSystem.Scripts
 
             OnDialogueEnd?.Invoke();
             FreeUseDialogue.gameObject.SetActive(true);
-            OnDialogueEndForGame?.Invoke();
         }
 
         private void ShowDialogueUI(bool show)

@@ -17,6 +17,6 @@ MonoBehaviour:
   messageText: "\u0647\u0627\u062A \u0643\u0648\u0628\u0627\u064A\u0629 \u0632\u062C\u0627\u062C
     \u062A\u0627\u0646\u064A\u0629 \u0633\u0639\u062A\u0647\u0627 \u0628\u0631\u0636\u0648
     005 \u0645\u0644."
-  voiceClip: {fileID: 8300000, guid: 1b7a1bfb01b9ea649a90470cc4fc52d7, type: 3}
+  voiceClip: {fileID: 8300000, guid: 0a34d7f9954010241b55c13bcb53eef1, type: 3}
   replies: []
   nextMessage: {fileID: 0}
