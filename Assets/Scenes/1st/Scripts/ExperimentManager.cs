@@ -25,17 +25,19 @@ public class ExperimentManager : MonoBehaviour
 
     public void CheckIfItemsInCorrectPosition(ItemPosition item)
     {
-        if (Items.All(home => home.doneWithAction))
+        if (Items.Count > 0)
         {
-            Arrow.DORotate(new Vector3(0, 0, -30f), SpeedArrow).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+            if (Items.All(home => home.doneWithAction))
+            {
+                Arrow.DORotate(new Vector3(0, 0, -30f), SpeedArrow).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.Linear);
+            }
+            else
+            {
+                Arrow.DORotate(new Vector3(0, 0, 0), SpeedArrow).SetEase(Ease.Linear).OnComplete(() => DOTween.Pause(Arrow));
+            }
+            ExpStep(item);
         }
-        else
-        {
-            Arrow.DORotate(new Vector3(0, 0, 0), SpeedArrow).SetEase(Ease.Linear).OnComplete(() => DOTween.Pause(Arrow));
-        }
-        ExpStep(item);
     }
-
     private void ExpStep(ItemPosition item)
     {
 
@@ -51,7 +53,7 @@ public class ExperimentManager : MonoBehaviour
         GameContextBuilder.Instance.ClearObjective();
         SceneManager.LoadScene(0);
     }
-    public void CloseApp ()
+    public void CloseApp()
     {
         Application.Quit();
     }

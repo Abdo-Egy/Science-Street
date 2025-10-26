@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ALArcade.ArabicTMP;
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -24,8 +25,10 @@ public class RayCast : MonoBehaviour
         {
             if (LayerMask.LayerToName(Hit.collider.gameObject.layer) == RaylayerMask)
             {
-                OnRayCast?.Invoke(Hit.collider.name);
-
+                if (Hit.collider.TryGetComponent<ItemName>(out ItemName ItemName))
+                {
+                   OnRayCast?.Invoke(ItemName.MyName);
+                }
             }
             if (Input.GetMouseButtonDown(0))
             {

@@ -12,9 +12,7 @@ public class ItemPosition : MonoBehaviour
     [SerializeField] AreaEnum EndPositionAreaName;
     [SerializeField] float AnimationDuration = 5;
     [Header("End Transform")]
-    [SerializeField] Vector3 EndPosition;
-    [SerializeField] Quaternion EndRotation;
-    [SerializeField] Vector3 EndScale;
+    [SerializeField] Transform EndPosition;
     [Header("Start Transform")]
     Vector3 StartPosition;
     Quaternion StartRotation;
@@ -70,16 +68,16 @@ public class ItemPosition : MonoBehaviour
     {
         if (inHome)
         {
-            inHomePosition = Vector3.Distance(transform.position, EndPosition) < .2f;
+            inHomePosition = Vector3.Distance(transform.position, EndPosition.position) < .2f;
             if (inHomePosition)
             {
                 StartActionInHome();
             }
             if (!IsDragable)
             {
-                transform.position = Vector3.Lerp(transform.position, EndPosition, AnimationDuration * Time.deltaTime);
-                transform.localScale = Vector3.Lerp(transform.localScale, EndScale, AnimationDuration * Time.deltaTime);
-                transform.rotation = Quaternion.Lerp(transform.rotation, EndRotation, AnimationDuration * Time.deltaTime);
+                transform.position = Vector3.Lerp(transform.position, EndPosition.position, AnimationDuration * Time.deltaTime);
+                transform.localScale = Vector3.Lerp(transform.localScale, EndPosition.localScale, AnimationDuration * Time.deltaTime);
+                transform.rotation = Quaternion.Lerp(transform.rotation, EndPosition.rotation, AnimationDuration * Time.deltaTime);
                 //  if(ChildCollidor != null) ChildCollidor.enabled = true;
 
             }

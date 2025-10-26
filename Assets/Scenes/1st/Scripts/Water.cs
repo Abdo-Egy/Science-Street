@@ -22,10 +22,12 @@ public class Water : MonoBehaviour, ItemAction
         GetComponent<SoundEffect>().PlaySound();
         WaterEffect.Play();
         LiquidVolume.alpha = 1;
-        DOTween.To(() => LiquidVolume.level, x => LiquidVolume.level = x, .6f, AnimationDuration).OnComplete(() =>
+        DOTween.To(() => LiquidVolume.level, x => LiquidVolume.level = x, .3f, AnimationDuration).OnComplete(() =>
         {
             GetComponent<ItemPosition>().ReturnToHome();
             WaterEffect.Stop();
+            GetComponent<SoundEffect>().StopSound();
+
             LiquidVolume.turbulence2 = 0;
         });
     }

@@ -1,17 +1,18 @@
+using ALArcade.ArabicTMP;
 using TMPro;
 using UnityEngine;
 
 public class DisplayNameItem : MonoBehaviour
 {
     [SerializeField] RayCast rayCastScript;
-    [SerializeField] TextMeshProUGUI Text;
+    [SerializeField] ArabicTextMeshProUGUI Text;
     void Start()
     {
         rayCastScript.OnRayCast += DisplayName;
     }
     private void DisplayName(string ItemName)
     {
-        Text.text = ItemName;
+        Text.arabicText = ItemName;
     }
     private void OnDestroy()
     {
