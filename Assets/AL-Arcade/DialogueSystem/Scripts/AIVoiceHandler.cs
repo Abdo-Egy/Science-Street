@@ -3,11 +3,23 @@ using System.Collections;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UI;
+using DG.Tweening;
 
 namespace AL_Arcade.DialogueSystem.Scripts
 {
     public class AIVoiceHandler : MonoBehaviour
     {
+        [Header("Recording")]
+        [SerializeField] Image RecordingSprite;
+        [SerializeField] Vector3 Scale;
+        [SerializeField] float Duration;
+        [SerializeField] Ease ease;
+        [SerializeField] Sprite RecorordingIcon;
+        [SerializeField] Sprite SpeakIcon;
+        [SerializeField] Sprite DefultIcon;
+        [SerializeField] Color DefultColor;
+        [SerializeField] Transform SkipButton;
         #region Singleton
         private static AIVoiceHandler instance;
         public static AIVoiceHandler Instance
@@ -126,9 +138,12 @@ namespace AL_Arcade.DialogueSystem.Scripts
             {
                 if (success)
                 {
+                    RecordingSprite.sprite = SpeakIcon;
+                    RecordingSprite.GetComponent<Animator>().SetTrigger("Speak");
+                    SkipButton.gameObject.SetActive(true);
                     response = result;
                     Debug.Log("[AIVoiceHandler] API Success");
-            
+                      
                     // Report AI response to GameContextBuilder
                     if (GameContextBuilder.Instance != null && result != null)
                     {
@@ -178,7 +193,12 @@ namespace AL_Arcade.DialogueSystem.Scripts
             using (UnityWebRequest request = UnityWebRequest.Post(API_URL, form))
             {
                 request.timeout = REQUEST_TIMEOUT;
-                
+                RecordingSprite.sprite = RecorordingIcon;
+                RecordingSprite.transform.parent.GetComponent<Image>().color = DefultColor;
+                RecordingSprite.GetComponent<Animator>().enabled = true;
+                RecordingSprite.GetComponent<Animator>().SetTrigger("Loading");
+                SkipButton.gameObject.SetActive(false);
+                // RecordingSprite.transform.DOScale(Scale, Duration).SetLoops(-1, LoopType.Yoyo).SetEase(ease);
                 Debug.Log("[AIVoiceHandler] Sending request to API");
                 
                 yield return request.SendWebRequest();
@@ -204,6 +224,9 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 
                 if (parsedResponse != null && parsedResponse.status == "success")
                 {
+                    DOTween.Kill(RecordingSprite.transform);
+                    RecordingSprite.sprite = DefultIcon;
+
                     callback?.Invoke(true, parsedResponse, null);
                 }
                 else
@@ -422,5 +445,9 @@ namespace AL_Arcade.DialogueSystem.Scripts
             public string audio_filepath;
         }
         #endregion
+        public void ResetColor()
+        {
+            RecordingSprite.transform.parent.GetComponent<Image>().color = DefultColor;
+        }
     }
 }

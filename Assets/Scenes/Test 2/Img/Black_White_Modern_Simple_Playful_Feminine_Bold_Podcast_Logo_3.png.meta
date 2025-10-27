@@ -1,0 +1,3977 @@
+fileFormatVersion: 2
+guid: 2d9d900b65f9f2d4bb5291f164a8edfd
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 12000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc98abfc34f52b14dbf3d9dca2847634
+      internalID: -37954759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_1
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 12000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71906bc3e5b082e44a97ebb6d88d3a6c
+      internalID: 123193948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_2
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 12000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18126927d6d2416448ba3fd534be1e33
+      internalID: 912653655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_3
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 12000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9febd8399833ff84599541e53d94edf1
+      internalID: 508257862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_4
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 12000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 875f70606bad8a34da29539b4fbab831
+      internalID: -119136949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_5
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 12000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05e35342bba5b4c489ddae78c2d4fa57
+      internalID: 868821735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_6
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 12000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8126ebc56ed8c4d95f44339d609b1e
+      internalID: -502591165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d27178db8165464da4ffdd02cf31d19
+      internalID: -254118544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_8
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 11500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4f61742c6397fe43a48bf129730febe
+      internalID: -1956554172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_9
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 11500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8507c9e396f69e45972a06cdf282b2a
+      internalID: 1446097624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_10
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 11500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63ccb76223004084ab2c8968a2d3f592
+      internalID: -214508988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_11
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 11500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148e5ce7c46889f4495f75e8af72eab4
+      internalID: 1716496319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_12
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 11500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 827516d119543fd45bf9ac1ed1e7451f
+      internalID: 1474792493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_13
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 11500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a76241fadccc246bf734e038b7c675
+      internalID: 197777400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 11000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b712b61e60603484dbf0e2021feab6b1
+      internalID: -1934115191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_15
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 11000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d248e91bc5459442bda86c47d904589
+      internalID: 403753899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_16
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 11000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e25ccb12b954a4a860870a986cd87c
+      internalID: 521426211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_17
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 11000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e59c13c575f49c0479665adbb5645105
+      internalID: -199471207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_18
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 11000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3d51661bc5c03040acbaec4f5b6ccc3
+      internalID: -506778336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_19
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 11000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aeef426aacf5244dab55a92d666432f
+      internalID: -1368757731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_20
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 11000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 121151b17f44b884ab4069b9101e7b41
+      internalID: -86044791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa37688e3eada52468c37d1269ecc872
+      internalID: 448497369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_22
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 10500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae99dc4a6ab657e45ae8205eac8c712b
+      internalID: 965194711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_23
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 10500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 905eb11e51b966249aeb5c893ee89958
+      internalID: -396505258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_24
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 10500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2a38fa0a43dd0a479f20528246eabdd
+      internalID: -379500143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_25
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 10500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5309917f0bec1a94f98089af0c6939d3
+      internalID: 849356970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_26
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 10500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4c94992f413954983a048cc7f8d99a
+      internalID: -1337206964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_27
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 10500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3548975459be64aba8623c1e30e312
+      internalID: -1038499700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d091845d9f06fc04dac4807d2e2c82ba
+      internalID: 2058325883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_29
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 10000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636e061ec19aa1f438c064766ce12539
+      internalID: -919142621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_30
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 10000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247fe728626d21e4ba6086f154550377
+      internalID: 1432627838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_31
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 10000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc203fc9447cd9247bed582406c3a32f
+      internalID: 1068794588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_32
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 10000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef44da4bc8482bd4e906aef4c94e0115
+      internalID: -803668144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_33
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 10000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26b5a1ae7217e254ba1ed916202424eb
+      internalID: -629560856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_34
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 10000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c30f4779c6a30c949a22b96533b82211
+      internalID: 2003288326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66d962c37aa544a4e80e29d143e56e2e
+      internalID: -489005045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_36
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 9500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9193d688daa6343ae60b59d51c3e2a
+      internalID: -364349966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_37
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 9500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f752df48601b348930d49bc205dba8
+      internalID: -784315957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_38
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 9500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65cf20ecee69984eaaf36011d100374
+      internalID: 142436900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_39
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 9500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecdff1432dd01ab488d90a0bc997ee61
+      internalID: -1812019536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_40
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 9500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2347087670be954f81aee6adc77aeb0
+      internalID: -1284520881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_41
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 9500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79822121c9829da489a1e826a55c265a
+      internalID: 1463357165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1a31b97cc23ba409ff142f41206cb3
+      internalID: 924583046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_43
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908cc504fbb543f4d83ac0a4b1aef92c
+      internalID: 1607811992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_44
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a91959d528a9844390ed61dded8254e
+      internalID: -1646398611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_45
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e76aa7850174f74ab9afd9e9db58c1e
+      internalID: 1069999891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_46
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3243145da6a91c49b4ae0b5f6e347d5
+      internalID: -540495663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_47
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644f111424c492a47abbdf83726c5292
+      internalID: 765245976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_48
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 9000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 776649d469bbb3d42a5eafb32ffa8cc3
+      internalID: 2128782061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62942420624a59341a01ddd789da7667
+      internalID: -1030502163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_50
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 8500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9931199d7c958499b575dbaafeca01
+      internalID: 2129884243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_51
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 8500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d1ad0bfe6a1bb345856f8831d7ba6b5
+      internalID: 1447161760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_52
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 8500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23a167355c7a21a47af5ed0e1e3692eb
+      internalID: -1822686411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_53
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 8500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 840b18b1e894d25479a4547e93b676a4
+      internalID: 957337244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_54
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 8500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 315f69c3fea23464fbff6fdb48b0ae36
+      internalID: -1244118689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_55
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 8500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a968e845347694bbe0f7802fcd2717
+      internalID: 1697698040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b986a42367e1aca438311b3969e20bae
+      internalID: 1345349256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_57
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b1015e5c4eeb564481b271dca6ee74d
+      internalID: 805881353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_58
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7edc4991a23c2e141b0c65023ce395aa
+      internalID: -1848126145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_59
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b16a57904577624db59e0db2584b502
+      internalID: 1521498194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_60
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149dfdc58121bf44195fc64b48eda5d4
+      internalID: 250719044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_61
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee8c75fb8448dbd4faed49a3aa055778
+      internalID: -4999553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_62
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 8000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65911b5c1ea4de7458b12660af9c85c5
+      internalID: -976422716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf77155a61da944d9642dfaa66473df
+      internalID: -696120806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_64
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 7500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24ff40609df8e54aad55d993c524b83
+      internalID: 1519516166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_65
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc91e06cd2ba8b46bae136a16b82b71
+      internalID: -2106729322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_66
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 7500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd9279522614bd74e92d05f4b7eca78b
+      internalID: 951180339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_67
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1423d9a6fd8a37a46b2a156a58dba702
+      internalID: 1469521961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_68
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 7500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee2f3af679184cb4ebd62b7279d7006a
+      internalID: -1510081280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_69
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 205f61169fcaa1742a59cdda32f26754
+      internalID: 1132611522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_70
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f3f5fc100273047a53b913f9b4a5f8
+      internalID: -197160911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_71
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b7a36638dc65fe408b37911d291558a
+      internalID: 1129333898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_72
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee809e7fc4193804883fb9652f200e0e
+      internalID: -2626912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_73
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c54da77c21c346e47ac9c4dc7b7728b3
+      internalID: -1359358406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_74
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27abcd3961a31a045929f5b573fecf9c
+      internalID: -671686958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_75
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b088d17f015dcf345a52b805f561b952
+      internalID: 1597856097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_76
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcf34cea6567c754f803f8994ba1c206
+      internalID: 1994473586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_77
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4033297b5e19cd9438962dffece0feda
+      internalID: -775101240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_78
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d0684c61d1b9fb41a7604de37449fb3
+      internalID: -834942626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_79
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fabf45b839be147438b151bcfc2934ec
+      internalID: 116955480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_80
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62853de5e8af3364b8774e69a51f4f25
+      internalID: 357041589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_81
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b27d9c4d2072b4bb810f0bb849503d
+      internalID: 273972867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_82
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 493fb3d776198814eba23288f7bd664f
+      internalID: -105963878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_83
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30d35e8ebb3979f499e8388389900298
+      internalID: -262957207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_84
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9368ef8c762b2004a9245dd144780e1d
+      internalID: -1732329276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_85
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fa01af86db8f0f4393d26d42702394a
+      internalID: -632859413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_86
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4711557d6de751a4b9462e312e9ad6aa
+      internalID: 1844960447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_87
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89624f57e6c0ce845b936854189b3cd7
+      internalID: -1776861330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_88
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92d7acb9329773c4aba809960d306e88
+      internalID: -1646463388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_89
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a821dd8e5f2e83549b6e8c669ec7cd03
+      internalID: -1321624605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_90
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e3190c0028f7041a5a5312c673c2a2
+      internalID: 1869639347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_91
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940db834d41ce294ab895cf5f05c7cec
+      internalID: 749842485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_92
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 5500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62e28e0bf27382f418891d26917de9e5
+      internalID: 1315124549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_93
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 5500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15c17071fca57784988b7c8b2deea440
+      internalID: 953695253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_94
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 5500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054cbf95c33602b4ea98ca22aae7f141
+      internalID: 1593119424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_95
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 5500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3626218602c433a40bbfe8df046f4aa3
+      internalID: 887634959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_96
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 5500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc42c614b8684dc4a93c015366c09909
+      internalID: 1851027931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_97
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1186e8b9902699940a6b7d1e5fbb09b0
+      internalID: -235946399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_98
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a562b457b181f42a271233e1db54ae
+      internalID: -73820380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_99
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c19946406a6e3b44824688136804aba
+      internalID: -1673540560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_100
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86085e498fa1aef4885a6e273576bec8
+      internalID: -2005222581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_101
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4176860e71b3d54288319b294d6f326
+      internalID: 737244858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_102
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9f23278b7d2294a9049d1cdfa2c915
+      internalID: 57947754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_103
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 725e81e339e3ccc488b6f6508542b80b
+      internalID: -1254391784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_104
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88e71c7fc25ef0b47aa22b0c7a99e925
+      internalID: -20004080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_105
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 380100526a8a0784997199b819d713c1
+      internalID: -1587449835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_106
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1991d482fe8419647a2eb2033b229797
+      internalID: 1103285114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_107
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8053fcfd72090204784084eb5e1da679
+      internalID: 1343189201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_108
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ffae0b3ed40cf41afc3755dcfc019f
+      internalID: 201685677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_109
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 935fd6edf5d0d604eb802c279831e6c4
+      internalID: -798562987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_110
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0934efe96116be847a00d30ef2284a00
+      internalID: -1988069190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_111
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490215d3de971c246b30cf7f1342de5b
+      internalID: 1377535670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4fdbbfbde836b4f91417ab3c9b5274
+      internalID: 1766458123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_113
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b2a4ea473e36a4bbdfb12ef2d05088
+      internalID: 929136130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_114
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9de576194f5cd4e94452137962e9b1
+      internalID: -1221828793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_115
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e460e6e83b77ec41916ec9a45bea8e3
+      internalID: -1108207203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_116
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cdf09bb0fc3f2a44a1222bbb2e18b11
+      internalID: 2137594856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_117
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b3f941bc1552774e90e47e052bf8101
+      internalID: -217892385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_118
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41c65fb38d0bd3048b8c129e5d5e708c
+      internalID: -310991791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_119
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df4281497cc30a340a1355e2094fcb8c
+      internalID: 119628286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_120
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31598c27dc575244bace99341b766af8
+      internalID: 1115414580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_121
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1ead969fac8db46b9bfe996dc82ed1
+      internalID: 1577095410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_122
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f529aa3e00a85f34cbb8c4857cfe56aa
+      internalID: -228753720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_123
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e4ffa8d8b965c46905853196f0cb77
+      internalID: 1989305702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_124
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1104e72ad636b4549afd773ec8697f85
+      internalID: -267938295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_125
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e66ba3ec6fc88459ec7f3bee58221c
+      internalID: 1735374890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_126
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ce2074e066d7504ea05700c6e9f5eaf
+      internalID: -601967557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_127
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92a076f1d5189f34aa4632696a9314e1
+      internalID: 1154845244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_128
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d17285288f5b3b248b89437ebb99ec73
+      internalID: 1631727754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_129
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 3000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7fee8287865cf1458c44d1c9ba43d56
+      internalID: 943483889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_130
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b7114e86f93f84b83b5af43f2b25e3
+      internalID: 582376212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_131
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 3000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f148128af527c41be4f27c82fcdbc1
+      internalID: -163695361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_132
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e20cb6b17817e44a3e0b6bd01c0592
+      internalID: -1556325246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_133
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6310cd9a552b03498477e698575794b
+      internalID: -1864360832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_134
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42fb41a99eefdfb4aaf911b2ae4b55fc
+      internalID: 1684839677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_135
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2ea8c925df2b634b8e680f11f0087db
+      internalID: 124225869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_136
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8519fe050ddeb104a9c48e40add46d3e
+      internalID: -1929873872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_137
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3edc6700dc8cd4786e2b5dc2af739c
+      internalID: -809378467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_138
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d2cbb4a013c9e4da779d5cbe87d223
+      internalID: -1529491757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_139
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c87455352127b841a2c7d58441e9395
+      internalID: 1087204731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_140
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951f55593c3cc3743ad8b255a63774ec
+      internalID: -1226367709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_141
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cedc64685c412548895bb49055e79fd
+      internalID: 177913018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_142
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c00c646b91225194484f80b60ae41e48
+      internalID: 2124414241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_143
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb683862d1a5bf741909a9455cb3213a
+      internalID: 191631454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_144
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12faed1b6bd02740a924a03c36dba0e
+      internalID: 1148902536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_145
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6028592c95ce46f4495068269c2da31a
+      internalID: 340916858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_146
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 690ea304c80b3424ea4eabcee1d7a62c
+      internalID: -644601494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_147
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15cdeb67a670204e8e7a121a1b58c02
+      internalID: -1672610940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_148
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f8bb3789e65c0409067b587e06b32e
+      internalID: 517170885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_149
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56b39d19980cff49b23b4e61b032cbc
+      internalID: 252551668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_150
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0106a3377951ad348b63c9491311e580
+      internalID: -1059497738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_151
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96267d9919b260c4c9d14375e7d26539
+      internalID: 381931958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_152
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845c8c30b936b2d46b897c3276f87d58
+      internalID: -1225150262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_153
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 887f7b3814096174199c9db8261b6d5e
+      internalID: 1200458710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_154
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854698bea914f9d46b0d218bb78f6b03
+      internalID: -1147392217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_155
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a658bb2e652b4f499ad5b9be60977b7
+      internalID: -170328324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_156
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3301fb27740c8b44face26df0329f0ea
+      internalID: 1680243971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_157
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8510d3625654607428eafdd9a43942a9
+      internalID: 1327610869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_158
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e82d9b53c565a0428b0649f141f75cb
+      internalID: -92365633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_159
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61639c18b5e9ea409654de55176c4b7
+      internalID: 1212564502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_160
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1000
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a59e8a43fe0bf4f93b0551e189659c
+      internalID: 449753679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_161
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8462c234e31877f4e895b914f2f1b347
+      internalID: -161767681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_162
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc81b6e891cbc65469a61a0c165e8bcd
+      internalID: -686953910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_163
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19f2987a7ab22104bb060eb414568571
+      internalID: -233861068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_164
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93025fdd2784164fa4bca397815bcb7
+      internalID: -209178115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_165
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef4c59a129987fa47afd15b39b341d95
+      internalID: -639710114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_166
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de7dae7b2ff136449e301ccdd7402e0
+      internalID: 192345479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_167
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 500
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c17c45cfcca4a64c85bbf907267281b
+      internalID: 1667451684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_168
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc35c799739de19458fe9fc60ccc4995
+      internalID: 316629154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_169
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d5b2cc5c855bd4fb568bfa1c2bd821
+      internalID: -1888219165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_170
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6f6800c7edeb947bcb37f0de68938c
+      internalID: -531347454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_171
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f410b5d8b2cb754ea4d34c8c3aef7b8
+      internalID: -773963115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_172
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9fefe524be60a843b2911fe07294e9d
+      internalID: -763178404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_173
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894ec3d86e0eb4e40ad02e1c1337c777
+      internalID: -2117189601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_174
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f919ba068622ee14791e5e67411e5d67
+      internalID: 209726108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_0: -37954759
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_1: 123193948
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_10: -214508988
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_100: -2005222581
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_101: 737244858
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_102: 57947754
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_103: -1254391784
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_104: -20004080
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_105: -1587449835
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_106: 1103285114
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_107: 1343189201
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_108: 201685677
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_109: -798562987
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_11: 1716496319
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_110: -1988069190
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_111: 1377535670
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_112: 1766458123
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_113: 929136130
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_114: -1221828793
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_115: -1108207203
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_116: 2137594856
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_117: -217892385
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_118: -310991791
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_119: 119628286
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_12: 1474792493
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_120: 1115414580
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_121: 1577095410
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_122: -228753720
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_123: 1989305702
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_124: -267938295
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_125: 1735374890
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_126: -601967557
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_127: 1154845244
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_128: 1631727754
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_129: 943483889
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_13: 197777400
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_130: 582376212
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_131: -163695361
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_132: -1556325246
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_133: -1864360832
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_134: 1684839677
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_135: 124225869
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_136: -1929873872
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_137: -809378467
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_138: -1529491757
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_139: 1087204731
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_14: -1934115191
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_140: -1226367709
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_141: 177913018
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_142: 2124414241
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_143: 191631454
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_144: 1148902536
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_145: 340916858
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_146: -644601494
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_147: -1672610940
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_148: 517170885
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_149: 252551668
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_15: 403753899
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_150: -1059497738
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_151: 381931958
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_152: -1225150262
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_153: 1200458710
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_154: -1147392217
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_155: -170328324
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_156: 1680243971
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_157: 1327610869
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_158: -92365633
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_159: 1212564502
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_16: 521426211
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_160: 449753679
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_161: -161767681
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_162: -686953910
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_163: -233861068
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_164: -209178115
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_165: -639710114
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_166: 192345479
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_167: 1667451684
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_168: 316629154
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_169: -1888219165
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_17: -199471207
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_170: -531347454
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_171: -773963115
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_172: -763178404
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_173: -2117189601
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_174: 209726108
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_18: -506778336
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_19: -1368757731
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_2: 912653655
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_20: -86044791
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_21: 448497369
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_22: 965194711
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_23: -396505258
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_24: -379500143
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_25: 849356970
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_26: -1337206964
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_27: -1038499700
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_28: 2058325883
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_29: -919142621
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_3: 508257862
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_30: 1432627838
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_31: 1068794588
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_32: -803668144
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_33: -629560856
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_34: 2003288326
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_35: -489005045
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_36: -364349966
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_37: -784315957
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_38: 142436900
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_39: -1812019536
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_4: -119136949
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_40: -1284520881
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_41: 1463357165
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_42: 924583046
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_43: 1607811992
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_44: -1646398611
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_45: 1069999891
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_46: -540495663
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_47: 765245976
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_48: 2128782061
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_49: -1030502163
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_5: 868821735
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_50: 2129884243
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_51: 1447161760
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_52: -1822686411
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_53: 957337244
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_54: -1244118689
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_55: 1697698040
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_56: 1345349256
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_57: 805881353
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_58: -1848126145
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_59: 1521498194
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_6: -502591165
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_60: 250719044
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_61: -4999553
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_62: -976422716
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_63: -696120806
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_64: 1519516166
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_65: -2106729322
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_66: 951180339
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_67: 1469521961
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_68: -1510081280
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_69: 1132611522
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_7: -254118544
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_70: -197160911
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_71: 1129333898
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_72: -2626912
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_73: -1359358406
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_74: -671686958
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_75: 1597856097
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_76: 1994473586
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_77: -775101240
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_78: -834942626
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_79: 116955480
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_8: -1956554172
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_80: 357041589
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_81: 273972867
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_82: -105963878
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_83: -262957207
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_84: -1732329276
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_85: -632859413
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_86: 1844960447
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_87: -1776861330
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_88: -1646463388
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_89: -1321624605
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_9: 1446097624
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_90: 1869639347
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_91: 749842485
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_92: 1315124549
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_93: 953695253
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_94: 1593119424
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_95: 887634959
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_96: 1851027931
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_97: -235946399
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_98: -73820380
+      Black_White_Modern_Simple_Playful_Feminine_Bold_Podcast_Logo_3_99: -1673540560
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

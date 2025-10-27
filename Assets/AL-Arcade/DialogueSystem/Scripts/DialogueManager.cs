@@ -249,17 +249,17 @@ namespace AL_Arcade.DialogueSystem.Scripts
             UpdateReplyPanel(message);
         }
 
-        private IEnumerator TypeText(TextMeshProUGUI textComponent, string fullText)
+        private IEnumerator TypeText(ArabicTextMeshProUGUI textComponent, string fullText)
         {
             isTyping = true;
             canAdvance = false;
-            textComponent.text = "";
+            textComponent.arabicText = "";
             ArabicTextMeshProUGUI arText;
            arText =  textComponent.gameObject.GetComponent<ArabicTextMeshProUGUI>() != null ? textComponent.gameObject.GetComponent<ArabicTextMeshProUGUI>() :  null;
             foreach (char c in fullText)
             {
                 if (arText != null) arText.arabicText += c;
-                else textComponent.text += c;
+                else textComponent.arabicText += c;
                 yield return new WaitForSecondsRealtime(textSpeed);
             }
 
@@ -280,7 +280,7 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 DialogueUI dialogueUI = currentDialogueUI.GetComponent<DialogueUI>();
                 if (dialogueUI != null && currentMessage != null)
                 {
-                    dialogueUI.messageText.text = currentMessage.messageText;
+                    dialogueUI.messageText.arabicText = currentMessage.messageText;
                 }
             }
 

@@ -12,8 +12,8 @@ namespace AL_Arcade.DialogueSystem.Scripts
     public class DialogueUI : MonoBehaviour
     {
         [Header("UI Elements")] public Image characterSprite;
-        public TextMeshProUGUI characterName;
-        public TextMeshProUGUI messageText;
+        public ArabicTextMeshProUGUI characterName;
+        public ArabicTextMeshProUGUI messageText;
 
         public void OnNextButtonClicked()
         {

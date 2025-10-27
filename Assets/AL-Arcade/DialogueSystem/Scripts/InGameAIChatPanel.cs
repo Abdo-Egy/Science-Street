@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
-using TMPro;
-using DG.Tweening;
-using AL_Arcade.DialogueSystem.Scripts;
+﻿using AL_Arcade.DialogueSystem.Scripts;
 using ALArcade.ArabicTMP;
+using DG.Tweening;
+using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace AL_Arcade.DialogueSystem.Scripts
 {
@@ -36,6 +36,12 @@ namespace AL_Arcade.DialogueSystem.Scripts
 
         [Header("Visual Feedback")]
         [SerializeField] private Sprite recordingSprite;
+        [SerializeField] Vector3 Scale;
+        [SerializeField] float Duration;
+        [SerializeField] Ease ease;
+        [SerializeField] Color color;
+        [SerializeField] float Speed;
+        [Space]
         [SerializeField] private Sprite idleSprite;
         [SerializeField] private Image recordButtonImage;
 
@@ -254,6 +260,7 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 .OnComplete(() =>
                 {
                     isAITextPanelVisible = true;
+
                     Debug.Log("[InGameAIChatPanel] AITextPanel slide in complete");
                 });
         }
@@ -271,6 +278,9 @@ namespace AL_Arcade.DialogueSystem.Scripts
                 .OnComplete(() =>
                 {
                     isAITextPanelVisible = false;
+                    recordButtonImage.GetComponent<Animator>().enabled = false;
+                    recordButtonImage.sprite = idleSprite;
+
                     Debug.Log("[InGameAIChatPanel] AITextPanel slide out complete");
 
                     // After AI panel slides out, check if char area should also slide out
@@ -328,6 +338,8 @@ namespace AL_Arcade.DialogueSystem.Scripts
             // Update button visual
             if (recordButtonImage != null && recordingSprite != null)
             {
+                recordButtonImage.transform.DOScale(Scale, Duration).SetLoops(-1, LoopType.Yoyo).SetEase(ease);
+                recordButtonImage.transform.parent.GetComponent<Image>().color = color;
                 recordButtonImage.sprite = recordingSprite;
             }
 
@@ -591,6 +603,7 @@ namespace AL_Arcade.DialogueSystem.Scripts
         private void OnAIProcessingComplete()
         {
             Debug.Log("[InGameAIChatPanel] AI processing complete");
+
             isWaitingForAIResponse = false;
         }
 
