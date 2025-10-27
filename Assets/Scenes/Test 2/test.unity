@@ -154,6 +154,140 @@ Transform:
   - {fileID: 1630218439}
   m_Father: {fileID: 526588648}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &20316701
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 20316702}
+  - component: {fileID: 20316704}
+  - component: {fileID: 20316703}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &20316702
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20316701}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0.000000014901159, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1827722038}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &20316703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20316701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0634\u0631\u064A\u062D\u0629 \u0627\u0644\u0646\u062D\u0627\u0633"
+--- !u!65 &20316704
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 20316701}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.20460922, y: 0.19795951, z: 0.7286404}
+  m_Center: {x: 0.050442513, y: 0.0000000012803962, z: 0.01946133}
+--- !u!1 &21357089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 21357090}
+  - component: {fileID: 21357092}
+  - component: {fileID: 21357091}
+  m_Layer: 6
+  m_Name: Hover
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &21357090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21357089}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1052911682}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &21357091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21357089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0628\u064A\u0643\u0631 005\u0645\u0644"
+--- !u!65 &21357092
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21357089}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12095961, y: 0.15799999, z: 0.10799998}
+  m_Center: {x: -0.006476841, y: 0.0008201599, z: 0.0000005010515}
 --- !u!1 &33653568
 GameObject:
   m_ObjectHideFlags: 0
@@ -5631,7 +5765,7 @@ MonoBehaviour:
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
+  m_ChildControlWidth: 1
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
@@ -6242,106 +6376,73 @@ Material:
     - _Turbulence: {r: 0, g: 0, b: 0, a: 0}
     - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
---- !u!21 &177961659
-Material:
-  serializedVersion: 8
+--- !u!1 &165239212
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidVolumeSimple(Clone)
-  m_Shader: {fileID: 4800000, guid: dceb6298c8f1d4227a4fb2355f0a4ef0, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LIQUID_VOLUME_CYLINDER
-  - LIQUID_VOLUME_NON_AABB
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  - LIQUID_VOLUME_USE_REFRACTION
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise2Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex2D:
-        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 0
-    - _AlphaCombined: 0
-    - _BasePos: -1
-    - _CullMode: 2
-    - _DeepAtten: 0.31
-    - _DoubleSidedBias: 0
-    - _FlaskBlurIntensity: 0.75
-    - _FlaskThickness: 0.05
-    - _FoamBottom: 1
-    - _FoamDensity: -1
-    - _FoamMaxPos: -25.202047
-    - _FoamRaySteps: 1
-    - _FoamTurbulence: 1
-    - _FoamWeight: 4
-    - _Glossiness: 0.767
-    - _GlossinessInt: 0.5
-    - _Level: 1
-    - _LevelPos: -25.202047
-    - _LiquidRaySteps: 10
-    - _LowerLimit: -0.118499994
-    - _Metallic: 0
-    - _Muddy: 0
-    - _Radius: 0.5
-    - _SmokeAtten: 2
-    - _SmokeHeightAtten: 0
-    - _SmokeRaySteps: 5
-    - _SmokeSpeed: 5
-    - _Sparkling: 1
-    - _SparklingIntensity: 0
-    - _SparklingThreshold: 1
-    - _Topology: 0
-    - _Turbulence: 1
-    - _Turbulence2: 1
-    - _TurbulenceSpeed: 1
-    - _UpperLimit: 0.118499994
-    - _ZTestMode: 4
-    m_Colors:
-    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
-    - _Center: {r: 1.9700003, g: -23.624138, b: -18.5, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.505226, g: 0.63432544, b: 0.81886786, a: 0}
-    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0}
-    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
-    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskThickness: {r: 1, g: 1, b: 1, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Scale: {r: 0.12563676, g: 0.00502547, b: 0.81915164, a: 2.5127351}
-    - _Size: {r: 5.8858695, g: 3.979727, b: 2.736987, a: 1.52894}
-    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0}
-    - _Turbulence: {r: 1, g: 0, b: 47.12389, a: 15.707964}
-    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
-  m_BuildTextureStacks: []
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 165239213}
+  - component: {fileID: 165239215}
+  - component: {fileID: 165239214}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &165239213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165239212}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5821770335306012819}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &165239214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165239212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0627\u0644\u0639\u0635\u0627\u064A\u0629 \u0627\u0644\u0632\u062C\u0627\u062C\u064A\u0647"
+--- !u!65 &165239215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165239212}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12531021, y: 0.03251501, z: 0.041083597}
+  m_Center: {x: -0.037060693, y: 0.011934367, z: -0.017792879}
 --- !u!1 &180113190
 GameObject:
   m_ObjectHideFlags: 0
@@ -6950,7 +7051,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 244898604b818433c9e707e9b305687a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bb725b1642e8142f5831714128de877d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7219,7 +7320,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 43e7f30f88778654f97290834601e46b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1622611821}
+      objectReference: {fileID: 1785538360}
     - target: {fileID: -7511558181221131132, guid: 43e7f30f88778654f97290834601e46b, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
@@ -7992,6 +8093,73 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &403110328
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 403110329}
+  - component: {fileID: 403110331}
+  - component: {fileID: 403110330}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &403110329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403110328}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1483031592}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &403110330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403110328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0627\u0644\u0645\u0644\u0639\u0642\u0629 \u0627\u0644\u0645\u0639\u0645\u0644\u064A\u0629"
+--- !u!65 &403110331
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 403110328}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.22632709, y: 1.1228384, z: 0.29610997}
+  m_Center: {x: -0.115341485, y: 0.18659478, z: 0.013672883}
 --- !u!1 &417682790
 GameObject:
   m_ObjectHideFlags: 0
@@ -13669,7 +13837,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1694603129}
+  - {fileID: 555668660}
   - {fileID: 380314545}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -13781,6 +13949,106 @@ Transform:
   m_Children: []
   m_Father: {fileID: 5392672868699212330}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!21 &555668660
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiquidVolumeSimple(Clone)
+  m_Shader: {fileID: 4800000, guid: dceb6298c8f1d4227a4fb2355f0a4ef0, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - LIQUID_VOLUME_CYLINDER
+  - LIQUID_VOLUME_NON_AABB
+  m_InvalidKeywords:
+  - 
+  - 
+  - 
+  - LIQUID_VOLUME_USE_REFRACTION
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2D:
+        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 0
+    - _AlphaCombined: 0
+    - _BasePos: -1
+    - _CullMode: 2
+    - _DeepAtten: 0.31
+    - _DoubleSidedBias: 0
+    - _FlaskBlurIntensity: 0.75
+    - _FlaskThickness: 0.05
+    - _FoamBottom: 1
+    - _FoamDensity: -1
+    - _FoamMaxPos: -25.202047
+    - _FoamRaySteps: 1
+    - _FoamTurbulence: 1
+    - _FoamWeight: 4
+    - _Glossiness: 0.767
+    - _GlossinessInt: 0.5
+    - _Level: 1
+    - _LevelPos: -25.202047
+    - _LiquidRaySteps: 10
+    - _LowerLimit: -0.118499994
+    - _Metallic: 0
+    - _Muddy: 0
+    - _Radius: 0.5
+    - _SmokeAtten: 2
+    - _SmokeHeightAtten: 0
+    - _SmokeRaySteps: 5
+    - _SmokeSpeed: 5
+    - _Sparkling: 1
+    - _SparklingIntensity: 0
+    - _SparklingThreshold: 1
+    - _Topology: 0
+    - _Turbulence: 1
+    - _Turbulence2: 1
+    - _TurbulenceSpeed: 1
+    - _UpperLimit: 0.118499994
+    - _ZTestMode: 4
+    m_Colors:
+    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: 6.14, g: -23.624138, b: -18.5, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.505226, g: 0.63432544, b: 0.81886786, a: 0}
+    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0}
+    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
+    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskThickness: {r: 1, g: 1, b: 1, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 0.12563676, g: 0.00502547, b: 0.81915164, a: 2.5127351}
+    - _Size: {r: 5.8858695, g: 3.979727, b: 2.7369876, a: 1.52894}
+    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0}
+    - _Turbulence: {r: 1, g: 0, b: 47.12389, a: 15.707964}
+    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &557194920
 GameObject:
   m_ObjectHideFlags: 0
@@ -13979,7 +14247,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1440085406}
+  - {fileID: 1362891241}
   - {fileID: 1069002129}
   - {fileID: 741225887}
   - {fileID: 380314545}
@@ -14452,6 +14720,73 @@ Material:
     - _Turbulence: {r: 0, g: 0, b: 0, a: 0}
     - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
+--- !u!1 &660291804
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 660291805}
+  - component: {fileID: 660291807}
+  - component: {fileID: 660291806}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &660291805
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660291804}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1683735765077382616}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &660291806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660291804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0627\u0644\u0641\u0648\u0644\u062A\u0645\u064A\u062A\u0631"
+--- !u!65 &660291807
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660291804}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.956878, y: 3.9724417, z: 1.2569509}
+  m_Center: {x: 0, y: 2.241384, z: -0}
 --- !u!1 &705180911
 GameObject:
   m_ObjectHideFlags: 0
@@ -15100,6 +15435,106 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 0.078431375}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+  m_BuildTextureStacks: []
+--- !u!21 &750070263
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiquidVolumeSimple(Clone)
+  m_Shader: {fileID: 4800000, guid: dceb6298c8f1d4227a4fb2355f0a4ef0, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - LIQUID_VOLUME_CYLINDER
+  - LIQUID_VOLUME_NON_AABB
+  m_InvalidKeywords:
+  - 
+  - 
+  - 
+  - LIQUID_VOLUME_USE_REFRACTION
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2D:
+        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 0
+    - _AlphaCombined: 0
+    - _BasePos: -1
+    - _CullMode: 2
+    - _DeepAtten: 0.31
+    - _DoubleSidedBias: 0
+    - _FlaskBlurIntensity: 0.75
+    - _FlaskThickness: 0.05
+    - _FoamBottom: 1
+    - _FoamDensity: -1
+    - _FoamMaxPos: -25.202047
+    - _FoamRaySteps: 1
+    - _FoamTurbulence: 1
+    - _FoamWeight: 4
+    - _Glossiness: 0.767
+    - _GlossinessInt: 0.5
+    - _Level: 1
+    - _LevelPos: -25.202047
+    - _LiquidRaySteps: 10
+    - _LowerLimit: -0.118499994
+    - _Metallic: 0
+    - _Muddy: 0
+    - _Radius: 0.5
+    - _SmokeAtten: 2
+    - _SmokeHeightAtten: 0
+    - _SmokeRaySteps: 5
+    - _SmokeSpeed: 5
+    - _Sparkling: 1
+    - _SparklingIntensity: 0
+    - _SparklingThreshold: 1
+    - _Topology: 0
+    - _Turbulence: 1
+    - _Turbulence2: 1
+    - _TurbulenceSpeed: 1
+    - _UpperLimit: 0.118499994
+    - _ZTestMode: 4
+    m_Colors:
+    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: 1.9700003, g: -23.624138, b: -18.5, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.505226, g: 0.63432544, b: 0.81886786, a: 0}
+    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0}
+    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
+    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskThickness: {r: 1, g: 1, b: 1, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 0.12563676, g: 0.00502547, b: 0.81915164, a: 2.5127351}
+    - _Size: {r: 5.8858695, g: 3.979727, b: 2.736987, a: 1.52894}
+    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0}
+    - _Turbulence: {r: 1, g: 0, b: 47.12389, a: 15.707964}
+    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
   m_BuildTextureStacks: []
 --- !u!1 &804885315
 GameObject:
@@ -20752,6 +21187,7 @@ Transform:
   - {fileID: 1206669191}
   - {fileID: 512192501}
   - {fileID: 598837802}
+  - {fileID: 21357090}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 0, y: 177.18, z: -0.341}
 --- !u!114 &1052911684
@@ -20879,6 +21315,32 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 4abda2c5e10ce4ecaaddad066ae97a8c, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0627\u0645\u0644\u0623 \u0627\u0644\u0628\u064A\u0643\u0631
+            \u0628\u062D\u0648\u0627\u0644\u064A 300 \u0645\u0644 \u0645\u064A\u0629."
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 512192505}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0627\u0645\u0644\u0623 \u0627\u0644\u0628\u064A\u0643\u0631
+            \u0628\u062D\u0648\u0627\u0644\u064A 300 \u0645\u0644 \u0645\u064A\u0629."
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1054874353}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u0627\u0645\u0644\u0623 \u0627\u0644\u0628\u064A\u0643\u0631
@@ -22499,7 +22961,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 177961659}
+  - {fileID: 750070263}
   - {fileID: 380314545}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -22543,7 +23005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMode: 1
-  outlineColor: {r: 0, g: 0, b: 0, a: 1}
+  outlineColor: {r: 0, g: 1, b: 0, a: 1}
   outlineWidth: 1
   precomputeOutline: 0
   bakeKeys: []
@@ -22631,6 +23093,106 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1355386491}
   m_Mesh: {fileID: 4300002, guid: 9f7061e33a6f353489bfdb56f6390954, type: 3}
+--- !u!21 &1362891241
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiquidVolumeSimple(Clone)
+  m_Shader: {fileID: 4800000, guid: dceb6298c8f1d4227a4fb2355f0a4ef0, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - LIQUID_VOLUME_CYLINDER
+  - LIQUID_VOLUME_NON_AABB
+  m_InvalidKeywords:
+  - 
+  - 
+  - 
+  - LIQUID_VOLUME_USE_REFRACTION
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2D:
+        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AlphaCombined: 1
+    - _BasePos: -1
+    - _CullMode: 2
+    - _DeepAtten: 0.31
+    - _DoubleSidedBias: 0
+    - _FlaskBlurIntensity: 0.75
+    - _FlaskThickness: 0.05
+    - _FoamBottom: 1
+    - _FoamDensity: -1
+    - _FoamMaxPos: -22.799154
+    - _FoamRaySteps: 1
+    - _FoamTurbulence: 1
+    - _FoamWeight: 4
+    - _Glossiness: 0.767
+    - _GlossinessInt: 0.5
+    - _Level: 1
+    - _LevelPos: -22.799154
+    - _LiquidRaySteps: 10
+    - _LowerLimit: -0.118499994
+    - _Metallic: 0
+    - _Muddy: 0
+    - _Radius: 0.5
+    - _SmokeAtten: 2
+    - _SmokeHeightAtten: 0
+    - _SmokeRaySteps: 5
+    - _SmokeSpeed: 5
+    - _Sparkling: 1
+    - _SparklingIntensity: 0
+    - _SparklingThreshold: 1
+    - _Topology: 0
+    - _Turbulence: 1
+    - _Turbulence2: 1
+    - _TurbulenceSpeed: 1
+    - _UpperLimit: 0.118499994
+    - _ZTestMode: 4
+    m_Colors:
+    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: 4.1900005, g: -23.620562, b: -7.3387485, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0.505226, g: 0.63432544, b: 0.81886786, a: 1}
+    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
+    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
+    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskThickness: {r: 1, g: 1, b: 1, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 0.12563676, g: 0.00502547, b: 0.81915164, a: 2.5127351}
+    - _Size: {r: 5.885869, g: 3.979727, b: 2.736987, a: 1.52894}
+    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
+    - _Turbulence: {r: 0, g: 0, b: 0, a: 0}
+    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1362988513
 GameObject:
   m_ObjectHideFlags: 0
@@ -22881,6 +23443,7 @@ Transform:
   - {fileID: 593871488}
   - {fileID: 1355386492}
   - {fileID: 1054874349}
+  - {fileID: 1629395139}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 0, y: 177.18, z: -0.341}
 --- !u!114 &1374560932
@@ -23040,6 +23603,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1054874353}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   EventExit:
     m_PersistentCalls:
       m_Calls:
@@ -23166,6 +23741,23 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 9076cdee3a80e4dba8f49f99957d5da9, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0645\u0644\u0639\u0642\u0629
+            \u0627\u0644\u0645\u0639\u0645\u0644\u064A\u0629\u060C \u062E\u062F \u0634\u0648\u064A\u0629
+            \u0643\u0628\u0631\u064A\u062A\u0627\u062A \u0627\u0644\u0632\u0646\u0643
+            (ZnSO\u2084) \u0648\u0636\u064A\u0641\u0647\u0645 \u0639\u0644\u0649
+            \u0627\u0644\u0645\u064A\u0629 \u0627\u0644\u0644\u064A \u0641\u064A
+            \u0627\u0644\u0628\u064A\u0643\u0631."
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 348156091}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0645\u0644\u0639\u0642\u0629
@@ -23599,106 +24191,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450651630128111}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1440085406
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidVolumeSimple(Clone)
-  m_Shader: {fileID: 4800000, guid: dceb6298c8f1d4227a4fb2355f0a4ef0, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LIQUID_VOLUME_CYLINDER
-  - LIQUID_VOLUME_NON_AABB
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  - LIQUID_VOLUME_USE_REFRACTION
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise2Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex2D:
-        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 1
-    - _AlphaCombined: 1
-    - _BasePos: -1
-    - _CullMode: 2
-    - _DeepAtten: 0.31
-    - _DoubleSidedBias: 0
-    - _FlaskBlurIntensity: 0.75
-    - _FlaskThickness: 0.05
-    - _FoamBottom: 1
-    - _FoamDensity: -1
-    - _FoamMaxPos: -22.799154
-    - _FoamRaySteps: 1
-    - _FoamTurbulence: 1
-    - _FoamWeight: 4
-    - _Glossiness: 0.767
-    - _GlossinessInt: 0.5
-    - _Level: 1
-    - _LevelPos: -22.799154
-    - _LiquidRaySteps: 10
-    - _LowerLimit: -0.118499994
-    - _Metallic: 0
-    - _Muddy: 0
-    - _Radius: 0.5
-    - _SmokeAtten: 2
-    - _SmokeHeightAtten: 0
-    - _SmokeRaySteps: 5
-    - _SmokeSpeed: 5
-    - _Sparkling: 1
-    - _SparklingIntensity: 0
-    - _SparklingThreshold: 1
-    - _Topology: 0
-    - _Turbulence: 1
-    - _Turbulence2: 1
-    - _TurbulenceSpeed: 1
-    - _UpperLimit: 0.118499994
-    - _ZTestMode: 4
-    m_Colors:
-    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
-    - _Center: {r: 4.1900005, g: -23.620562, b: -7.3387485, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.505226, g: 0.63432544, b: 0.81886786, a: 1}
-    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0.21568628}
-    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
-    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskThickness: {r: 1, g: 1, b: 1, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Scale: {r: 0.12563676, g: 0.00502547, b: 0.81915164, a: 2.5127351}
-    - _Size: {r: 5.885869, g: 3.979727, b: 2.736987, a: 1.52894}
-    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
-    - _Turbulence: {r: 0, g: 0, b: 0, a: 0}
-    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1450330649
 GameObject:
   m_ObjectHideFlags: 0
@@ -24232,6 +24724,7 @@ Transform:
   m_Children:
   - {fileID: 1337434321}
   - {fileID: 348156090}
+  - {fileID: 403110329}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 0, y: -61.627, z: -90}
 --- !u!65 &1483031593
@@ -24298,6 +24791,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1483031593}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 348156091}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24419,6 +24924,22 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 4abda2c5e10ce4ecaaddad066ae97a8c, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0627\u0633\u062A\u062E\u062F\u0645 \u0627\u0644\u0639\u0635\u0627\u064A\u0629
+            \u0627\u0644\u0632\u062C\u0627\u062C\u064A\u0629 \u0648\u0642\u0644\u0651\u0628
+            \u0627\u0644\u0645\u062D\u0644\u0648\u0644 \u0643\u0648\u064A\u0633 \u0644\u062D\u062F
+            \u0645\u0627 \u0643\u0628\u0631\u064A\u062A\u0627\u062A \u0627\u0644\u062E\u0627\u0631\u0635\u064A\u0646
+            \u062A\u0630\u0648\u0628 \u062A\u0645\u0627\u0645\u064B\u0627. "
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 42993273}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u0627\u0633\u062A\u062E\u062F\u0645 \u0627\u0644\u0639\u0635\u0627\u064A\u0629
@@ -24712,6 +25233,73 @@ Transform:
   - {fileID: 2051951110}
   m_Father: {fileID: 1834998382}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1545984999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1545985000}
+  - component: {fileID: 1545985002}
+  - component: {fileID: 1545985001}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1545985000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545984999}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 360926449025204708}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1545985001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545984999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0627\u0644\u0645\u0644\u0639\u0642\u0629 \u0627\u0644\u0645\u0639\u0645\u0644\u064A\u0629"
+--- !u!65 &1545985002
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1545984999}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.22632709, y: 1.1228384, z: 0.29610997}
+  m_Center: {x: -0.115341485, y: 0.18659478, z: 0.013672883}
 --- !u!1 &1548070422
 GameObject:
   m_ObjectHideFlags: 0
@@ -25012,11 +25600,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1
+  m_fontSize: 0.05
   m_fontSizeBase: 1
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 0
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -30099,6 +30687,73 @@ Transform:
   - {fileID: 1400205114}
   m_Father: {fileID: 1751409461}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1601492537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1601492538}
+  - component: {fileID: 1601492540}
+  - component: {fileID: 1601492539}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1601492538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601492537}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2472836632140486306}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1601492539
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601492537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.00044830242, y: 0.000041042393, z: 0.0004399027}
+  m_Center: {x: -0.0000995472, y: -0.0000006193679, z: 0.00022181062}
+--- !u!114 &1601492540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1601492537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0627\u0644\u062C\u0633\u0631 \u0627\u0644\u0645\u0644\u062D\u064A"
 --- !u!1 &1601850602
 GameObject:
   m_ObjectHideFlags: 0
@@ -30503,106 +31158,73 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!21 &1622611821
-Material:
-  serializedVersion: 8
+--- !u!1 &1629395138
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidVolumeDefaultNoFlask(Clone)
-  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LIQUID_VOLUME_CYLINDER
-  - LIQUID_VOLUME_NON_AABB
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  - 
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise2Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex2D:
-        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 1
-    - _AlphaCombined: 1
-    - _BasePos: -1
-    - _CullMode: 2
-    - _DeepAtten: 2.41
-    - _DoubleSidedBias: 0.001
-    - _FlaskBlurIntensity: 1
-    - _FlaskThickness: 0.05
-    - _FoamBottom: 1
-    - _FoamDensity: -1
-    - _FoamMaxPos: -23.552301
-    - _FoamRaySteps: 7
-    - _FoamTurbulence: 0
-    - _FoamWeight: 4
-    - _Glossiness: 0.767
-    - _GlossinessInt: 0.5
-    - _Level: 1
-    - _LevelPos: -23.5527
-    - _LiquidRaySteps: 10
-    - _LowerLimit: -0.032624856
-    - _Metallic: 0
-    - _Muddy: 0
-    - _Radius: 0.5
-    - _SmokeAtten: 2
-    - _SmokeHeightAtten: 0
-    - _SmokeRaySteps: 5
-    - _SmokeSpeed: 5
-    - _Sparkling: 1
-    - _SparklingIntensity: 0
-    - _SparklingThreshold: 1
-    - _Topology: 0
-    - _Turbulence: 1
-    - _Turbulence2: 1
-    - _TurbulenceSpeed: 1
-    - _UpperLimit: 0.032624856
-    - _ZTestMode: 4
-    m_Colors:
-    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
-    - _Center: {r: 23.09, g: -24.706163, b: -6.64, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0, g: 0, b: 0, a: 0.1}
-    - _Color2: {r: 0.6754716, g: 0.3833188, b: 0.1924457, a: 0.3}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskThickness: {r: 1, g: 1, b: 1, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Scale: {r: 0.12532564, g: 0.0050130254, b: 0.36093786, a: 1.0026051}
-    - _Size: {r: 4.766823, g: 3.9896066, b: 1.845559, a: 0.92050016}
-    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
-    - _Turbulence: {r: 0, g: 0, b: 9.424778, a: 3.1415927}
-    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
-  m_BuildTextureStacks: []
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1629395139}
+  - component: {fileID: 1629395141}
+  - component: {fileID: 1629395140}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1629395139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629395138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1374560930}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1629395140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629395138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0645\u0627\u0621"
+--- !u!65 &1629395141
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629395138}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12095961, y: 0.15799999, z: 0.10799998}
+  m_Center: {x: -0.006476841, y: 0.0008201599, z: 0.0000005010515}
 --- !u!1 &1630218438
 GameObject:
   m_ObjectHideFlags: 0
@@ -30886,6 +31508,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2015570212}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1657372942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657372943}
+  - component: {fileID: 1657372945}
+  - component: {fileID: 1657372944}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657372943
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657372942}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1993985855}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1657372944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657372942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0627\u0644\u0639\u0635\u0627\u064A\u0629 \u0627\u0644\u0632\u062C\u0627\u062C\u064A\u0647"
+--- !u!65 &1657372945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657372942}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12531021, y: 0.03251501, z: 0.041083597}
+  m_Center: {x: -0.037060693, y: 0.011934367, z: -0.017792879}
 --- !u!1 &1684539904
 GameObject:
   m_ObjectHideFlags: 0
@@ -30969,106 +31658,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684539904}
   m_Mesh: {fileID: 4300002, guid: 9f7061e33a6f353489bfdb56f6390954, type: 3}
---- !u!21 &1694603129
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: LiquidVolumeSimple(Clone)
-  m_Shader: {fileID: 4800000, guid: dceb6298c8f1d4227a4fb2355f0a4ef0, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords:
-  - LIQUID_VOLUME_CYLINDER
-  - LIQUID_VOLUME_NON_AABB
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  - LIQUID_VOLUME_USE_REFRACTION
-  m_LightmapFlags: 5
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3001
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _Noise2Tex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex:
-        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _NoiseTex2D:
-        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _Alpha: 0
-    - _AlphaCombined: 0
-    - _BasePos: -1
-    - _CullMode: 2
-    - _DeepAtten: 0.31
-    - _DoubleSidedBias: 0
-    - _FlaskBlurIntensity: 0.75
-    - _FlaskThickness: 0.05
-    - _FoamBottom: 1
-    - _FoamDensity: -1
-    - _FoamMaxPos: -25.202047
-    - _FoamRaySteps: 1
-    - _FoamTurbulence: 1
-    - _FoamWeight: 4
-    - _Glossiness: 0.767
-    - _GlossinessInt: 0.5
-    - _Level: 1
-    - _LevelPos: -25.202047
-    - _LiquidRaySteps: 10
-    - _LowerLimit: -0.118499994
-    - _Metallic: 0
-    - _Muddy: 0
-    - _Radius: 0.5
-    - _SmokeAtten: 2
-    - _SmokeHeightAtten: 0
-    - _SmokeRaySteps: 5
-    - _SmokeSpeed: 5
-    - _Sparkling: 1
-    - _SparklingIntensity: 0
-    - _SparklingThreshold: 1
-    - _Topology: 0
-    - _Turbulence: 1
-    - _Turbulence2: 1
-    - _TurbulenceSpeed: 1
-    - _UpperLimit: 0.118499994
-    - _ZTestMode: 4
-    m_Colors:
-    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
-    - _Center: {r: 6.14, g: -23.624138, b: -18.5, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.505226, g: 0.63432544, b: 0.81886786, a: 0}
-    - _Color2: {r: 0.7207546, g: 0.7207546, b: 0.7207546, a: 0}
-    - _EmissionColor: {r: 0.74165183, g: 0.84704566, b: 0.94716984, a: 1}
-    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FlaskThickness: {r: 1, g: 1, b: 1, a: 0}
-    - _FoamColor: {r: 1, g: 1, b: 1, a: 0}
-    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Scale: {r: 0.12563676, g: 0.00502547, b: 0.81915164, a: 2.5127351}
-    - _Size: {r: 5.8858695, g: 3.979727, b: 2.7369876, a: 1.52894}
-    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0}
-    - _Turbulence: {r: 1, g: 0, b: 47.12389, a: 15.707964}
-    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
-  m_BuildTextureStacks: []
 --- !u!1 &1712544489
 GameObject:
   m_ObjectHideFlags: 0
@@ -31445,6 +32034,106 @@ Transform:
   - {fileID: 1592095906}
   m_Father: {fileID: 2052278867}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1785538360
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LiquidVolumeDefaultNoFlask(Clone)
+  m_Shader: {fileID: 4800000, guid: 045a60f5db3314d55b5609a847d062a8, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - LIQUID_VOLUME_CYLINDER
+  - LIQUID_VOLUME_NON_AABB
+  m_InvalidKeywords:
+  - 
+  - 
+  - 
+  - 
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3001
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise2Tex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 11700000, guid: 41974beaaddc547889b39d0022cb1d07, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex2D:
+        m_Texture: {fileID: 2800000, guid: 2e25f51e1f31e4da8bdac5d08b0f578f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AlphaCombined: 1
+    - _BasePos: -1
+    - _CullMode: 2
+    - _DeepAtten: 2.41
+    - _DoubleSidedBias: 0.001
+    - _FlaskBlurIntensity: 1
+    - _FlaskThickness: 0.05
+    - _FoamBottom: 1
+    - _FoamDensity: -1
+    - _FoamMaxPos: -23.552301
+    - _FoamRaySteps: 7
+    - _FoamTurbulence: 0
+    - _FoamWeight: 4
+    - _Glossiness: 0.767
+    - _GlossinessInt: 0.5
+    - _Level: 1
+    - _LevelPos: -23.5527
+    - _LiquidRaySteps: 10
+    - _LowerLimit: -0.032624856
+    - _Metallic: 0
+    - _Muddy: 0
+    - _Radius: 0.5
+    - _SmokeAtten: 2
+    - _SmokeHeightAtten: 0
+    - _SmokeRaySteps: 5
+    - _SmokeSpeed: 5
+    - _Sparkling: 1
+    - _SparklingIntensity: 0
+    - _SparklingThreshold: 1
+    - _Topology: 0
+    - _Turbulence: 1
+    - _Turbulence2: 1
+    - _TurbulenceSpeed: 1
+    - _UpperLimit: 0.032624856
+    - _ZTestMode: 4
+    m_Colors:
+    - _Bounds: {r: 1, g: 1, b: 1, a: 1}
+    - _Center: {r: 23.09, g: -24.706163, b: -6.64, a: 0}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color1: {r: 0, g: 0, b: 0, a: 0.1}
+    - _Color2: {r: 0.6754716, g: 0.3833188, b: 0.1924457, a: 0.3}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlaskThickness: {r: 1, g: 1, b: 1, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 0.65}
+    - _LightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Scale: {r: 0.12532564, g: 0.0050130254, b: 0.36093786, a: 1.0026051}
+    - _Size: {r: 4.766823, g: 3.9896066, b: 1.845559, a: 0.92050016}
+    - _SmokeColor: {r: 0.7, g: 0.7, b: 0.7, a: 0.25}
+    - _Turbulence: {r: 0, g: 0, b: 9.424778, a: 3.1415927}
+    - _ViewDir: {r: 0, g: 0, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1001 &1795029675
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31619,6 +32308,7 @@ Transform:
   - {fileID: 1450463912}
   - {fileID: 103670246}
   - {fileID: 145042020}
+  - {fileID: 20316702}
   m_Father: {fileID: 417682791}
   m_LocalEulerAnglesHint: {x: 0.921, y: 292.772, z: 93.934}
 --- !u!114 &1827722039
@@ -31937,6 +32627,73 @@ Transform:
   - {fileID: 1536790814}
   m_Father: {fileID: 1601850603}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1835430351
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1835430352}
+  - component: {fileID: 1835430354}
+  - component: {fileID: 1835430353}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1835430352
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835430351}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3847494395451147306}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1835430353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835430351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0634\u0631\u064A\u062D\u0629 \u0627\u0644\u062E\u0627\u0631\u0635\u064A\u0646"
+--- !u!65 &1835430354
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835430351}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.20460922, y: 0.19795951, z: 0.7286404}
+  m_Center: {x: 0.050442513, y: 0.0000000012803962, z: 0.01946133}
 --- !u!1 &1841841979
 GameObject:
   m_ObjectHideFlags: 0
@@ -31969,6 +32726,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2319820166524752553}
+  - {fileID: 2102011446}
   m_Father: {fileID: 2019281011}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -33063,6 +33821,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 42993273}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   EventExit:
     m_PersistentCalls:
       m_Calls:
@@ -33170,6 +33940,20 @@ MonoBehaviour:
             \u0627\u0644\u0646\u062D\u0627\u0633."
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1719890150}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 2cbd57d86be374999ae96bddb5e83e29, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u064F\u0637 \u0634\u0631\u064A\u062D\u0629 \u0627\u0644\u0646\u062D\u0627\u0633
+            \u062C\u0648\u0647 \u0645\u062D\u0644\u0648\u0644 \u0643\u0628\u0631\u064A\u062A\u0627\u062A
+            \u0627\u0644\u0646\u062D\u0627\u0633."
+          m_BoolArgument: 1
+        m_CallState: 2
   HomeHighlights: {fileID: 226407790}
   EndPositionAreaName: 10
   AnimationDuration: 5
@@ -33213,6 +33997,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 42993271}
+  - {fileID: 1657372943}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 60.586}
 --- !u!114 &1993985856
@@ -33260,6 +34045,73 @@ Transform:
   - {fileID: 36171399}
   m_Father: {fileID: 1017405963}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2003126539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003126540}
+  - component: {fileID: 2003126542}
+  - component: {fileID: 2003126541}
+  m_Layer: 6
+  m_Name: Name
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2003126540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003126539}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7668024832241155252}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003126541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003126539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ad6672f9f6077a42959c846b77b8a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MyName: "\u0645\u0627\u0621"
+--- !u!65 &2003126542
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003126539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.12095961, y: 0.15799999, z: 0.10799998}
+  m_Center: {x: -0.006476841, y: 0.0008201599, z: 0.0000005010515}
 --- !u!1 &2015570211
 GameObject:
   m_ObjectHideFlags: 0
@@ -34414,16 +35266,16 @@ RectTransform:
   m_GameObject: {fileID: 2102011445}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 48.76, y: 48.76, z: 48.76}
+  m_LocalScale: {x: 19.497774, y: 19.046888, z: 20.008377}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1562884552}
-  m_Father: {fileID: 3476415617984646808}
+  m_Father: {fileID: 1841841980}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 251.7, y: -560.21}
-  m_SizeDelta: {x: 10, y: 2.32}
+  m_AnchoredPosition: {x: 0, y: -7}
+  m_SizeDelta: {x: 0.5618, y: 0.1303}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2102011447
 MonoBehaviour:
@@ -34454,7 +35306,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 76.5
+  m_PixelsPerUnitMultiplier: 816
 --- !u!222 &2102011448
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -34470,13 +35322,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102011445}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
-  m_EffectDistance: {x: 0, y: -0.1}
+  m_EffectDistance: {x: 0, y: -0.01}
   m_UseGraphicAlpha: 1
 --- !u!114 &2102011450
 MonoBehaviour:
@@ -35046,6 +35898,7 @@ Transform:
   m_Children:
   - {fileID: 5914387810397525036}
   - {fileID: 1946472027639678942}
+  - {fileID: 1545985000}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 0, y: -61.627, z: -90}
 --- !u!1 &380158376234076352
@@ -35091,6 +35944,18 @@ MonoBehaviour:
       - m_Target: {fileID: 3555931670498393113}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2621301998337334479}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35193,6 +36058,22 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 4abda2c5e10ce4ecaaddad066ae97a8c, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0627\u0633\u062A\u062E\u062F\u0645 \u0627\u0644\u0639\u0635\u0627\u064A\u0629
+            \u0627\u0644\u0632\u062C\u0627\u062C\u064A\u0629 \u0648\u0642\u0644\u0651\u0628
+            \u0627\u0644\u0645\u062D\u0644\u0648\u0644 \u0643\u0648\u064A\u0633 \u0644\u062D\u062F
+            \u0645\u0627 \u0643\u0628\u0631\u064A\u062A\u0627\u062A \u0627\u0644\u062E\u0627\u0631\u0635\u064A\u0646
+            \u062A\u0630\u0648\u0628 \u062A\u0645\u0627\u0645\u064B\u0627. "
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1339080979}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u0627\u0633\u062A\u062E\u062F\u0645 \u0627\u0644\u0639\u0635\u0627\u064A\u0629
@@ -35486,6 +36367,19 @@ MonoBehaviour:
           m_StringArgument: "\u062A\u0645: \u062A\u0648\u0635\u064A\u0644 \u0627\u0644\u062C\u0633\u0631
             \u0627\u0644\u0645\u0644\u062D\u064A \u0628\u064A\u0646 \u0627\u0644\u0628\u064A\u0643\u0631\u064A\u0646."
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1533501090}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u062A\u0645: \u062A\u0648\u0635\u064A\u0644 \u0627\u0644\u062C\u0633\u0631
+            \u0627\u0644\u0645\u0644\u062D\u064A \u0628\u064A\u0646 \u0627\u0644\u0628\u064A\u0643\u0631\u064A\u0646."
+          m_BoolArgument: 1
         m_CallState: 2
   EventExit:
     m_PersistentCalls:
@@ -45316,6 +46210,22 @@ MonoBehaviour:
             \u0627\u0644\u0623\u0633\u0648\u062F."
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7607123591871375542}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0648\u0635\u0651\u0644 \u0634\u0631\u064A\u062D\u0629
+            \u0627\u0644\u062E\u0627\u0631\u0635\u064A\u0646 \u0628\u0627\u0644\u0637\u0631\u0641
+            \u0627\u0644\u0633\u0627\u0644\u0628 \u0644\u0644\u0641\u0648\u0644\u062A\u0645\u064A\u062A\u0631
+            \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0633\u0644\u0643
+            \u0627\u0644\u0623\u0633\u0648\u062F."
+          m_BoolArgument: 0
+        m_CallState: 2
   EventExit:
     m_PersistentCalls:
       m_Calls: []
@@ -45722,6 +46632,7 @@ Transform:
   - {fileID: 5392672868699212330}
   - {fileID: 3167048488674148976}
   - {fileID: 1265353783648187818}
+  - {fileID: 660291805}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &1711813854411211290
@@ -46000,6 +46911,19 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 2cbd57d86be374999ae96bddb5e83e29, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0647\u0627\u062A \u0628\u064A\u0643\u0631 \u062A\u0627\u0646\u064A
+            \u0633\u0650\u0639\u062A\u0647 \u0628\u0631\u0636\u0648 500 \u0645\u0644. "
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 512192505}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u0647\u0627\u062A \u0628\u064A\u0643\u0631 \u062A\u0627\u0646\u064A
@@ -50950,7 +51874,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.025878, y: 0.15595}
+  m_AnchoredPosition: {x: -0.0000009533699, y: -0.00000230968}
   m_SizeDelta: {x: 278.29, y: 173.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2421725010218375680
@@ -51088,6 +52012,7 @@ Transform:
   m_Children:
   - {fileID: 6280777083280308109}
   - {fileID: 713969064}
+  - {fileID: 1601492538}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2479222302328240074
@@ -51610,6 +52535,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1339080979}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   EventExit:
     m_PersistentCalls:
       m_Calls:
@@ -51705,6 +52642,20 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 1719890150}
+        m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
+        m_MethodName: set_sprite
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 21300000, guid: 9076cdee3a80e4dba8f49f99957d5da9, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u062D\u064F\u0637 \u0634\u0631\u064A\u062D\u0629 \u0627\u0644\u062E\u0627\u0631\u0635\u064A\u0646
+            \u062C\u0648\u0647 \u0645\u062D\u0644\u0648\u0644 \u0643\u0628\u0631\u064A\u062A\u0627\u062A
+            \u0627\u0644\u062E\u0627\u0631\u0635\u064A\u0646. "
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5363297767960504929}
         m_TargetAssemblyTypeName: UnityEngine.SpriteRenderer, UnityEngine
         m_MethodName: set_sprite
         m_Mode: 2
@@ -52166,6 +53117,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1533501090}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   EventExit:
     m_PersistentCalls:
       m_Calls:
@@ -52238,6 +53201,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 21300000, guid: 4886b9fc5809043acaef1600540bcb35, type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0647\u0627\u062A \u062C\u0647\u0627\u0632 \u0627\u0644\u0641\u0648\u0644\u062A\u0645\u064A\u062A\u0631."
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7607123591871375542}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: "\u0647\u0627\u062A \u062C\u0647\u0627\u0632 \u0627\u0644\u0641\u0648\u0644\u062A\u0645\u064A\u062A\u0631."
@@ -52393,7 +53368,6 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7586720034078303296}
-  - {fileID: 2102011446}
   m_Father: {fileID: 959911876571303800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
@@ -52729,6 +53703,7 @@ Transform:
   - {fileID: 7946645414267624325}
   - {fileID: 4852630137528320256}
   - {fileID: 2616436626995139123}
+  - {fileID: 1835430352}
   m_Father: {fileID: 33799018}
   m_LocalEulerAnglesHint: {x: 0.921, y: 292.772, z: 93.934}
 --- !u!1 &3924835662557768569
@@ -53975,6 +54950,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 90889951}
+  - {fileID: 165239213}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 60.586}
 --- !u!4 &5914387810397525036
@@ -54902,8 +55878,9 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: e630741edec6d486b8e4f0026c106e8e, type: 3}
     - target: {fileID: 6700463709490650087, guid: 0e2d5176947e64a6596c1adb8577d8c3, type: 3}
       propertyPath: m_text
-      value: "\uFECB\uFE92\uFEAA \u0627\uFEDF\uFEAE\uFEA3\uFEE4\uFEE6 \uFEE3\uFEA4\uFEE4\uFEAA
-        \uFED3\uFE98\uFEA4\uFEF2 \uFECB\uFEE0\uFEF2"
+      value: '
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 6700463709490650087, guid: 0e2d5176947e64a6596c1adb8577d8c3, type: 3}
       propertyPath: m_fontSize
@@ -54919,8 +55896,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6700463709490650087, guid: 0e2d5176947e64a6596c1adb8577d8c3, type: 3}
       propertyPath: m_ArabicText
-      value: "\u0639\u0628\u062F \u0627\u0644\u0631\u062D\u0645\u0646 \u0645\u062D\u0645\u062F
-        \u0641\u062A\u062D\u064A \u0639\u0644\u064A"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6700463709490650087, guid: 0e2d5176947e64a6596c1adb8577d8c3, type: 3}
       propertyPath: m_fontSizeBase
@@ -55148,6 +56124,7 @@ Transform:
   - {fileID: 186150873488878930}
   - {fileID: 1684539905}
   - {fileID: 584919000}
+  - {fileID: 2003126540}
   m_Father: {fileID: 1079282851}
   m_LocalEulerAnglesHint: {x: 0, y: 177.18, z: -0.341}
 --- !u!4 &7668024832485993526
@@ -55982,7 +56959,7 @@ MonoBehaviour:
   m_Inertia: 1
   m_DecelerationRate: 0.135
   m_ScrollSensitivity: 1
-  m_Viewport: {fileID: 0}
+  m_Viewport: {fileID: 2319820166524752553}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 0}
   m_HorizontalScrollbarVisibility: 0
@@ -56257,11 +57234,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uFE97\uFEA0\uFEE4\uFEF4\uFECA \uFEA7\uFEE0\uFEF4\uFE94 \uFE9F\uFEE0\uFED4\uFE8E\uFEE7\uFEF4\uFE94
-    \uFE91\uFE8E\uFEB3\uFE98\uFEA8\uFEAA\u0627\u0645 \uFED7\uFEC4\uFE92\uFEF4\uFEE6
-    \uFEE3\uFEA8\uFE98\uFEE0\uFED4\uFEF4\uFEE6  \uFE97\uFEA0\uFEE4\uFEF4\uFECA \uFEA7\uFEE0\uFEF4\uFE94
-    \uFE9F\uFEE0\uFED4\uFE8E\uFEE7\uFEF4\uFE94 \uFE91\uFE8E\uFEB3\uFE98\uFEA8\uFEAA\u0627\u0645
-    \uFED7\uFEC4\uFE92\uFEF4\uFEE6 \uFEE3\uFEA8\uFE98\uFEE0\uFED4\uFEF4\uFEE6 "
+  m_text: '
+
+'
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 4b1038618804cf140a96475a05e3c66c, type: 2}
   m_sharedMaterial: {fileID: 3688312791884616243, guid: 4b1038618804cf140a96475a05e3c66c, type: 2}
@@ -56330,11 +57305,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
-  m_ArabicText: "\u062A\u062C\u0645\u064A\u0639 \u062E\u0644\u064A\u0629 \u062C\u0644\u0641\u0627\u0646\u064A\u0629
-    \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0642\u0637\u0628\u064A\u0646
-    \u0645\u062E\u062A\u0644\u0641\u064A\u0646  \u062A\u062C\u0645\u064A\u0639 \u062E\u0644\u064A\u0629
-    \u062C\u0644\u0641\u0627\u0646\u064A\u0629 \u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645
-    \u0642\u0637\u0628\u064A\u0646 \u0645\u062E\u062A\u0644\u0641\u064A\u0646 "
+  m_ArabicText: 
   m_ShowTashkeel: 1
   m_PreserveNumbers: 1
   m_FixTags: 1
@@ -56456,6 +57427,32 @@ MonoBehaviour:
             \u0628\u062D\u0648\u0627\u0644\u064A 300 \u0645\u0644 \u0645\u064A\u0629."
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1342373859}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0627\u0645\u0644\u0623 \u0627\u0644\u0628\u064A\u0643\u0631
+            \u0628\u062D\u0648\u0627\u0644\u064A 300 \u0645\u0644 \u0645\u064A\u0629."
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9104868472539441084}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0627\u0645\u0644\u0623 \u0627\u0644\u0628\u064A\u0643\u0631
+            \u0628\u062D\u0648\u0627\u0644\u064A 300 \u0645\u0644 \u0645\u064A\u0629."
+          m_BoolArgument: 1
+        m_CallState: 2
   EventExit:
     m_PersistentCalls:
       m_Calls: []
@@ -56497,6 +57494,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5576505895692502500}
+        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9104868472539441084}
         m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
         m_MethodName: set_enabled
         m_Mode: 6
@@ -56606,6 +57615,23 @@ MonoBehaviour:
             \u0627\u0644\u0628\u064A\u0643\u0631."
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2621301998337334479}
+        m_TargetAssemblyTypeName: Outline, Assembly-CSharp
+        m_MethodName: EnableHighLightColor
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "\u0628\u0627\u0633\u062A\u062E\u062F\u0627\u0645 \u0627\u0644\u0645\u0644\u0639\u0642\u0629
+            \u0627\u0644\u0645\u0639\u0645\u0644\u064A\u0629\u060C \u062E\u062F \u0634\u0648\u064A\u0629
+            \u0643\u0628\u0631\u064A\u062A\u0627\u062A \u0627\u0644\u0632\u0646\u0643
+            (ZnSO\u2084) \u0648\u0636\u064A\u0641\u0647\u0645 \u0639\u0644\u0649
+            \u0627\u0644\u0645\u064A\u0629 \u0627\u0644\u0644\u064A \u0641\u064A
+            \u0627\u0644\u0628\u064A\u0643\u0631."
+          m_BoolArgument: 1
+        m_CallState: 2
   HomeHighlights: {fileID: 1613509270}
   EndPositionAreaName: 0
   AnimationDuration: 5
@@ -56621,7 +57647,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5460115062741663153}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 

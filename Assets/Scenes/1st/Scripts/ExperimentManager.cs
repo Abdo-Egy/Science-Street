@@ -55,6 +55,8 @@ public class ExperimentManager : MonoBehaviour
     }
     public void CloseApp()
     {
+        GameContextBuilder.Instance.ClearActions();
+        GameContextBuilder.Instance.ClearObjective();
         Application.Quit();
     }
 }
